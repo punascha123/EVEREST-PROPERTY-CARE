@@ -64,25 +64,25 @@
       margin-bottom: 20px;
     }
 
-    .services ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .services ul li {
+    .services table {
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      border-collapse: collapse;
       background-color: #e8f5e9;
-      margin: 10px auto;
-      padding: 10px;
       border-radius: 8px;
-      max-width: 600px;
+      overflow: hidden;
     }
 
-    .job-description {
-      font-size: 1rem;
-      margin: 10px auto;
-      color: #333;
+    .services th, .services td {
+      padding: 15px;
+      border-bottom: 1px solid #c8e6c9;
       text-align: left;
-      max-width: 600px;
+    }
+
+    .services th {
+      background-color: #a5d6a7;
+      color: #1b5e20;
     }
 
     .testimonial-section {
@@ -132,10 +132,11 @@
     .footer-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
+      justify-content: space-between;
+      gap: 40px;
       max-width: 1200px;
       margin: auto;
+      align-items: flex-start;
     }
 
     .footer-column {
@@ -222,22 +223,14 @@
 
   <section id="services" class="services">
     <h3>Our Services</h3>
-    <ul>
-      <li><strong>Cleaning</strong></li>
-      <div class="job-description">We provide meticulous cleaning tailored to your property's needs, making every corner shine with care and precision.</div>
-
-      <li><strong>Lawn Mowing</strong></li>
-      <div class="job-description">Our lawn mowing service ensures your garden stays neat, tidy, and professionally groomed every time.</div>
-
-      <li><strong>Painting</strong></li>
-      <div class="job-description">We bring new life to your walls with smooth, clean, and expertly applied interior and exterior paint.</div>
-
-      <li><strong>Gutter Cleaning</strong></li>
-      <div class="job-description">Avoid damage and blockages with our safe and thorough gutter cleaning for all types of buildings.</div>
-
-      <li><strong>Property Maintenance</strong></li>
-      <div class="job-description">We handle all your general property upkeep with prompt, trustworthy service and reliable results.</div>
-    </ul>
+    <table>
+      <tr><th>Service</th><th>Description</th></tr>
+      <tr><td>Cleaning</td><td>We provide meticulous cleaning tailored to your property's needs, making every corner shine with care and precision.</td></tr>
+      <tr><td>Lawn Mowing</td><td>Our lawn mowing service ensures your garden stays neat, tidy, and professionally groomed every time.</td></tr>
+      <tr><td>Painting</td><td>We bring new life to your walls with smooth, clean, and expertly applied interior and exterior paint.</td></tr>
+      <tr><td>Gutter Cleaning</td><td>Avoid damage and blockages with our safe and thorough gutter cleaning for all types of buildings.</td></tr>
+      <tr><td>Property Maintenance</td><td>We handle all your general property upkeep with prompt, trustworthy service and reliable results.</td></tr>
+    </table>
   </section>
 
   <section class="testimonial-section">
@@ -261,11 +254,10 @@
     </div>
   </section>
 
-  <!-- Updated Footer -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
-        <h3>Contact Us</h3>
+        <h3>Everest Property Care</h3>
         <p>Phone: 027 270 1271</p>
         <p>Email: info@nhrgroup.co.nz</p>
       </div>
