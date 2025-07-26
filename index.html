@@ -6,16 +6,24 @@
   <title>Everest Property Care</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --dark-green: #132a13;
+      --mid-green: #31572c;
+      --olive: #4f772d;
+      --lime: #90a955;
+      --cream: #ecf39e;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f3fdf6;
-      color: #2e7d32;
+      background-color: var(--cream);
+      color: var(--dark-green);
     }
 
     header {
-      background-color: #1b5e20;
+      background-color: var(--dark-green);
       color: white;
       padding: 20px;
       display: flex;
@@ -43,7 +51,7 @@
     }
 
     .hero {
-      background: linear-gradient(to right, #a5d6a7, #c8e6c9);
+      background: linear-gradient(to right, var(--lime), var(--cream));
       text-align: center;
       padding: 60px 20px;
     }
@@ -55,7 +63,7 @@
 
     .hero p {
       font-size: 1.1rem;
-      color: #1b5e20;
+      color: var(--dark-green);
     }
 
     section {
@@ -65,7 +73,7 @@
 
     .services h3 {
       font-size: 1.8rem;
-      color: #1b5e20;
+      color: var(--olive);
       margin-bottom: 20px;
     }
 
@@ -74,20 +82,20 @@
       max-width: 800px;
       margin: auto;
       border-collapse: collapse;
-      background-color: #e8f5e9;
+      background-color: var(--cream);
       border-radius: 8px;
       overflow: hidden;
     }
 
     .services th, .services td {
       padding: 15px;
-      border-bottom: 1px solid #c8e6c9;
+      border-bottom: 1px solid var(--lime);
       text-align: left;
     }
 
     .services th {
-      background-color: #a5d6a7;
-      color: #1b5e20;
+      background-color: var(--lime);
+      color: var(--dark-green);
     }
 
     .services img {
@@ -97,7 +105,7 @@
     }
 
     .testimonial-section {
-      background-color: #e0f2f1;
+      background-color: var(--lime);
     }
 
     .carousel {
@@ -118,7 +126,7 @@
     }
 
     .testimonial-card h4 {
-      color: #2e7d32;
+      color: var(--dark-green);
       margin-bottom: 5px;
     }
 
@@ -135,8 +143,8 @@
     }
 
     footer {
-      background-color: #333;
-      color: #f4f4f4;
+      background-color: var(--dark-green);
+      color: var(--cream);
       padding: 40px 0 10px;
     }
 
@@ -156,7 +164,7 @@
     }
 
     .footer-column h3 {
-      border-bottom: 2px solid #666;
+      border-bottom: 2px solid var(--lime);
       padding-bottom: 10px;
       margin-bottom: 15px;
     }
@@ -171,7 +179,7 @@
     }
 
     .footer-column ul li a {
-      color: #f4f4f4;
+      color: var(--cream);
       text-decoration: none;
     }
 
@@ -186,7 +194,7 @@
     }
 
     .request-quote {
-      background-color: #d32f2f;
+      background-color: var(--mid-green);
       color: white;
       border: none;
       padding: 10px 15px;
@@ -197,7 +205,7 @@
     }
 
     .request-quote:hover {
-      background-color: #b71c1c;
+      background-color: var(--olive);
     }
 
     .copyright {
@@ -250,8 +258,7 @@
     <table>
       <tr><th>Service</th><th>Description</th></tr>
       <tr><td>Cleaning</td><td>We provide meticulous cleaning tailored to your property's needs, making every corner shine with care and precision.</td></tr>
-      <tr><td>Lawn Mowing</td><td>Our lawn mowing service ensures your garden stays neat, tidy, and professionally groomed every time.<br><img src="https://i.ibb.co/NyVrk1S/lawnmowing.jpg" alt="Lawn Mowing">
-</td></tr>
+      <tr><td>Lawn Mowing</td><td>Our lawn mowing service ensures your garden stays neat, tidy, and professionally groomed every time.<br><img src="https://i.ibb.co/NyVrk1S/lawnmowing.jpg" alt="Lawn Mowing"></td></tr>
       <tr><td>Painting</td><td>We bring new life to your walls with smooth, clean, and expertly applied interior and exterior paint.</td></tr>
       <tr><td>Gutter Cleaning</td><td>Avoid damage and blockages with our safe and thorough gutter cleaning for all types of buildings.</td></tr>
       <tr><td>Property Maintenance</td><td>We handle all your general property upkeep with prompt, trustworthy service and reliable results.</td></tr>
