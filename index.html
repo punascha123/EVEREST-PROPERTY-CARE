@@ -52,12 +52,12 @@
       color: #1b5e20;
     }
 
-    .services, .contact {
+    section {
       padding: 40px 20px;
       text-align: center;
     }
 
-    .services h3, .contact h3 {
+    .services h3, .contact h3, .about h3, .privacy h3 {
       font-size: 1.8rem;
       color: #1b5e20;
       margin-bottom: 20px;
@@ -77,15 +77,7 @@
     }
 
     .testimonial-section {
-      padding: 50px 20px;
       background-color: #e0f2f1;
-      text-align: center;
-    }
-
-    .testimonial-section h3 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      color: #1b5e20;
     }
 
     .carousel {
@@ -130,15 +122,19 @@
     footer {
       background-color: #1b5e20;
       color: white;
-      text-align: center;
       padding: 30px 20px 15px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .footer-links {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      margin-bottom: 15px;
     }
 
     .footer-links a {
@@ -153,6 +149,7 @@
       font-size: 1rem;
       color: #a5d6a7;
       margin-top: 10px;
+      text-align: center;
     }
   </style>
 </head>
@@ -161,19 +158,19 @@
     <h1>Everest Property Care</h1>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero">
+  <section id="home" class="hero">
     <h2>Complete Property Care Services</h2>
     <p>From lawn mowing to painting – we've got you covered in West Auckland!</p>
   </section>
 
-  <section class="services">
+  <section id="services" class="services">
     <h3>Our Services</h3>
     <ul>
       <li>✅ Lawn Mowing</li>
@@ -206,17 +203,31 @@
     </div>
   </section>
 
-  <section class="contact">
+  <section id="contact" class="contact">
     <h3>Contact Us</h3>
     <p>Email: <a href="mailto:info@everestpropertycare.com">info@nhrgroup.co.nz</a></p>
     <p>Phone: <a href="tel:0272701271">027 270 1271</a></p>
   </section>
 
+  <section id="about" class="about">
+    <h3>About Us</h3>
+    <p>Everest Property Care is your local partner for reliable, professional, and affordable property maintenance services. We are based in West Auckland and take pride in our work.</p>
+  </section>
+
+  <section id="privacy" class="privacy">
+    <h3>Privacy Policy</h3>
+    <p>We respect your privacy. Your personal information is kept confidential and used only for the purpose of providing services or communication.</p>
+  </section>
+
   <footer>
-    <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#about">About Us</a>
-      <a href="#privacy">Privacy Policy</a>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
     <p>&copy; 2025 Everest Property Care</p>
     <p class="footer-slogan">EVEREST – You take rest, we make best</p>
