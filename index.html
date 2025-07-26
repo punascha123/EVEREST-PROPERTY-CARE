@@ -5,164 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Everest Property Care</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Everest Property Care</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>Everest Property Care</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section class="hero">
-    <div class="container">
-      <h2>Reliable Property Maintenance in Auckland</h2>
-      <p>Expert Lawn Mowing, Cleaning, Painting, and More</p>
-      <a href="#contact" class="btn">Get in Touch</a>
-    </div>
+    <h2>Complete Property Care Services</h2>
+    <p>From lawn mowing to painting – we've got you covered in West Auckland!</p>
   </section>
 
-  <section class="services" id="services">
-    <div class="container">
-      <h3>Our Services</h3>
-      <div class="service-grid">
-        <div class="service-card">Lawn Mowing</div>
-        <div class="service-card">Cleaning</div>
-        <div class="service-card">Gutter Cleaning</div>
-        <div class="service-card">Painting</div>
-        <div class="service-card">Plastering</div>
-        <div class="service-card">Handyman</div>
-      </div>
-    </div>
+  <section class="services">
+    <h3>Our Services</h3>
+    <ul>
+      <li>✅ Lawn Mowing</li>
+      <li>✅ Cleaning</li>
+      <li>✅ Gutter Cleaning</li>
+      <li>✅ Painting</li>
+      <li>✅ Plastering</li>
+      <li>✅ Handyman Services</li>
+    </ul>
   </section>
 
-  <section class="contact" id="contact">
-    <div class="container">
-      <h3>Contact Us</h3>
-      <p>Email: <a href="mailto:info@nhrgroup.co.nz">info@nhrgroup.co.nz</a></p>
-      <p>Phone: <a href="tel:0272701271">027 270 1271</a></p>
-    </div>
+  <section class="contact">
+    <h3>Contact Us</h3>
+    <p>Email: <a href="mailto:info@everestpropertycare.com">info@nhrgroup.co.nz</a></p>
+    <p>Phone: <a href="tel:0272701271">027 270 1271</a></p>
   </section>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Everest Property Care. All rights reserved.</p>
-    </div>
+    <p>&copy; 2025 Everest Property Care</p>
   </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Everest Property Care</title>
-  <link rel="stylesheet" href="style.css"/>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    .testimonials-section {
-      background-color: #e6f4ec;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .testimonials-section h2 {
-      color: #2e7d32;
-      margin-bottom: 40px;
-      font-size: 2rem;
-    }
-    .testimonial-slider {
-      position: relative;
-      max-width: 700px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-    .testimonial-card {
-      display: none;
-      background: #fff;
-      padding: 30px;
-      margin: 0 auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.5s ease-in-out;
-    }
-    .testimonial-card.active { display: block; }
-    .testimonial-job { font-size: 0.85rem; color: #666; margin-top: 10px; }
-    .testimonial-nav {
-      margin-top: 20px;
-    }
-    .testimonial-nav button {
-      padding: 8px 16px;
-      background-color: #2e7d32;
-      border: none;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-      margin: 0 5px;
-    }
-    .testimonial-nav button:hover {
-      background-color: #256026;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Main content of your site -->
-
-  <!-- 🌟 Testimonials Section -->
-  <section class="testimonials-section" id="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial-slider">
-      <div class="testimonial-card active">
-        <p>"Everest Property Care did a fantastic job on our lawns! Very professional and reliable."</p>
-        <strong>- Sarah T</strong>
-        <div class="testimonial-job">Lawn Mowing</div>
-      </div>
-      <div class="testimonial-card">
-        <p>"They handled our office cleaning with great attention to detail. Highly recommend."</p>
-        <strong>- Jason R</strong>
-        <div class="testimonial-job">Commercial Cleaning</div>
-      </div>
-      <div class="testimonial-card">
-        <p>"We had painting and handyman work done. Affordable and high quality."</p>
-        <strong>- Priya M</strong>
-        <div class="testimonial-job">Painting & Handyman</div>
-      </div>
-    </div>
-    <div class="testimonial-nav">
-      <button onclick="prevTestimonial()">Previous</button>
-      <button onclick="nextTestimonial()">Next</button>
-    </div>
-  </section>
-
-  <!-- Contact section goes below here -->
-  <!-- Example: <section id="contact">...</section> -->
-
-  <script>
-    let current = 0;
-    const testimonials = document.querySelectorAll('.testimonial-card');
-    function showTestimonial(index) {
-      testimonials.forEach((card, i) => {
-        card.classList.remove('active');
-        if (i === index) card.classList.add('active');
-      });
-    }
-    function nextTestimonial() {
-      current = (current + 1) % testimonials.length;
-      showTestimonial(current);
-    }
-    function prevTestimonial() {
-      current = (current - 1 + testimonials.length) % testimonials.length;
-      showTestimonial(current);
-    }
-    setInterval(nextTestimonial, 6000);
-  </script>
-
 </body>
 </html>
