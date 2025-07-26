@@ -81,35 +81,20 @@
       margin-bottom: 20px;
     }
 
-    .services table {
-      width: 100%;
-      max-width: 800px;
-      margin: auto;
-      border-collapse: collapse;
-      background-color: var(--cream);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .services th, .services td {
-      padding: 15px;
-      border-bottom: 1px solid var(--lime);
+    .services ul {
       text-align: left;
-    }
-
-    .services th {
-      background-color: var(--lime);
-      color: var(--dark-green);
-    }
-
-    .services img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-top: 10px;
+      max-width: 600px;
+      margin: auto;
+      line-height: 2;
+      font-size: 1.1rem;
     }
 
     .testimonial-section {
       background-color: var(--lime);
+    }
+
+    .testimonial-section h3 {
+      color: var(--dark-green);
     }
 
     .carousel {
@@ -258,7 +243,7 @@
     <p>Cleaning | Lawn Mowing | Painting | Gutter Cleaning | Property Maintenance</p>
   </div>
 
-  <!-- START: ABOUT SECTION -->
+  <!-- ✅ About Section -->
   <section id="about" style="background-color: #fff; padding: 60px 20px; color: var(--dark-green);">
     <div style="max-width: 900px; margin: auto; text-align: center;">
       <h2 style="font-size: 2rem; margin-bottom: 20px; color: var(--olive);">Transform Your Property, Elevate Your Life</h2>
@@ -276,4 +261,272 @@
         <li><strong>✨ Sparkling Cleaning:</strong> Experience the pure bliss of a truly clean home, meticulously cared for from top to bottom.</li>
         <li><strong>🌿 Lush Lawn Mowing & Gardening:</strong> Step into a vibrant outdoor oasis, perfectly manicured and bursting with life.</li>
         <li><strong>🎨 Seamless Plastering & Painting:</strong> Witness the dramatic transformation as walls come alive with fresh, flawless finishes.</li>
-        <li><strong>
+        <li><strong>💧 Crystal-Clear Gutter Cleaning:</strong> Protect your home and enhance its curb appeal with perfectly clear gutters.</li>
+        <li><strong>🧹 Stress-Free Rubbish Removal:</strong> Reclaim your space and say goodbye to unwanted clutter with our efficient disposal services.</li>
+        <li><
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Everest Property Care</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --dark-green: #132a13;
+      --mid-green: #31572c;
+      --olive: #4f772d;
+      --lime: #90a955;
+      --cream: #ecf39e;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--cream);
+      color: var(--dark-green);
+    }
+
+    header {
+      background-color: var(--dark-green);
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      margin-left: 30px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 30px;
+      margin-right: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: linear-gradient(to right, var(--lime), var(--cream));
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--dark-green);
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .services h3 {
+      font-size: 1.8rem;
+      color: var(--olive);
+      margin-bottom: 20px;
+    }
+
+    .services ul {
+      text-align: left;
+      max-width: 600px;
+      margin: auto;
+      line-height: 2;
+      font-size: 1.1rem;
+    }
+
+    .testimonial-section {
+      background-color: var(--lime);
+    }
+
+    .testimonial-section h3 {
+      color: var(--dark-green);
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .testimonial-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      min-width: 300px;
+      scroll-snap-align: start;
+    }
+
+    .testimonial-card h4 {
+      color: var(--dark-green);
+      margin-bottom: 5px;
+    }
+
+    .testimonial-card span {
+      font-size: 0.9rem;
+      color: #555;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      color: #333;
+    }
+
+    footer {
+      background-color: var(--dark-green);
+      color: var(--cream);
+      padding: 40px 0 10px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+      align-items: flex-start;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-column h3 {
+      border-bottom: 2px solid var(--lime);
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    .footer-column ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: #ccc;
+      margin-top: 20px;
+    }
+
+    .request-quote {
+      background-color: var(--mid-green);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+
+    .request-quote:hover {
+      background-color: var(--olive);
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.8em;
+      color: #aaa;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0 0 10px;
+      }
+
+      nav ul {
+        margin: 0;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Everest Property Care</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Reliable, Local & Professional</h2>
+    <p>Cleaning | Lawn Mowing | Painting | Gutter Cleaning | Property Maintenance</p>
+  </div>
+
+  <!-- ✅ About Section -->
+  <section id="about" style="background-color: #fff; padding: 60px 20px; color: var(--dark-green);">
+    <div style="max-width: 900px; margin: auto; text-align: center;">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; color: var(--olive);">Transform Your Property, Elevate Your Life</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8;">
+        Imagine a home where everything is effortlessly perfect. Where your lawn is a vibrant green carpet, your garden a blooming sanctuary, and every corner of your house gleams with freshness. At <strong>Everest Property Care</strong>, we don't just maintain properties – we create environments that inspire joy, reduce stress, and give you back the precious time you deserve.
+      </p>
+
+      <h3 style="margin-top: 40px; color: var(--olive);">Your Home, Reimagined and Revitalized</h3>
+      <p style="font-size: 1.1rem; line-height: 1.8;">
+        We know the feeling: the endless to-do list, the weekend chores that never quite get done. That's why we're here to sweep away the overwhelm and bring your property dreams to life. From the foundational beauty of expert plastering and painting to the pristine sparkle of a professional clean, we handle every detail with precision and passion.
+      </p>
+
+      <h3 style="margin-top: 40px; color: var(--olive);">Effortless Solutions for Every Need:</h3>
+      <ul style="text-align: left; list-style-type: none; padding: 0; margin: 30px auto; max-width: 700px; line-height: 2; font-size: 1.1rem;">
+        <li><strong>✨ Sparkling Cleaning:</strong> Experience the pure bliss of a truly clean home, meticulously cared for from top to bottom.</li>
+        <li><strong>🌿 Lush Lawn Mowing & Gardening:</strong> Step into a vibrant outdoor oasis, perfectly manicured and bursting with life.</li>
+        <li><strong>🎨 Seamless Plastering & Painting:</strong> Witness the dramatic transformation as walls come alive with fresh, flawless finishes.</li>
+        <li><strong>💧 Crystal-Clear Gutter Cleaning:</strong> Protect your home and enhance its curb appeal with perfectly clear gutters.</li>
+        <li><strong>🧹 Stress-Free Rubbish Removal:</strong> Reclaim your space and say goodbye to unwanted clutter with our efficient disposal services.</li>
+        <li><
