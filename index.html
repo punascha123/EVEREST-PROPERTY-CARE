@@ -23,7 +23,7 @@
         }
         /* Custom styles for the footer to match the image and new palette */
         .footer-bg {
-            background-color: #43291f; /* Dark Brown for footer background */
+            background-color: #226f54; /* Changed to Dark Green for footer background */
             color: #f4f0bb; /* Light Yellow/Cream for footer text */
         }
         .footer-heading {
@@ -32,12 +32,12 @@
             margin-bottom: 1rem;
         }
         .footer-link, .footer-contact-info {
-            color: #87c38f; /* Light Green for footer links/contact info */
+            color: #f4f0bb; /* Light Yellow/Cream for footer links/contact info */
             text-decoration: none;
             transition: color 0.3s ease;
         }
         .footer-link:hover, .footer-contact-info:hover {
-            color: #f4f0bb; /* Light Yellow/Cream on hover */
+            color: #ffffff; /* White on hover */
         }
         .footer-button {
             background-color: #da2c38; /* Red/Burgundy for footer button */
@@ -49,27 +49,34 @@
         .footer-button:hover {
             background-color: #c02a35; /* Slightly darker red on hover */
         }
+        /* Style for form inputs */
+        .form-input {
+            @apply w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#87c38f] focus:border-transparent;
+        }
+        .form-label {
+            @apply block text-sm font-medium text-[#43291f] mb-1;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <!-- Header/Navigation (Placeholder - you can expand this) -->
+    <!-- Header/Navigation -->
     <header class="bg-white shadow-md py-4 px-6 md:px-12">
         <nav class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-[#43291f]">Everest Property Care</a>
-            <!-- You can add navigation links here -->
             <div class="hidden md:block">
-                <a href="#" class="text-[#43291f] hover:text-[#226f54] mx-3">Services</a>
+                <a href="#hero" class="text-[#43291f] hover:text-[#226f54] mx-3">Home</a>
+                <a href="#services-section" class="text-[#43291f] hover:text-[#226f54] mx-3">Services</a>
                 <a href="#" class="text-[#43291f] hover:text-[#226f54] mx-3">About Us</a>
-                <a href="#" class="text-[#43291f] hover:text-[#226f54] mx-3">Gallery</a>
-                <a href="#" class="text-[#43291f] hover:text-[#226f54] mx-3">Contact</a>
+                <!-- Removed Gallery link -->
+                <a href="#contact-form-section" class="text-[#43291f] hover:text-[#226f54] mx-3">Contact</a>
             </div>
             <!-- Mobile menu button (if needed) -->
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-[#226f54] to-[#87c38f] text-white py-20 px-6 text-center rounded-b-lg shadow-lg">
+    <section id="hero" class="bg-gradient-to-r from-[#226f54] to-[#87c38f] text-white py-20 px-6 text-center rounded-b-lg shadow-lg">
         <div class="container mx-auto max-w-4xl">
             <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 animate-fade-in-up">
                 Transform Your Property, Elevate Your Life
@@ -80,7 +87,7 @@
             <p class="text-lg md:text-xl mb-10 opacity-90 animate-fade-in-up delay-200">
                 At Everest Property Care, we don't just maintain properties – we create environments that inspire joy, reduce stress, and give you back the precious time you deserve.
             </p>
-            <a href="#contact" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 animate-fade-in-up delay-300">
+            <a href="#contact-form-section" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 animate-fade-in-up delay-300">
                 Get Your Free Quote Today!
             </a>
         </div>
@@ -88,7 +95,7 @@
 
     <!-- Main Content Section -->
     <main class="flex-grow container mx-auto px-6 py-16">
-        <section class="mb-16">
+        <section id="services-section" class="mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-[#226f54] text-center mb-12">
                 Your Home, Reimagined and Revitalized
             </h2>
@@ -152,14 +159,82 @@
             </p>
         </section>
 
-        <!-- Call to Action Section (Repeat for emphasis) -->
-        <section id="contact" class="text-center py-12 bg-[#87c38f] rounded-lg shadow-md">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#43291f] mb-6">
-                Ready to reclaim your weekends and fall back in love with your property?
+        <!-- Contact Form Section -->
+        <section id="contact-form-section" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#226f54] text-center mb-8">
+                Request a Free Quote
             </h2>
-            <a href="#" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-4 px-10 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-                Get Your Free Quote Today!
-            </a>
+            <p class="text-lg text-[#43291f] text-center mb-8">
+                Tell us about your property maintenance needs, and we'll get back to you with a personalized quote.
+            </p>
+            <form class="grid grid-cols-1 gap-6">
+                <div>
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" class="form-input" placeholder="John Doe" required>
+                </div>
+                <div>
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" id="address" name="address" class="form-input" placeholder="123 Main St, Anytown" required>
+                </div>
+                <div>
+                    <label for="mobileNumber" class="form-label">Mobile Number</label>
+                    <input type="tel" id="mobileNumber" name="mobileNumber" class="form-input" placeholder="+123 456 7890" required>
+                </div>
+                <div>
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="john.doe@example.com" required>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="date" class="form-label">Preferred Date</label>
+                        <input type="date" id="date" name="date" class="form-input" required>
+                    </div>
+                    <div>
+                        <label for="time" class="form-label">Preferred Time</label>
+                        <input type="time" id="time" name="time" class="form-input" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label mb-2">Services You're Interested In:</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[#43291f]">
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" name="services" value="cleaning" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                            <span class="ml-2">Cleaning</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" name="services" value="lawn_mowing" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                            <span class="ml-2">Lawn Mowing</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" name="services" value="gardening" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                            <span class="ml-2">Gardening</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" name="services" value="plastering_painting" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                            <span class="ml-2">Plastering & Painting</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" name="services" value="gutter_cleaning" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                            <span class="ml-2">Gutter Cleaning</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" name="services" value="rubbish_removal" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                            <span class="ml-2">Rubbish Removal</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="checkbox" name="services" value="house_moving" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                            <span class="ml-2">House Moving</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label for="note" class="form-label">Additional Notes</label>
+                    <textarea id="note" name="note" rows="4" class="form-input" placeholder="Any specific details or requests?"></textarea>
+                </div>
+                <button type="submit" class="bg-[#da2c38] text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-[#c02a35] transition duration-300 ease-in-out transform hover:scale-105">
+                    Submit Request
+                </button>
+            </form>
         </section>
     </main>
 
@@ -175,17 +250,18 @@
                 <p class="footer-contact-info flex items-center justify-center md:justify-start mb-4">
                     <span class="mr-2">✉️</span> info@everestpropertycare.com
                 </p>
-                <a href="#" class="footer-button inline-block">Request a Free Quote</a>
+                <a href="#contact-form-section" class="footer-button inline-block">Request a Free Quote</a>
             </div>
 
             <!-- Quick Links -->
             <div>
                 <h4 class="footer-heading text-xl mb-4">QUICK LINKS</h4>
                 <ul>
-                    <li class="mb-2"><a href="#" class="footer-link">Services</a></li>
+                    <li class="mb-2"><a href="#hero" class="footer-link">Home</a></li>
+                    <li class="mb-2"><a href="#services-section" class="footer-link">Services</a></li>
                     <li class="mb-2"><a href="#" class="footer-link">About Us</a></li>
-                    <li class="mb-2"><a href="#" class="footer-link">Gallery</a></li>
-                    <li class="mb-2"><a href="#" class="footer-link">Privacy Policy</a></li>
+                    <!-- Removed Gallery link -->
+                    <li class="mb-2"><a href="#contact-form-section" class="footer-link">Contact</a></li>
                 </ul>
             </div>
 
