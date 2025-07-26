@@ -1,120 +1,30 @@
-.testimonials {
-  background-color: #d1fae5;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.testimonials h3 {
-  font-size: 2rem;
-  color: #047857;
-  margin-bottom: 30px;
-}
-
-.testimonial-grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin-top: 20px;
-}
-
-.testimonial-card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  font-style: italic;
-  border-left: 4px solid #10b981;
-  transition: transform 0.3s;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-}
-
-.testimonial-card h4 {
-  margin-top: 15px;
-  font-weight: normal;
-  color: #065f46;
-  font-size: 0.95rem;
-}
-.testimonials {
-  background-color: #d1fae5;
-  padding: 60px 20px;
-  text-align: center;
-  position: relative;
-}
-
-.testimonials h3 {
-  font-size: 2rem;
-  color: #047857;
-  margin-bottom: 40px;
-}
-
-.carousel {
+.footer-content {
   display: flex;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-  min-height: 180px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-.testimonial-card {
-  flex: 0 0 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: white;
-  border-left: 4px solid #10b981;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  opacity: 0;
-  transform: scale(0.95);
-  transition: all 0.5s ease-in-out;
-  position: absolute;
-  left: 0;
-  right: 0;
+.footer-section {
+  flex: 1;
+  min-width: 200px;
 }
 
-.testimonial-card.active {
-  opacity: 1;
-  transform: scale(1);
-  position: relative;
+.footer-section h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #a5d6a7;
 }
 
-.testimonial-card p {
-  font-style: italic;
-  font-size: 1.05rem;
-}
-
-.testimonial-card h4 {
-  margin-top: 15px;
-  font-weight: 600;
-  color: #047857;
-}
-
-.testimonial-card .job {
+.footer-section a {
+  display: block;
+  color: #c8e6c9;
+  text-decoration: none;
+  margin: 5px 0;
   font-size: 0.9rem;
-  color: #047857;
-  font-style: normal;
 }
 
-.carousel-buttons {
-  margin-top: 20px;
+.footer-section p {
+  margin: 5px 0;
+  font-size: 0.9rem;
 }
-
-.carousel-buttons button {
-  background-color: #10b981;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 50%;
-  margin: 0 10px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: background 0.3s;
-}
-
-.carousel-buttons button:hover {
-  background-color: #047857;
-}
-
