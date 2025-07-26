@@ -76,6 +76,13 @@
       max-width: 300px;
     }
 
+    .job-description {
+      font-size: 0.95rem;
+      max-width: 700px;
+      margin: 10px auto;
+      color: #333;
+    }
+
     .testimonial-section {
       background-color: #e0f2f1;
     }
@@ -120,36 +127,93 @@
     }
 
     footer {
-      background-color: #1b5e20;
-      color: white;
-      padding: 30px 20px 15px;
+      background-color: #333;
+      color: #f4f4f4;
+      padding: 20px 0;
+      font-family: sans-serif;
+      font-size: 0.9em;
     }
 
-    .footer-content {
+    .footer-container {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       flex-wrap: wrap;
-      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
-    .footer-links {
-      display: flex;
-      flex-direction: column;
+    .contact-us, .quick-links, .connect-with-us {
+      flex: 1;
+      margin: 0 10px;
     }
 
-    .footer-links a {
-      color: #c8e6c9;
-      text-decoration: none;
-      margin: 5px 0;
-      font-size: 0.95rem;
+    .footer-container h3 {
+      color: #f4f4f4;
+      border-bottom: 2px solid #555;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      font-size: 1.2em;
+      font-weight: bold;
     }
 
-    .footer-slogan {
-      font-style: italic;
-      font-size: 1rem;
-      color: #a5d6a7;
+    .contact-us p, .quick-links ul li, .connect-with-us .tagline {
+      margin-bottom: 10px;
+    }
+
+    .request-quote {
+      background-color: #8fbc8f;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
       margin-top: 10px;
+    }
+
+    .request-quote:hover {
+      background-color: #6e8b6e;
+    }
+
+    .quick-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .quick-links ul li a {
+      color: #f4f4f4;
+      text-decoration: none;
+    }
+
+    .quick-links ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .connect-with-us .tagline {
+      font-style: italic;
+      color: #ddd;
+    }
+
+    .copyright {
+      background-color: #222;
+      color: #ddd;
       text-align: center;
+      padding: 15px 0;
+      font-size: 0.8em;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-us, .quick-links, .connect-with-us {
+        width: 80%;
+        margin-bottom: 20px;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -174,11 +238,22 @@
     <h3>Our Services</h3>
     <ul>
       <li>✅ Lawn Mowing</li>
+      <p class="job-description">We deliver precision and consistency to every lawn. Our mowing services are designed to enhance your property’s beauty. From neat edges to green perfection, we handle it all. Clients love our punctuality and attention to detail. Let Everest Property Care bring a fresh look to your outdoor space.</p>
+
       <li>✅ Cleaning</li>
+      <p class="job-description">Our cleaning team ensures spotless results every time. We use eco-friendly products for a healthier environment. Whether it's offices or homes, we leave spaces shining and smelling fresh. We pay attention to even the smallest details. Trust us for cleanliness that impresses.</p>
+
       <li>✅ Gutter Cleaning</li>
+      <p class="job-description">Avoid blockages and water damage with our gutter cleaning. We make your drainage system safe and efficient. Our team is experienced in removing debris and buildup. Regular maintenance can save you costly repairs. Everest Property Care makes it quick and hassle-free.</p>
+
       <li>✅ Painting</li>
+      <p class="job-description">We transform walls with expert painting finishes. Our painters are neat, efficient, and precise. Choose from a wide palette to reflect your style. Every job is approached with care and creativity. Let us refresh your interiors and exteriors beautifully.</p>
+
       <li>✅ Plastering</li>
+      <p class="job-description">Smooth finishes and strong surfaces are our priority. We fix cracks, holes, and damages with care. Our plastering gives your walls a flawless base. Great preparation leads to great painting results. Everest’s experts deliver a professional and durable job every time.</p>
+
       <li>✅ Handyman Services</li>
+      <p class="job-description">No job is too small for our skilled handyman team. We cover all general maintenance around your home or business. Fast, reliable, and tidy workmanship every time. From repairs to installations, we’re here to help. One call does it all with Everest Property Care.</p>
     </ul>
   </section>
 
@@ -203,155 +278,31 @@
     </div>
   </section>
 
-<footer>
-<div class="footer-container">
-<div class="contact-us">
-<h3>CONTACT US</h3>
-<p><i class="fa fa-phone"></i> 027 270 1271</p>
-<p><i class="fa fa-envelope"></i> info@everestpropertycare.com</p>
-<button class="request-quote">Request a Free Quote</button>
-</div>
-<div class="quick-links">
-<h3>QUICK LINKS</h3>
-<ul>
-<li><a href="#">Services</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Gallery</a></li>
-<li><a href="#">Privacy Policy</a></li>
-</ul>
-</div>
-<div class="connect-with-us">
-<h3>CONNECT WITH US</h3>
-<p class="tagline">Your Property, Our Priority.</p>
-</div>
-</div>
-<div class="copyright">
-<p>© 2023 Everest Property Care. All Rights Reserved.</p>
-</div>
-</footer>
-
-
-<style>
-footer {
-background-color: #333; /* Dark background color */
-color: #f4f4f4; /* Light text color */
-padding: 20px 0;
-font-family: sans-serif; /* A common sans-serif font */
-font-size: 0.9em;
-}
-
-
-.footer-container {
-display: flex;
-justify-content: space-around;
-max-width: 1200px;
-margin: 0 auto;
-padding: 20px;
-}
-
-
-.contact-us,
-.quick-links,
-.connect-with-us {
-flex: 1;
-margin: 0 10px;
-}
-
-
-h3 {
-color: #f4f4f4;
-border-bottom: 2px solid #555;
-padding-bottom: 5px;
-margin-bottom: 15px;
-font-size: 1.2em;
-font-weight: bold;
-}
-
-
-.contact-us p {
-margin-bottom: 10px;
-}
-
-
-.contact-us i {
-margin-right: 5px;
-color: #e44d26; /* Example phone/email icon color */
-}
-
-
-.request-quote {
-background-color: #8fbc8f; /* red button color */
-color: white;
-border: none;
-padding: 10px 15px;
-border-radius: 5px;
-cursor: pointer;
-font-size: 1em;
-margin-top: 10px;
-}
-
-
-.request-quote:hover {
-background-color: #6e8b6e; /* Darker shade on hover */
-}
-
-
-.quick-links ul {
-list-style: none;
-padding: 0;
-}
-
-
-.quick-links ul li {
-margin-bottom: 8px;
-}
-
-
-.quick-links ul li a {
-color: #f4f4f4;
-text-decoration: none;
-}
-
-
-.quick-links ul li a:hover {
-text-decoration: underline;
-}
-
-
-.connect-with-us .tagline {
-font-style: italic;
-color: #ddd;
-}
-
-
-.copyright {
-background-color: #222;
-color: #ddd;
-text-align: center;
-padding: 15px 0;
-font-size: 0.8em;
-}
-
-
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-.footer-container {
-flex-direction: column;
-align-items: center;
-}
-
-
-.contact-us,
-.quick-links,
-.connect-with-us {
-width: 80%;
-margin-bottom: 20px;
-text-align: center;
-}
-
-
-.connect-with-us .tagline {
-text-align: center;
-}
-}
-</style>
+  <footer>
+    <div class="footer-container">
+      <div class="contact-us">
+        <h3>CONTACT US</h3>
+        <p><i class="fa fa-phone"></i> 027 270 1271</p>
+        <p><i class="fa fa-envelope"></i> info@everestpropertycare.com</p>
+        <button class="request-quote">Request a Free Quote</button>
+      </div>
+      <div class="quick-links">
+        <h3>QUICK LINKS</h3>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="connect-with-us">
+        <h3>CONNECT WITH US</h3>
+        <p class="tagline">EVEREST – You take rest, we make best.</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2023 Everest Property Care. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
