@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Everest Property Care - Transform Your Property, Elevate Your Life</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* New Color Palette:
@@ -60,22 +58,23 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <!-- Header/Navigation -->
     <header class="bg-white shadow-md py-4 px-6 md:px-12">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-[#43291f]">Everest Property Care</a>
+            <a href="#" class="flex items-center space-x-2">
+                <!-- Company Logo -->
+                <img src="http://googleusercontent.com/file_content/1" alt="Everest Property Care Logo" class="h-10 md:h-12">
+                <!-- Company Name - Font size increased -->
+                <span class="text-2xl md:text-3xl font-bold text-[#43291f]">Everest Property Care</span>
+            </a>
             <div class="hidden md:block">
                 <a href="#hero" class="text-[#43291f] hover:text-[#226f54] mx-3">Home</a>
                 <a href="#services-section" class="text-[#43291f] hover:text-[#226f54] mx-3">Services</a>
                 <a href="#" class="text-[#43291f] hover:text-[#226f54] mx-3">About Us</a>
-                <!-- Removed Gallery link -->
                 <a href="#contact-form-section" class="text-[#43291f] hover:text-[#226f54] mx-3">Contact</a>
             </div>
-            <!-- Mobile menu button (if needed) -->
-        </nav>
+            </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero" class="bg-gradient-to-r from-[#226f54] to-[#87c38f] text-white py-20 px-6 text-center rounded-b-lg shadow-lg">
         <div class="container mx-auto max-w-4xl">
             <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 animate-fade-in-up">
@@ -93,7 +92,6 @@
         </div>
     </section>
 
-    <!-- Main Content Section -->
     <main class="flex-grow container mx-auto px-6 py-16">
         <section id="services-section" class="mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-[#226f54] text-center mb-12">
@@ -108,46 +106,52 @@
             </h3>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="text-5xl text-blue-500 mb-4">✨</div>
-                    <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Sparkling Cleaning</h4>
-                    <p class="text-[#43291f]">Experience the pure bliss of a truly clean home, meticulously cared for from top to bottom.</p>
+                <div class="bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/400x250/87c38f/43291f/png?text=Sparkling%20Cleaning" alt="Sparkling Cleaning Service" class="w-full h-auto rounded-t-lg mb-4">
+                    <div class="p-8 pt-0">
+                        <div class="text-5xl text-blue-500 mb-4">✨</div>
+                        <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Sparkling Cleaning</h4>
+                        <p class="text-[#43291f]">Experience the pure bliss of a truly clean home, meticulously cared for from top to bottom.</p>
+                    </div>
                 </div>
 
-                <!-- Service Card 2 -->
-                <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="text-5xl text-green-500 mb-4">🌳</div>
-                    <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Lush Lawn Mowing & Gardening</h4>
-                    <p class="text-[#43291f]">Step into a vibrant outdoor oasis, perfectly manicured and bursting with life.</p>
+                <div class="bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/400x250/226f54/f4f0bb/png?text=Lush%20Lawn%20Mowing" alt="Lush Lawn Mowing Service" class="w-full h-auto rounded-t-lg mb-4">
+                    <div class="p-8 pt-0">
+                        <div class="text-5xl text-green-500 mb-4">🌳</div>
+                        <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Lush Lawn Mowing & Gardening</h4>
+                        <p class="text-[#43291f]">Step into a vibrant outdoor oasis, perfectly manicured and bursting with life.</p>
+                    </div>
                 </div>
 
-                <!-- Service Card 3 -->
-                <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="text-5xl text-yellow-500 mb-4">🎨</div>
-                    <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Seamless Plastering & Painting</h4>
-                    <p class="text-[#43291f]">Witness the dramatic transformation as walls come alive with fresh, flawless finishes.</p>
+                <div class="bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/400x250/da2c38/f4f0bb/png?text=Flawless%20Plastering" alt="Seamless Plastering and Painting Service" class="w-full h-auto rounded-t-lg mb-4">
+                    <div class="p-8 pt-0">
+                        <div class="text-5xl text-yellow-500 mb-4">🎨</div>
+                        <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Seamless Plastering & Painting</h4>
+                        <p class="text-[#43291f]">Witness the dramatic transformation as walls come alive with fresh, flawless finishes.</p>
+                    </div>
                 </div>
 
-                <!-- Service Card 4 -->
                 <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="text-5xl text-gray-500 mb-4">💧</div>
                     <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Crystal-Clear Gutter Cleaning</h4>
                     <p class="text-[#43291f]">Protect your home and enhance its curb appeal with perfectly clear gutters.</p>
                 </div>
 
-                <!-- Service Card 5 -->
                 <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="text-5xl text-red-500 mb-4">🗑️</div>
                     <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Stress-Free Rubbish Removal</h4>
                     <p class="text-[#43291f]">Reclaim your space and say goodbye to unwanted clutter with our efficient disposal services.</p>
                 </div>
 
-                <!-- Service Card 6 -->
-                <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                    <div class="text-5xl text-purple-500 mb-4">🚚</div>
-                    <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Effortless House Moving</h4>
-                    <p class="text-[#43291f]">Transition to your new chapter with ease, knowing every detail of your move is handled with care.</p>
+                <div class="bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://placehold.co/400x250/43291f/f4f0bb/png?text=Effortless%20Moving" alt="Effortless House Moving Service" class="w-full h-auto rounded-t-lg mb-4">
+                    <div class="p-8 pt-0">
+                        <div class="text-5xl text-purple-500 mb-4">🚚</div>
+                        <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Effortless House Moving</h4>
+                        <p class="text-[#43291f]">Transition to your new chapter with ease, knowing every detail of your move is handled with care.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -159,7 +163,6 @@
             </p>
         </section>
 
-        <!-- Contact Form Section -->
         <section id="contact-form-section" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-3xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-[#226f54] text-center mb-8">
                 Request a Free Quote
@@ -238,10 +241,8 @@
         </section>
     </main>
 
-    <!-- Footer Section (Based on the provided image) -->
     <footer class="footer-bg py-12 mt-auto">
         <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <!-- Contact Us -->
             <div>
                 <h4 class="footer-heading text-xl mb-4">CONTACT US</h4>
                 <p class="footer-contact-info flex items-center justify-center md:justify-start mb-2">
@@ -253,24 +254,20 @@
                 <a href="#contact-form-section" class="footer-button inline-block">Request a Free Quote</a>
             </div>
 
-            <!-- Quick Links -->
             <div>
                 <h4 class="footer-heading text-xl mb-4">QUICK LINKS</h4>
                 <ul>
                     <li class="mb-2"><a href="#hero" class="footer-link">Home</a></li>
                     <li class="mb-2"><a href="#services-section" class="footer-link">Services</a></li>
                     <li class="mb-2"><a href="#" class="footer-link">About Us</a></li>
-                    <!-- Removed Gallery link -->
                     <li class="mb-2"><a href="#contact-form-section" class="footer-link">Contact</a></li>
                 </ul>
             </div>
 
-            <!-- Connect With Us -->
             <div>
                 <h4 class="footer-heading text-xl mb-4">CONNECT WITH US</h4>
                 <p class="footer-contact-info">Your Property. Our Priority.</p>
-                <!-- Social media icons can go here -->
-            </div>
+                </div>
         </div>
         <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-sm">
             © 2025 Everest Property Care. All Rights Reserved.
