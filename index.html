@@ -71,17 +71,16 @@
       margin-bottom: 20px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
     }
 
-    .card {
-      background-color: #f0fdf4;
-      border-left: 5px solid #90a955;
+    table td {
       padding: 20px;
-      border-radius: 8px;
+      background-color: #f0fdf4;
+      border: 1px solid #90a955;
+      vertical-align: top;
     }
 
     .footer-section {
@@ -98,10 +97,6 @@
     .footer-section h4 {
       border-bottom: 2px solid #ecf39e;
       padding-bottom: 5px;
-    }
-
-    .contact-info i {
-      margin-right: 10px;
     }
 
     .quote-button {
@@ -138,14 +133,20 @@
 
   <section class="section" id="services">
     <h2>Effortless Solutions for Every Need 🛠️</h2>
-    <div class="grid">
-      <div class="card">✨ <strong>Sparkling Cleaning:</strong> Experience the bliss of a truly clean home, cared for top to bottom.</div>
-      <div class="card">🌱 <strong>Lush Lawn Mowing & Gardening:</strong> Step into a vibrant outdoor oasis, perfectly manicured and bursting with life.</div>
-      <div class="card">🎨 <strong>Plastering & Painting:</strong> Witness the dramatic transformation as walls come alive with fresh, flawless finishes.</div>
-      <div class="card">🌀 <strong>Gutter Cleaning:</strong> Enhance your home’s appeal and protect it with clear gutters.</div>
-      <div class="card">🗑️ <strong>Rubbish Removal:</strong> Say goodbye to clutter with efficient disposal services.</div>
-      <div class="card">🚚 <strong>House Moving:</strong> Transition smoothly knowing every detail is handled with care.</div>
-    </div>
+    <table>
+      <tr>
+        <td>✨ <strong>Sparkling Cleaning:</strong> Experience the bliss of a truly clean home, cared for top to bottom.</td>
+        <td>🌱 <strong>Lawn Mowing & Gardening:</strong> Step into a vibrant outdoor oasis, perfectly manicured and bursting with life.</td>
+      </tr>
+      <tr>
+        <td>🎨 <strong>Plastering & Painting:</strong> Witness the dramatic transformation as walls come alive with fresh, flawless finishes.</td>
+        <td>🌀 <strong>Gutter Cleaning:</strong> Enhance your home’s appeal and protect it with clear gutters.</td>
+      </tr>
+      <tr>
+        <td>🗑️ <strong>Rubbish Removal:</strong> Say goodbye to clutter with efficient disposal services.</td>
+        <td>🚚 <strong>House Moving:</strong> Transition smoothly knowing every detail is handled with care.</td>
+      </tr>
+    </table>
   </section>
 
   <section class="section">
