@@ -9,38 +9,45 @@
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* New Color Palette:
+           #da2c38 (Red/Burgundy)
+           #226f54 (Dark Green)
+           #87c38f (Light Green)
+           #f4f0bb (Light Yellow/Cream)
+           #43291f (Dark Brown)
+        */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8; /* Light background for the main content */
-            color: #333;
+            background-color: #f4f0bb; /* Light Yellow/Cream for main background */
+            color: #43291f; /* Dark Brown for main text */
         }
-        /* Custom styles for the footer to match the image */
+        /* Custom styles for the footer to match the image and new palette */
         .footer-bg {
-            background-color: #2b2b2b;
-            color: #f0f0f0;
+            background-color: #43291f; /* Dark Brown for footer background */
+            color: #f4f0bb; /* Light Yellow/Cream for footer text */
         }
         .footer-heading {
-            color: #f0f0f0;
+            color: #f4f0bb; /* Light Yellow/Cream for footer headings */
             font-weight: 600;
             margin-bottom: 1rem;
         }
         .footer-link, .footer-contact-info {
-            color: #b0b0b0;
+            color: #87c38f; /* Light Green for footer links/contact info */
             text-decoration: none;
             transition: color 0.3s ease;
         }
         .footer-link:hover, .footer-contact-info:hover {
-            color: #ffffff;
+            color: #f4f0bb; /* Light Yellow/Cream on hover */
         }
         .footer-button {
-            background-color: #4CAF50; /* Green from the image */
+            background-color: #da2c38; /* Red/Burgundy for footer button */
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease;
         }
         .footer-button:hover {
-            background-color: #45a049;
+            background-color: #c02a35; /* Slightly darker red on hover */
         }
     </style>
 </head>
@@ -49,20 +56,20 @@
     <!-- Header/Navigation (Placeholder - you can expand this) -->
     <header class="bg-white shadow-md py-4 px-6 md:px-12">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-800">Everest Property Care</a>
+            <a href="#" class="text-2xl font-bold text-[#43291f]">Everest Property Care</a>
             <!-- You can add navigation links here -->
             <div class="hidden md:block">
-                <a href="#" class="text-gray-600 hover:text-gray-900 mx-3">Services</a>
-                <a href="#" class="text-gray-600 hover:text-gray-900 mx-3">About Us</a>
-                <a href="#" class="text-gray-600 hover:text-gray-900 mx-3">Gallery</a>
-                <a href="#" class="text-gray-600 hover:text-gray-900 mx-3">Contact</a>
+                <a href="#" class="text-[#43291f] hover:text-[#226f54] mx-3">Services</a>
+                <a href="#" class="text-[#43291f] hover:text-[#226f54] mx-3">About Us</a>
+                <a href="#" class="text-[#43291f] hover:text-[#226f54] mx-3">Gallery</a>
+                <a href="#" class="text-[#43291f] hover:text-[#226f54] mx-3">Contact</a>
             </div>
             <!-- Mobile menu button (if needed) -->
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-green-500 to-blue-600 text-white py-20 px-6 text-center rounded-b-lg shadow-lg">
+    <section class="bg-gradient-to-r from-[#226f54] to-[#87c38f] text-white py-20 px-6 text-center rounded-b-lg shadow-lg">
         <div class="container mx-auto max-w-4xl">
             <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 animate-fade-in-up">
                 Transform Your Property, Elevate Your Life
@@ -73,7 +80,7 @@
             <p class="text-lg md:text-xl mb-10 opacity-90 animate-fade-in-up delay-200">
                 At Everest Property Care, we don't just maintain properties – we create environments that inspire joy, reduce stress, and give you back the precious time you deserve.
             </p>
-            <a href="#contact" class="bg-white text-green-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 animate-fade-in-up delay-300">
+            <a href="#contact" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 animate-fade-in-up delay-300">
                 Get Your Free Quote Today!
             </a>
         </div>
@@ -82,14 +89,14 @@
     <!-- Main Content Section -->
     <main class="flex-grow container mx-auto px-6 py-16">
         <section class="mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#226f54] text-center mb-12">
                 Your Home, Reimagined and Revitalized
             </h2>
-            <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-16">
-                We know the feeling: the endless to-do list, the weekend chores that never quite get done. That's why we're here to sweep away the overwhelm and bring your property dreams to life. From the foundational beauty of expert <span class="font-semibold text-green-600">plastering and painting</span> to the pristine sparkle of a professional <span class="font-semibold text-green-600">clean</span>, we handle every detail with precision and passion.
+            <p class="text-lg text-[#43291f] text-center max-w-3xl mx-auto mb-16">
+                We know the feeling: the endless to-do list, the weekend chores that never quite get done. That's why we're here to sweep away the overwhelm and bring your property dreams to life. From the foundational beauty of expert <span class="font-semibold text-[#226f54]">plastering and painting</span> to the pristine sparkle of a professional <span class="font-semibold text-[#226f54]">clean</span>, we handle every detail with precision and passion.
             </p>
 
-            <h3 class="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-10">
+            <h3 class="text-2xl md:text-3xl font-bold text-[#226f54] text-center mb-10">
                 Effortless Solutions for Every Need:
             </h3>
 
@@ -97,60 +104,60 @@
                 <!-- Service Card 1 -->
                 <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="text-5xl text-blue-500 mb-4">✨</div>
-                    <h4 class="text-xl font-semibold mb-3">Sparkling Cleaning</h4>
-                    <p class="text-gray-600">Experience the pure bliss of a truly clean home, meticulously cared for from top to bottom.</p>
+                    <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Sparkling Cleaning</h4>
+                    <p class="text-[#43291f]">Experience the pure bliss of a truly clean home, meticulously cared for from top to bottom.</p>
                 </div>
 
                 <!-- Service Card 2 -->
                 <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="text-5xl text-green-500 mb-4">🌳</div>
-                    <h4 class="text-xl font-semibold mb-3">Lush Lawn Mowing & Gardening</h4>
-                    <p class="text-gray-600">Step into a vibrant outdoor oasis, perfectly manicured and bursting with life.</p>
+                    <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Lush Lawn Mowing & Gardening</h4>
+                    <p class="text-[#43291f]">Step into a vibrant outdoor oasis, perfectly manicured and bursting with life.</p>
                 </div>
 
                 <!-- Service Card 3 -->
                 <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="text-5xl text-yellow-500 mb-4">🎨</div>
-                    <h4 class="text-xl font-semibold mb-3">Seamless Plastering & Painting</h4>
-                    <p class="text-gray-600">Witness the dramatic transformation as walls come alive with fresh, flawless finishes.</p>
+                    <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Seamless Plastering & Painting</h4>
+                    <p class="text-[#43291f]">Witness the dramatic transformation as walls come alive with fresh, flawless finishes.</p>
                 </div>
 
                 <!-- Service Card 4 -->
                 <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="text-5xl text-gray-500 mb-4">💧</div>
-                    <h4 class="text-xl font-semibold mb-3">Crystal-Clear Gutter Cleaning</h4>
-                    <p class="text-gray-600">Protect your home and enhance its curb appeal with perfectly clear gutters.</p>
+                    <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Crystal-Clear Gutter Cleaning</h4>
+                    <p class="text-[#43291f]">Protect your home and enhance its curb appeal with perfectly clear gutters.</p>
                 </div>
 
                 <!-- Service Card 5 -->
                 <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="text-5xl text-red-500 mb-4">🗑️</div>
-                    <h4 class="text-xl font-semibold mb-3">Stress-Free Rubbish Removal</h4>
-                    <p class="text-gray-600">Reclaim your space and say goodbye to unwanted clutter with our efficient disposal services.</p>
+                    <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Stress-Free Rubbish Removal</h4>
+                    <p class="text-[#43291f]">Reclaim your space and say goodbye to unwanted clutter with our efficient disposal services.</p>
                 </div>
 
                 <!-- Service Card 6 -->
                 <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="text-5xl text-purple-500 mb-4">🚚</div>
-                    <h4 class="text-xl font-semibold mb-3">Effortless House Moving</h4>
-                    <p class="text-gray-600">Transition to your new chapter with ease, knowing every detail of your move is handled with care.</p>
+                    <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Effortless House Moving</h4>
+                    <p class="text-[#43291f]">Transition to your new chapter with ease, knowing every detail of your move is handled with care.</p>
                 </div>
             </div>
         </section>
 
-        <section class="bg-blue-50 p-10 rounded-lg shadow-md text-center mb-16">
-            <h3 class="text-3xl font-bold text-gray-800 mb-6">Why Choose Everest Property Care?</h3>
-            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+        <section class="bg-[#87c38f] p-10 rounded-lg shadow-md text-center mb-16">
+            <h3 class="text-3xl font-bold text-[#43291f] mb-6">Why Choose Everest Property Care?</h3>
+            <p class="text-lg text-[#43291f] max-w-3xl mx-auto">
                 We're more than just a service provider; we're your partners in creating a property that truly feels like home. Our dedicated team delivers exceptional results with a friendly smile, ensuring every experience is smooth, reliable, and utterly satisfying.
             </p>
         </section>
 
         <!-- Call to Action Section (Repeat for emphasis) -->
-        <section id="contact" class="text-center py-12 bg-green-100 rounded-lg shadow-md">
-            <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-6">
+        <section id="contact" class="text-center py-12 bg-[#87c38f] rounded-lg shadow-md">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#43291f] mb-6">
                 Ready to reclaim your weekends and fall back in love with your property?
             </h2>
-            <a href="#" class="bg-green-700 text-white hover:bg-green-800 font-bold py-4 px-10 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+            <a href="#" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-4 px-10 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
                 Get Your Free Quote Today!
             </a>
         </section>
