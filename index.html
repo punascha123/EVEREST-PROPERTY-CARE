@@ -1,328 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Everest Property Care</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --dark-green: #132a13;
-      --mid-green: #31572c;
-      --olive: #4f772d;
-      --lime: #90a955;
-      --cream: #ecf39e;
-    }
-
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: var(--cream);
-      color: var(--dark-green);
+      background-color: #f5f5f5;
+      color: #132a13;
     }
 
-    header {
-      background-color: var(--dark-green);
+    header, footer {
+      background-color: #4f772d;
       color: white;
       padding: 20px;
+    }
+
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
-    header h1 {
-      margin-left: 30px;
+    nav .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
     }
 
     nav ul {
       list-style: none;
-      padding: 0;
       display: flex;
-      gap: 30px;
-      margin-right: 30px;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: inline;
     }
 
     nav ul li a {
-      text-decoration: none;
       color: white;
-      font-weight: bold;
+      text-decoration: none;
+      font-weight: 600;
     }
 
     .hero {
-      background: linear-gradient(to right, var(--lime), var(--cream));
-      text-align: center;
+      background-color: #ecf39e;
       padding: 60px 20px;
+      text-align: center;
     }
 
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #31572c;
     }
 
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--dark-green);
-    }
-
-    section {
+    .section {
       padding: 40px 20px;
-      text-align: center;
+      background-color: #fff;
     }
 
-    .services h3 {
-      font-size: 1.8rem;
-      color: var(--olive);
-      margin-bottom: 20px;
-    }
-
-    .services ul {
-      text-align: left;
-      max-width: 600px;
-      margin: auto;
-      line-height: 2;
-      font-size: 1.2rem;
-    }
-
-    .testimonial-section {
-      background-color: var(--lime);
-    }
-
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 20px;
-      padding: 20px 0;
-    }
-
-    .testimonial-card {
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      min-width: 300px;
-      scroll-snap-align: start;
-    }
-
-    .testimonial-card h4 {
-      color: var(--dark-green);
-      margin-bottom: 5px;
-    }
-
-    .testimonial-card span {
-      font-size: 0.9rem;
-      color: #555;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .testimonial-card p {
-      font-style: italic;
-      color: #333;
-    }
-
-    .about-section {
-      background-color: #f4f9ec;
-      padding: 60px 20px;
-    }
-
-    .about-section h3 {
+    .section h2 {
+      color: #4f772d;
       font-size: 2rem;
-      color: var(--olive);
       margin-bottom: 20px;
     }
 
-    .about-section p {
-      max-width: 800px;
-      margin: auto;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #222;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    footer {
-      background-color: var(--dark-green);
-      color: var(--cream);
-      padding: 40px 0 10px;
+    .card {
+      background-color: #f0fdf4;
+      border-left: 5px solid #90a955;
+      padding: 20px;
+      border-radius: 8px;
     }
 
-    .footer-container {
+    .footer-section {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 40px;
-      max-width: 1200px;
-      margin: auto;
-      align-items: flex-start;
     }
 
-    .footer-column {
-      flex: 1;
-      min-width: 200px;
+    .footer-section div {
+      margin-bottom: 20px;
+      flex: 1 1 200px;
     }
 
-    .footer-column h3 {
-      border-bottom: 2px solid var(--lime);
-      padding-bottom: 10px;
-      margin-bottom: 15px;
+    .footer-section h4 {
+      border-bottom: 2px solid #ecf39e;
+      padding-bottom: 5px;
     }
 
-    .footer-column ul {
-      list-style: none;
-      padding: 0;
+    .contact-info i {
+      margin-right: 10px;
     }
 
-    .footer-column ul li {
-      margin-bottom: 10px;
-    }
-
-    .footer-column ul li a {
-      color: var(--cream);
-      text-decoration: none;
-    }
-
-    .footer-column ul li a:hover {
-      text-decoration: underline;
-    }
-
-    .tagline {
-      font-style: italic;
-      color: #ccc;
-      margin-top: 20px;
-    }
-
-    .request-quote {
-      background-color: var(--mid-green);
+    .quote-button {
+      background-color: red;
       color: white;
-      border: none;
-      padding: 10px 15px;
+      padding: 10px 20px;
+      text-decoration: none;
       border-radius: 5px;
-      cursor: pointer;
-      font-size: 1em;
-      margin-top: 10px;
-    }
-
-    .request-quote:hover {
-      background-color: var(--olive);
-    }
-
-    .copyright {
-      text-align: center;
-      font-size: 0.8em;
-      color: #aaa;
-      margin-top: 30px;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      header h1 {
-        margin: 0 0 10px;
-      }
-
-      nav ul {
-        margin: 0;
-      }
-
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-      }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>Everest Property Care</h1>
     <nav>
+      <div class="logo">Everest Property Care</div>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="hero">
-    <h2>Reliable, Local & Professional</h2>
-    <p>Cleaning | Lawn Mowing | Painting | Gutter Cleaning | Property Maintenance</p>
-  </div>
-
-  <section id="services" class="services">
-    <h3>Our Services</h3>
-    <ul>
-      <li><strong>Cleaning</strong></li>
-      <li><strong>Lawn Mowing</strong></li>
-      <li><strong>Plastering and Painting</strong></li>
-      <li><strong>Rubbish Removal</strong></li>
-      <li><strong>Gutter Cleaning</strong></li>
-      <li><strong>Handyman</strong></li>
-    </ul>
+  <section class="hero" id="home">
+    <h1>Transform Your Property, Elevate Your Life 🌿</h1>
+    <p>Imagine a home where everything is effortlessly perfect. At Everest Property Care, we don’t just maintain properties – we create environments that inspire joy, reduce stress, and give you back the precious time you deserve.</p>
   </section>
 
-  <section id="about" class="about-section">
-    <h3>Transform Your Property, Elevate Your Life</h3>
-    <p>
-      Imagine a home where everything is effortlessly perfect. Where your lawn is a vibrant green carpet,
-      your garden a blooming sanctuary, and every corner of your house gleams with freshness.
-      At Everest Property Care, we don't just maintain properties – we create environments that inspire joy,
-      reduce stress, and give you back the precious time you deserve.
-      <br><br>
-      From expert plastering and painting to meticulous cleaning and garden care, we handle it all with precision and passion.
-      Our team is reliable, friendly, and committed to delivering seamless, stress-free service that makes your life easier.
-    </p>
+  <section class="section">
+    <h2>Your Home, Reimagined and Revitalized 🏡</h2>
+    <p>From expert plastering and painting to professional cleaning, we handle every detail with precision and passion. We’re here to sweep away the overwhelm and bring your property dreams to life.</p>
   </section>
 
-  <section class="testimonial-section">
-    <h3>What Our Clients Say</h3>
-    <div class="carousel">
-      <div class="testimonial-card">
-        <h4>Sarah L.</h4>
-        <span>Lawn Mowing</span>
-        <p>"Everest Property Care completely transformed my lawn. So neat and perfect! Highly recommended!"</p>
-      </div>
-      <div class="testimonial-card">
-        <h4>David M.</h4>
-        <span>Cleaning</span>
-        <p>"They made my rental spotless before inspection day. Reliable and friendly!"</p>
-      </div>
-      <div class="testimonial-card">
-        <h4>Jessie T.</h4>
-        <span>Painting</span>
-        <p>"Our new paint job looks stunning. Great detail and service. Will use again!"</p>
-      </div>
+  <section class="section" id="services">
+    <h2>Effortless Solutions for Every Need 🛠️</h2>
+    <div class="grid">
+      <div class="card">✨ <strong>Sparkling Cleaning:</strong> Experience the bliss of a truly clean home, cared for top to bottom.</div>
+      <div class="card">🌱 <strong>Lush Lawn Mowing & Gardening:</strong> Step into a vibrant outdoor oasis, perfectly manicured.</div>
+      <div class="card">🎨 <strong>Plastering & Painting:</strong> Watch your walls come alive with fresh, flawless finishes.</div>
+      <div class="card">🌀 <strong>Gutter Cleaning:</strong> Enhance your home’s appeal and protect it with clear gutters.</div>
+      <div class="card">🗑️ <strong>Rubbish Removal:</strong> Say goodbye to clutter with efficient disposal services.</div>
+      <div class="card">🚚 <strong>House Moving:</strong> Transition smoothly knowing every detail is handled with care.</div>
     </div>
+  </section>
+
+  <section class="section">
+    <h2>Why Choose Everest Property Care? 💚</h2>
+    <p>We’re more than just a service provider; we’re your partner in creating a property that truly feels like home. Our team delivers exceptional results with a friendly smile — smooth, reliable, and satisfying experiences every time.</p>
+    <a class="quote-button" href="#contact">Get Your Free Quote Today!</a>
   </section>
 
   <footer>
-    <div class="footer-container">
-      <div class="footer-column">
-        <h3>Everest Property Care</h3>
-        <p><i class="fas fa-phone"></i> 027 270 1271</p>
-        <p><i class="fas fa-envelope"></i> info@everestpropertycare.com</p>
+    <div class="footer-section">
+      <div>
+        <h4>Everest Property Care</h4>
+        <p>🌐 Auckland, New Zealand</p>
+        <p>📧 info@everestpropertycare.com</p>
+        <p>📞 027 270 1271</p>
       </div>
-      <div class="footer-column">
-        <h3>Quick Pages</h3>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>Connect With Us</h3>
-        <p class="tagline">EVEREST - You take rest, we make best.</p>
-        <a href="request-quote.html"><button class="request-quote">Request a Quote</button></a>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="#home">Home</a></p>
+        <p><a href="#services">Services</a></p>
+        <p><a href="#contact">Contact Us</a></p>
+        <p><a href="#">About Us</a></p>
+        <p><a href="#">Gallery</a></p>
       </div>
     </div>
-    <div class="copyright">&copy; 2025 Everest Property Care. All rights reserved.</div>
+    <p style="text-align: center; margin-top: 20px;">EVEREST - You take rest, we make best.</p>
   </footer>
 </body>
+
 </html>
