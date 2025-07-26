@@ -2,197 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Everest Property Care</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #f5f5f5;
-    }
-
-    header {
-      background-color: #39a845;
-      color: white;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    header img {
-      height: 60px;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .hero {
-      background-color: #c8f7c5;
-      text-align: center;
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    .testimonials-section {
+      background-color: #e6f4ec;
       padding: 60px 20px;
+      text-align: center;
     }
-
-    .hero h1 {
-      margin: 0;
+    .testimonials-section h2 {
       color: #2e7d32;
+      margin-bottom: 40px;
+      font-size: 2rem;
     }
-
-    .section {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
+    .testimonial-slider {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      overflow: hidden;
     }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background-color: grey;
-      padding: 20px;
+    .testimonial-card {
+      display: none;
+      background: #fff;
+      padding: 30px;
+      margin: 0 auto;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.5s ease-in-out;
     }
-
-    .card img {
-      width: 100px;
-      height: auto;
+    .testimonial-card.active { display: block; }
+    .testimonial-job { font-size: 0.85rem; color: #666; margin-top: 10px; }
+    .testimonial-nav {
+      margin-top: 20px;
     }
-
-    footer {
+    .testimonial-nav button {
+      padding: 8px 16px;
       background-color: #2e7d32;
+      border: none;
       color: white;
-      text-align: center;
-      padding: 30px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 0 5px;
     }
-
-    .contact-info {
-      line-height: 1.8;
+    .testimonial-nav button:hover {
+      background-color: #256026;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Everest Property Care Logo" />
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section id="home" class="hero">
-    <h1>Welcome to Everest Property Care</h1>
-    <p>Your one-stop solution for property maintenance in Auckland</p>
-  </section>
+  <!-- Main content of your site -->
 
-  <section id="services" class="section">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Cleaning">
-        <h3>Cleaning</h3>
-      </div>
-      <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/263/263115.png" alt="Lawn Mowing">
-        <h3>Lawn Mowing</h3>
-      </div>
-      <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/727/727606.png" alt="Gutter Cleaning">
-        <h3>Gutter Cleaning</h3>
-      </div>
-      <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/2554/2554827.png" alt="House Washing">
-        <h3>House Washing</h3>
-      </div>
-      <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1900/1900223.png" alt="Plastering">
-        <h3>Plastering</h3>
-      </div>
-      <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/809/809957.png" alt="Painting">
-        <h3>Painting</h3>
-      </div>
-    </div>
-  </section>
-<section class="testimonials">
-  <div class="container">
-    <h3>What Our Clients Say</h3>
-    <div class="carousel">
+  <!-- 🌟 Testimonials Section -->
+  <section class="testimonials-section" id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-slider">
       <div class="testimonial-card active">
-        <p>"Everest Property Care transformed our backyard. We now have a beautiful space to enjoy."</p>
-        <h4>– Sarah M., Henderson</h4>
-        <span class="job">Lawn Mowing & Garden Clean-Up</span>
+        <p>"Everest Property Care did a fantastic job on our lawns! Very professional and reliable."</p>
+        <strong>- Sarah T</strong>
+        <div class="testimonial-job">Lawn Mowing</div>
       </div>
       <div class="testimonial-card">
-        <p>"Reliable, friendly and always on time. Their cleaning team is top-notch!"</p>
-        <h4>– Jason R., West Auckland</h4>
-        <span class="job">Office Cleaning</span>
+        <p>"They handled our office cleaning with great attention to detail. Highly recommend."</p>
+        <strong>- Jason R</strong>
+        <div class="testimonial-job">Commercial Cleaning</div>
       </div>
       <div class="testimonial-card">
-        <p>"We hired Binod’s team for interior painting – they did a fantastic job. Highly recommend!"</p>
-        <h4>– Priya D., Massey</h4>
-        <span class="job">Interior Painting</span>
+        <p>"We had painting and handyman work done. Affordable and high quality."</p>
+        <strong>- Priya M</strong>
+        <div class="testimonial-job">Painting & Handyman</div>
       </div>
     </div>
-    <div class="carousel-buttons">
-      <button onclick="prevTestimonial()">←</button>
-      <button onclick="nextTestimonial()">→</button>
-    </div>
-  </div>
-</section>
-
-<script>
-  let current = 0;
-  const testimonials = document.querySelectorAll('.testimonial-card');
-
-  function showTestimonial(index) {
-    testimonials.forEach((card, i) => {
-      card.classList.remove('active');
-      if (i === index) {
-        card.classList.add('active');
-      }
-    });
-  }
-
-  function nextTestimonial() {
-    current = (current + 1) % testimonials.length;
-    showTestimonial(current);
-  }
-
-  function prevTestimonial() {
-    current = (current - 1 + testimonials.length) % testimonials.length;
-    showTestimonial(current);
-  }
-
-  // Auto-slide every 6 seconds
-  setInterval(nextTestimonial, 6000);
-</script>
-
-
-  <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <div class="contact-info">
-      <p><strong>Email:</strong> info@everestpropertycare.com</p>
-      <p><strong>Phone:</strong> 027 270 1271</p>
-      <p><strong>Location:</strong> Auckland</p>
+    <div class="testimonial-nav">
+      <button onclick="prevTestimonial()">Previous</button>
+      <button onclick="nextTestimonial()">Next</button>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Everest Property Care. All rights reserved.</p>
-  </footer>
+  <!-- Contact section goes below here -->
+  <!-- Example: <section id="contact">...</section> -->
+
+  <script>
+    let current = 0;
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    function showTestimonial(index) {
+      testimonials.forEach((card, i) => {
+        card.classList.remove('active');
+        if (i === index) card.classList.add('active');
+      });
+    }
+    function nextTestimonial() {
+      current = (current + 1) % testimonials.length;
+      showTestimonial(current);
+    }
+    function prevTestimonial() {
+      current = (current - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(current);
+    }
+    setInterval(nextTestimonial, 6000);
+  </script>
+
 </body>
 </html>
