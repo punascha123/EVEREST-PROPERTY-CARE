@@ -204,27 +204,154 @@
   </section>
 
 <footer>
-  <div class="footer-content">
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <a href="#home">🏠 Home</a>
-      <a href="#services">🛠️ Services</a>
-      <a href="#about">📌 About Us</a>
-      <a href="#contact">📞 Contact</a>
-      <a href="#privacy">🔒 Privacy Policy</a>
-    </div>
-    <div class="footer-section">
-      <h4>Explore</h4>
-      <a href="#gallery">🖼️ Gallery</a>
-      <a href="#quote">📝 Request Quotation</a>
-    </div>
-    <div class="footer-section">
-      <h4>Contact</h4>
-      <p>Email: <a href="mailto:info@nhrgroup.co.nz">info@nhrgroup.co.nz</a></p>
-      <p>Phone: <a href="tel:0272701271">027 270 1271</a></p>
-      <p>Location: West Auckland, NZ</p>
-    </div>
-  </div>
-  <p class="footer-slogan">EVEREST – You take rest, we make best</p>
-  <p style="text-align:center; margin-top: 10px;">&copy; 2025 Everest Property Care</p>
+<div class="footer-container">
+<div class="contact-us">
+<h3>CONTACT US</h3>
+<p><i class="fa fa-phone"></i> 027 270 1271</p>
+<p><i class="fa fa-envelope"></i> info@everestpropertycare.com</p>
+<button class="request-quote">Request a Free Quote</button>
+</div>
+<div class="quick-links">
+<h3>QUICK LINKS</h3>
+<ul>
+<li><a href="#">Services</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Gallery</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="connect-with-us">
+<h3>CONNECT WITH US</h3>
+<p class="tagline">Your Property, Our Priority.</p>
+</div>
+</div>
+<div class="copyright">
+<p>© 2023 Everest Property Care. All Rights Reserved.</p>
+</div>
 </footer>
+
+
+<style>
+footer {
+background-color: #333; /* Dark background color */
+color: #f4f4f4; /* Light text color */
+padding: 20px 0;
+font-family: sans-serif; /* A common sans-serif font */
+font-size: 0.9em;
+}
+
+
+.footer-container {
+display: flex;
+justify-content: space-around;
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+
+
+.contact-us,
+.quick-links,
+.connect-with-us {
+flex: 1;
+margin: 0 10px;
+}
+
+
+h3 {
+color: #f4f4f4;
+border-bottom: 2px solid #555;
+padding-bottom: 5px;
+margin-bottom: 15px;
+font-size: 1.2em;
+font-weight: bold;
+}
+
+
+.contact-us p {
+margin-bottom: 10px;
+}
+
+
+.contact-us i {
+margin-right: 5px;
+color: #e44d26; /* Example phone/email icon color */
+}
+
+
+.request-quote {
+background-color: #8fbc8f; /* Light green button color */
+color: white;
+border: none;
+padding: 10px 15px;
+border-radius: 5px;
+cursor: pointer;
+font-size: 1em;
+margin-top: 10px;
+}
+
+
+.request-quote:hover {
+background-color: #6e8b6e; /* Darker shade on hover */
+}
+
+
+.quick-links ul {
+list-style: none;
+padding: 0;
+}
+
+
+.quick-links ul li {
+margin-bottom: 8px;
+}
+
+
+.quick-links ul li a {
+color: #f4f4f4;
+text-decoration: none;
+}
+
+
+.quick-links ul li a:hover {
+text-decoration: underline;
+}
+
+
+.connect-with-us .tagline {
+font-style: italic;
+color: #ddd;
+}
+
+
+.copyright {
+background-color: #222;
+color: #ddd;
+text-align: center;
+padding: 15px 0;
+font-size: 0.8em;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+.footer-container {
+flex-direction: column;
+align-items: center;
+}
+
+
+.contact-us,
+.quick-links,
+.connect-with-us {
+width: 80%;
+margin-bottom: 20px;
+text-align: center;
+}
+
+
+.connect-with-us .tagline {
+text-align: center;
+}
+}
+</style>
