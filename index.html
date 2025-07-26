@@ -131,8 +131,28 @@
       background-color: #1b5e20;
       color: white;
       text-align: center;
-      padding: 15px 0;
-      margin-top: 40px;
+      padding: 30px 20px 15px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      color: #c8e6c9;
+      text-decoration: none;
+      margin: 5px 0;
+      font-size: 0.95rem;
+    }
+
+    .footer-slogan {
+      font-style: italic;
+      font-size: 1rem;
+      color: #a5d6a7;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -193,7 +213,13 @@
   </section>
 
   <footer>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#privacy">Privacy Policy</a>
+    </div>
     <p>&copy; 2025 Everest Property Care</p>
+    <p class="footer-slogan">EVEREST – You take rest, we make best</p>
   </footer>
 </body>
 </html>
