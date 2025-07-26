@@ -76,6 +76,52 @@
       max-width: 300px;
     }
 
+    .testimonial-section {
+      padding: 50px 20px;
+      background-color: #e0f2f1;
+      text-align: center;
+    }
+
+    .testimonial-section h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #1b5e20;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .testimonial-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      min-width: 300px;
+      scroll-snap-align: start;
+    }
+
+    .testimonial-card h4 {
+      color: #2e7d32;
+      margin-bottom: 5px;
+    }
+
+    .testimonial-card span {
+      font-size: 0.9rem;
+      color: #555;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      color: #333;
+    }
+
     .contact a {
       color: #2e7d32;
       text-decoration: none;
@@ -117,6 +163,27 @@
       <li>✅ Plastering</li>
       <li>✅ Handyman Services</li>
     </ul>
+  </section>
+
+  <section class="testimonial-section">
+    <h3>What Our Clients Say</h3>
+    <div class="carousel">
+      <div class="testimonial-card">
+        <h4>John D.</h4>
+        <span>Lawn Mowing</span>
+        <p>“The team at Everest Property Care does an amazing job every time. My lawn has never looked better!”</p>
+      </div>
+      <div class="testimonial-card">
+        <h4>Susan K.</h4>
+        <span>Cleaning</span>
+        <p>“Super reliable and efficient. They made my rental property spotless before inspection!”</p>
+      </div>
+      <div class="testimonial-card">
+        <h4>Mike T.</h4>
+        <span>Painting</span>
+        <p>“Very professional painters – neat, quick, and left my house looking brand new.”</p>
+      </div>
+    </div>
   </section>
 
   <section class="contact">
