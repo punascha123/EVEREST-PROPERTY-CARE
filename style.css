@@ -14,20 +14,26 @@
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 20px;
 }
 
 .testimonial-card {
   background-color: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   font-style: italic;
   border-left: 4px solid #10b981;
+  transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
 }
 
 .testimonial-card h4 {
   margin-top: 15px;
   font-weight: normal;
   color: #065f46;
+  font-size: 0.95rem;
 }
-
