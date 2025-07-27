@@ -7,77 +7,117 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* New Color Palette:
-            #da2c38 (Red/Burgundy)
-            #226f54 (Dark Green)
-            #87c38f (Light Green)
-            #f4f0bb (Light Yellow/Cream)
-            #43291f (Dark Brown)
+        /* New Aesthetic Color Palette for Property Care:
+            --primary-teal: #004D40 (Deep, rich teal)
+            --light-aqua: #80CBC4 (Lighter, fresh aqua)
+            --soft-grey: #F5F5F5 (Very light grey)
+            --dark-grey: #212121 (Almost black for text)
+            --vibrant-gold: #FFB300 (Bright, inviting orange/gold)
         */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f4f0bb; /* Light Yellow/Cream for main background */
-            color: #43291f; /* Dark Brown for main text */
+            background-color: #F5F5F5; /* Soft Grey for main background */
+            color: #212121; /* Dark Grey for main text */
             scroll-behavior: smooth; /* Smooth scrolling for anchor links */
         }
-        /* Custom styles for the footer to match the image and new palette */
+        /* Custom styles for the footer to match the new palette */
         .footer-bg {
-            background-color: #43291f; /* Changed to Dark Brown for footer background */
-            color: #f4f0bb; /* Light Yellow/Cream for footer text */
+            background-color: #004D40; /* Primary Teal for footer background */
+            color: #FFFFFF; /* Clean White for footer text */
         }
         .footer-heading {
-            color: #f4f0bb; /* Light Yellow/Cream for footer headings */
+            color: #FFFFFF; /* Clean White for footer headings */
             font-weight: 600;
             margin-bottom: 1rem;
         }
         .footer-link, .footer-contact-info {
-            color: #f4f0bb; /* Light Yellow/Cream for footer links/contact info */
+            color: #FFFFFF; /* Clean White for footer links/contact info */
             text-decoration: none;
             transition: color 0.3s ease;
         }
         .footer-link:hover, .footer-contact-info:hover {
-            color: #ffffff; /* White on hover */
+            color: #80CBC4; /* Light Aqua on hover */
         }
         .footer-button {
-            background-color: #da2c38; /* Red/Burgundy for footer button */
+            background-color: #FFB300; /* Vibrant Gold for footer button */
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease;
         }
         .footer-button:hover {
-            background-color: #c02a35; /* Slightly darker red on hover */
+            background-color: #e6a200; /* Slightly darker gold on hover */
         }
-        /* Style for form inputs - Added resize-y and cursor-text */
+        /* Style for form inputs */
         .form-input {
-            @apply w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#87c38f] focus:border-transparent resize-y cursor-text;
+            @apply w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#80CBC4] focus:border-transparent resize-y cursor-text;
         }
         .form-label {
-            @apply block text-sm font-medium text-[#43291f] mb-1;
+            @apply block text-sm font-medium text-[#212121] mb-1;
         }
         /* Hidden by default for service details section */
         .hidden-section {
             display: none;
         }
-        /* Removed loading spinner styles as the feature is removed */
+        /* Animations for hero section */
+        @keyframes fadeInUpx {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUpx 0.8s ease-out forwards;
+        }
+        .animate-fade-in-up.delay-100 { animation-delay: 0.1s; }
+        .animate-fade-in-up.delay-200 { animation-delay: 0.2s; }
+        .animate-fade-in-up.delay-300 { animation-delay: 0.3s; }
+
+        /* Service detail section layout */
+        .service-detail-content {
+            display: flex;
+            flex-direction: column; /* Default to column for small screens */
+            align-items: center;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) { /* Medium screens and up */
+            .service-detail-content {
+                flex-direction: row;
+                text-align: left;
+            }
+            .service-detail-content.reverse {
+                flex-direction: row-reverse;
+            }
+            .service-detail-content > div {
+                flex: 1;
+            }
+            .service-detail-content img {
+                width: 50%; /* Image takes half width on larger screens */
+                height: auto;
+            }
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
     <!-- Header/Navigation -->
-    <header class="bg-[#f4f0bb] shadow-md py-4 px-6 md:px-12">
+    <header class="bg-[#FFFFFF] shadow-md py-4 px-6 md:px-12">
         <nav class="container mx-auto flex justify-between items-center">
             <a href="#" class="flex flex-col items-center space-y-1">
                 <!-- Company Name -->
-                <span class="text-2xl md:text-3xl font-bold text-[#43291f]">Everest Property Care</span>
+                <span class="text-2xl md:text-3xl font-bold text-[#004D40]">Everest Property Care</span>
                 <!-- Slogan - in italic font -->
-                <span class="text-xl italic text-[#43291f]" style="font-family: 'Dancing Script', cursive;">You take rest and we make best</span>
+                <span class="text-xl italic text-[#212121]" style="font-family: 'Dancing Script', cursive;">You take rest and we make best</span>
             </a>
             <div class="hidden md:block">
-                <a href="#" id="nav-home" class="text-xl font-semibold text-[#226f54] hover:text-[#da2c38] mx-3">Home</a>
-                <a href="#" id="nav-services" class="text-xl font-semibold text-[#226f54] hover:text-[#da2c38] mx-3">Services</a>
-                <a href="#" class="text-xl font-semibold text-[#226f54] hover:text-[#da2c38] mx-3">About Us</a>
-                <a href="#contact-form-section" class="text-xl font-semibold text-[#226f54] hover:text-[#da2c38] mx-3">Contact</a>
+                <a href="#" id="nav-home" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Home</a>
+                <a href="#" id="nav-services" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Services</a>
+                <a href="#" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">About Us</a>
+                <a href="#contact-form-section" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Contact</a>
             </div>
             </nav>
     </header>
@@ -85,7 +125,7 @@
     <!-- Main Content Area - This div will toggle visibility -->
     <div id="main-content-area">
         <!-- Hero Section -->
-        <section id="hero" class="bg-gradient-to-r from-[#226f54] to-[#87c38f] text-white py-20 px-6 text-center rounded-b-lg shadow-lg">
+        <section id="hero" class="bg-gradient-to-r from-[#004D40] to-[#80CBC4] text-white py-20 px-6 text-center rounded-b-lg shadow-lg">
             <div class="container mx-auto max-w-4xl">
                 <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 animate-fade-in-up">
                     Transform Your Property, Elevate Your Life
@@ -96,7 +136,7 @@
                 <p class="text-lg md::text-xl mb-10 opacity-90 animate-fade-in-up delay-200">
                     At Everest Property Care, we don't just maintain properties – we create environments that inspire joy, reduce stress, and give you back the precious time you deserve.
                 </p>
-                <a href="#contact-form-section" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 animate-fade-in-up delay-300">
+                <a href="#contact-form-section" class="bg-[#FFB300] text-white hover:bg-[#e6a200] font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 animate-fade-in-up delay-300">
                     Get Your Free Quote Today!
                 </a>
             </div>
@@ -105,133 +145,134 @@
         <!-- Services Overview Section (Cards) -->
         <main class="flex-grow container mx-auto px-6 py-16">
             <section id="services-section" class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#226f54] text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-12">
                     Your Home, Reimagined and Revitalized
                 </h2>
-                <p class="text-lg text-[#43291f] text-center max-w-3xl mx-auto mb-16">
-                    We know the feeling: the endless to-do list, the weekend chores that never quite get done. That's why we're here to sweep away the overwhelm and bring your property dreams to life. From the foundational beauty of expert <span class="font-semibold text-[#226f54]">plastering and painting</span> to the pristine sparkle of a professional <span class="font-semibold text-[#226f54]">clean</span>, we handle every detail with precision and passion.
+                <p class="text-lg text-[#212121] text-center max-w-3xl mx-auto mb-16">
+                    We know the feeling: the endless to-do list, the weekend chores that never quite get done. That's why we're here to sweep away the overwhelm and bring your property dreams to life. From the foundational beauty of expert <span class="font-semibold text-[#004D40]">plastering and painting</span> to the pristine sparkle of a professional <span class="font-semibold text-[#004D40]">clean</span>, we handle every detail with precision and passion.
                 </p>
 
-                <h3 class="text-2xl md:text-3xl font-bold text-[#226f54] text-center mb-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-[#004D40] text-center mb-10">
                     Effortless Solutions for Every Need:
                 </h3>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Service Card 1: Sparkling Cleaning -->
-                    <a href="#cleaning-details" class="bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
-                        <img src="https://placehold.co/400x250/87c38f/43291f/png?text=Sparkling%20Cleaning" alt="Sparkling Cleaning Service" class="w-full h-auto rounded-t-lg mb-4">
+                    <a href="#cleaning-details" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                        <img src="https://i.ibb.co/TDJ5H3b5/Gemini-Generated-Image-g74snxg74snxg74s-1.png" alt="Sparkling Cleaning Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/80CBC4/212121/png?text=Sparkling%20Cleaning';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-blue-500 mb-4">✨</div>
-                            <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Sparkling Cleaning</h4>
-                            <p class="text-[#43291f]">Experience the pure bliss of a truly clean home, meticulously cared for from top to bottom.</p>
+                            <h4 class="text-xl font-semibold mb-3 text-[#212121]">Sparkling Cleaning</h4>
+                            <p class="text-[#212121]">Experience the pure bliss of a truly clean home, meticulously cared for from top to bottom.</p>
                         </div>
                     </a>
 
                     <!-- Service Card 2: Lush Lawn Mowing & Gardening -->
-                    <a href="#lawn-mowing-details" class="bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
-                        <img src="https://placehold.co/400x250/226f54/f4f0bb/png?text=Lush%20Lawn%20Mowing" alt="Lush Lawn Mowing Service" class="w-full h-auto rounded-t-lg mb-4">
+                    <a href="#lawn-mowing-details" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                        <img src="https://i.ibb.co/Jj2tf5Qk/Gemini-Generated-Image-ua705cua705cua70.png" alt="Lush Lawn Mowing Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/004D40/FFFFFF/png?text=Lush%20Lawn%20Mowing';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-green-500 mb-4">🌳</div>
-                            <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Lush Lawn Mowing & Gardening</h4>
-                            <p class="text-[#43291f]">Step into a vibrant outdoor oasis, perfectly manicured and bursting with life.</p>
+                            <h4 class="text-xl font-semibold mb-3 text-[#212121]">Lush Lawn Mowing & Gardening</h4>
+                            <p class="text-[#212121]">Step into a vibrant outdoor oasis, perfectly manicured and bursting with life.</p>
                         </div>
                     </a>
 
                     <!-- Service Card 3: Seamless Plastering & Painting -->
-                    <a href="#plastering-painting-details" class="bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
-                        <img src="https://placehold.co/400x250/da2c38/f4f0bb/png?text=Flawless%20Plastering" alt="Seamless Plastering and Painting Service" class="w-full h-auto rounded-t-lg mb-4">
+                    <a href="#plastering-painting-details" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                        <img src="https://i.ibb.co/rRPGmxRd/Gemini-Generated-Image-kkcentkkcentkkce.png" alt="Seamless Plastering and Painting Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/FFB300/FFFFFF/png?text=Flawless%20Plastering';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-yellow-500 mb-4">🎨</div>
-                            <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Seamless Plastering & Painting</h4>
-                            <p class="text-[#43291f]">Witness the dramatic transformation as walls come alive with fresh, flawless finishes.</p>
+                            <h4 class="text-xl font-semibold mb-3 text-[#212121]">Seamless Plastering & Painting</h4>
+                            <p class="text-[#212121]">Witness the dramatic transformation as walls come alive with fresh, flawless finishes.</p>
                         </div>
                     </a>
 
                     <!-- Service Card 4: Crystal-Clear Gutter Cleaning -->
-                    <a href="#gutter-cleaning-details" class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                    <a href="#gutter-cleaning-details" class="service-card bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
                         <div class="flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-gray-500 mb-4">💧</div>
-                            <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Crystal-Clear Gutter Cleaning</h4>
-                            <p class="text-[#43291f]">Protect your home and enhance its curb appeal with perfectly clear gutters.</p>
+                            <h4 class="text-xl font-semibold mb-3 text-[#212121]">Crystal-Clear Gutter Cleaning</h4>
+                            <p class="text-[#212121]">Protect your home and enhance its curb appeal with perfectly clear gutters.</p>
                         </div>
                     </a>
 
                     <!-- Service Card 5: Stress-Free Rubbish Removal -->
-                    <a href="#rubbish-removal-details" class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
-                        <div class="flex-grow flex flex-col justify-between">
+                    <a href="#rubbish-removal-details" class="service-card bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                        <img src="https://i.ibb.co/ycLKmz0q/Gemini-Generated-Image-5neug55neug55neu.png" alt="Stress-Free Rubbish Removal Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/FFB300/FFFFFF/png?text=Rubbish%20Removal';">
+                        <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-red-500 mb-4">🗑️</div>
-                            <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Stress-Free Rubbish Removal</h4>
-                            <p class="text-[#43291f]">Reclaim your space and say goodbye to unwanted clutter with our efficient disposal services.</p>
+                            <h4 class="text-xl font-semibold mb-3 text-[#212121]">Stress-Free Rubbish Removal</h4>
+                            <p class="text-[#212121]">Reclaim your space and say goodbye to unwanted clutter with our efficient disposal services.</p>
                         </div>
                     </a>
 
                     <!-- Service Card 6: Effortless House Moving -->
-                    <a href="#house-moving-details" class="bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
-                        <img src="https://placehold.co/400x250/43291f/f4f0bb/png?text=Effortless%20Moving" alt="Effortless House Moving Service" class="w-full h-auto rounded-t-lg mb-4">
+                    <a href="#house-moving-details" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                        <img src="https://i.ibb.co/1YbTDhX1/Gemini-Generated-Image-k8kex5k8kex5k8ke.png" alt="Effortless House Moving Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/212121/F5F5F5/png?text=Effortless%20Moving';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-purple-500 mb-4">🚚</div>
-                            <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Effortless House Moving</h4>
-                            <p class="text-[#43291f]">Transition to your new chapter with ease, knowing every detail of your move is handled with care.</p>
+                            <h4 class="text-xl font-semibold mb-3 text-[#212121]">Effortless House Moving</h4>
+                            <p class="text-[#212121]">Transition to your new chapter with ease, knowing every detail of your move is handled with care.</p>
                         </div>
                     </a>
 
                     <!-- Service Card 7: Plumbing Services -->
-                    <a href="#plumbing-details" class="bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
-                        <img src="https://placehold.co/400x250/226f54/f4f0bb/png?text=Reliable%20Plumbing" alt="Reliable Plumbing Service" class="w-full h-auto rounded-t-lg mb-4">
+                    <a href="#plumbing-details" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                        <img src="https://i.ibb.co/JWXyczq8/Gemini-Generated-Image-tbnguvtbnguvtbng.png" alt="Reliable Plumbing Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/004D40/FFFFFF/png?text=Reliable%20Plumbing';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-blue-700 mb-4">🛠️</div>
-                            <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Reliable Plumbing Services</h4>
-                            <p class="text-[#43291f]">From leaky faucets to complex installations, our expert plumbers ensure your systems run perfectly, giving you peace of mind.</p>
+                            <h4 class="text-xl font-semibold mb-3 text-[#212121]">Reliable Plumbing Services</h4>
+                            <p class="text-[#212121]">From leaky faucets to complex installations, our expert plumbers ensure your systems run perfectly, giving you peace of mind.</p>
                         </div>
                     </a>
 
                     <!-- New Service Card: Sparkling House Washing -->
-                    <a href="#house-washing-details" class="bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
-                        <img src="https://placehold.co/400x250/87c38f/43291f/png?text=Sparkling%20House%20Wash" alt="Sparkling House Washing Service" class="w-full h-auto rounded-t-lg mb-4">
+                    <a href="#house-washing-details" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                        <img src="https://i.ibb.co/bRvLsChx/Gemini-Generated-Image-lvuukelvuukelvuu.png" alt="Sparkling House Washing Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/80CBC4/212121/png?text=Sparkling%20House%20Wash';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-teal-500 mb-4">🏠💧</div>
-                            <h4 class="text-xl font-semibold mb-3 text-[#43291f]">Sparkling House Washing</h4>
-                            <p class="text-[#43291f]">Restore your home's curb appeal with a professional house wash, removing grime and mildew for a fresh, vibrant look.</p>
+                            <h4 class="text-xl font-semibold mb-3 text-[#212121]">Sparkling House Washing</h4>
+                            <p class="text-[#212121]">Restore your home's curb appeal with a professional house wash, removing grime and mildew for a fresh, vibrant look.</p>
                         </div>
                     </a>
                 </div>
             </section>
 
-            <section id="why-choose-us-section" class="bg-[#87c38f] p-10 rounded-lg shadow-md text-center mb-16">
-                <h3 class="text-3xl font-bold text-[#43291f] mb-6">Why Choose Everest Property Care?</h3>
-                <p class="text-lg text-[#43291f] max-w-3xl mx-auto">
+            <section id="why-choose-us-section" class="bg-[#80CBC4] p-10 rounded-lg shadow-md text-center mb-16">
+                <h3 class="text-3xl font-bold text-[#004D40] mb-6">Why Choose Everest Property Care?</h3>
+                <p class="text-lg text-[#212121] max-w-3xl mx-auto">
                     We're more than just a service provider; we're your partners in creating a property that truly feels like home. Our dedicated team delivers exceptional results with a friendly smile, ensuring every experience is smooth, reliable, and utterly satisfying.
                 </p>
             </section>
 
             <!-- Testimonials Section -->
-            <section id="testimonials-section" class="py-16 bg-[#f4f0bb] rounded-lg shadow-inner">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#226f54] text-center mb-12">What Our Clients Say</h2>
+            <section id="testimonials-section" class="py-16 bg-[#F5F5F5] rounded-lg shadow-inner">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-12">What Our Clients Say</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
                     <!-- Testimonial 1: Byron - Gardening -->
                     <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
                         <p class="text-lg text-gray-700 mb-4 italic">"Everest Property Care transformed my overgrown garden. Byron and his team were meticulous, making my backyard enjoyable again. Huge weight off my shoulders!"</p>
-                        <p class="font-semibold text-[#43291f]">- Byron</p>
+                        <p class="font-semibold text-[#212121]">- Byron</p>
                     </div>
                     <!-- Testimonial 2: Avinesh - Cleaning -->
                     <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
                         <p class="text-lg text-gray-700 mb-4 italic">"Avinesh's team did an incredible deep clean of my apartment. Spotless and fresh, it made my weekend so much more relaxing."</p>
-                        <p class="font-semibold text-[#43291f]">- Avinesh</p>
+                        <p class="font-semibold text-[#212121]">- Avinesh</p>
                     </div>
                     <!-- Testimonial 3: Chris - House Moving -->
                     <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
                         <p class="text-lg text-gray-700 mb-4 italic">"Chris and the Everest Property Care crew made my move surprisingly smooth. They were careful and efficient. Couldn't have done it without them!"</p>
-                        <p class="font-semibold text-[#43291f]">- Chris</p>
+                        <p class="font-semibold text-[#212121]">- Chris</p>
                     </div>
                     <!-- Testimonial 4: Uday - Plastering & Painting -->
                     <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
                         <p class="text-lg text-gray-700 mb-4 italic">"Uday's painting and plastering work was exceptional. My walls look brand new and flawless. It completely changed the feel of the room – so happy!"</p>
-                        <p class="font-semibold text-[#43291f]">- Uday</p>
+                        <p class="font-semibold text-[#212121]">- Uday</p>
                     </div>
                     <!-- Testimonial 5: Penee - Rubbish Removal -->
                     <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
                         <p class="text-lg text-gray-700 mb-4 italic">"Penee's team handled my garage rubbish removal quickly and without fuss. Professional and left the area spotless. Fantastic service!"</p>
-                        <p class="font-semibold text-[#43291f]">- Penee</p>
+                        <p class="font-semibold text-[#212121]">- Penee</p>
                     </div>
                 </div>
             </section>
@@ -242,130 +283,158 @@
     <!-- Service Details Section - This div will toggle visibility -->
     <div id="services-details-page" class="hidden-section flex-grow container mx-auto px-6 py-16">
         <section class="py-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#226f54] text-center mb-12">Our Services in Detail</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-12">Our Services in Detail</h2>
 
             <!-- Cleaning Details -->
             <div id="cleaning-details" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-5xl mx-auto">
-                <h3 class="text-3xl font-bold text-[#226f54] mb-6 text-center">Sparkling Cleaning: Reclaim Your Sanctuary</h3>
-                <!-- Image for cleaning service, updated with the new link -->
-                <img src="https://i.ibb.co/TDJ5H3b5/Gemini-Generated-Image-g74snxg74snxg74s-1.png" alt="Professional Cleaning Service" class="w-full h-auto rounded-lg mb-8" onerror="this.onerror=null;this.src='https://placehold.co/600x350/87c38f/43291f/png?text=Image%20Not%20Loaded';">
-                <p class="text-lg text-[#43291f] mb-4">
-                    Imagine walking into a home that sparkles, where every surface gleams and the air feels fresh and pure. Our professional cleaning service isn't just about tidiness; it's about creating an environment that calms your mind and lifts your spirit. We meticulously clean every nook and cranny, from deep scrubbing kitchens and bathrooms to dusting forgotten corners.
-                </p>
-                <p class="text-lg text-[#43291f] mb-6">
-                    Feel the immediate sense of relief as the burden of chores is lifted, replaced by the joy of a pristine living space. This isn't just a clean house; it's your personal sanctuary, restored to perfection.
-                </p>
-                <a href="#contact-form-section" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
-                    Book Your Deep Clean
-                </a>
+                <h3 class="text-3xl font-bold text-[#004D40] mb-6 text-center">Sparkling Cleaning: Reclaim Your Sanctuary</h3>
+                <div class="service-detail-content">
+                    <img src="https://i.ibb.co/TDJ5H3b5/Gemini-Generated-Image-g74snxg74snxg74s-1.png" alt="Professional Cleaning Service" class="w-full md:w-1/2 h-auto rounded-lg mb-8 md:mb-0" onerror="this.onerror=null;this.src='https://placehold.co/600x350/80CBC4/212121/png?text=Image%20Not%20Loaded';">
+                    <div>
+                        <p class="text-lg text-[#212121] mb-4">
+                            Imagine walking into a home that sparkles, where every surface gleams and the air feels fresh and pure. Our professional cleaning service isn't just about tidiness; it's about creating an environment that calms your mind and lifts your spirit. We meticulously clean every nook and cranny, from deep scrubbing kitchens and bathrooms to dusting forgotten corners.
+                        </p>
+                        <p class="text-lg text-[#212121] mb-6">
+                            Feel the immediate sense of relief as the burden of chores is lifted, replaced by the joy of a pristine living space. This isn't just a clean house; it's your personal sanctuary, restored to perfection.
+                        </p>
+                        <a href="#contact-form-section" class="bg-[#FFB300] text-white hover:bg-[#e6a200] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
+                            Book Your Deep Clean
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Lawn Mowing & Gardening Details -->
             <div id="lawn-mowing-details" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-5xl mx-auto">
-                <h3 class="text-3xl font-bold text-[#226f54] mb-6 text-center">Lush Lawns & Vibrant Gardens: Your Outdoor Escape</h3>
-                <!-- Updated image for lawn mowing service -->
-                <a href="https://ibb.co/0yZ2ghtJ" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.ibb.co/Jj2tf5Qk/Gemini-Generated-Image-ua705cua705cua70.png" alt="Lawn Mowing and Gardening Service" class="w-full h-auto rounded-lg mb-8" onerror="this.onerror=null;this.src='https://placehold.co/600x350/226f54/f4f0bb/png?text=Image%20Not%20Loaded';">
-                </a>
-                <p class="text-lg text-[#43291f] mb-4">
-                    Step outside and be greeted by a perfectly manicured lawn, vibrant and inviting, and a garden bursting with life and color. Our lawn mowing and gardening services transform your outdoor space into a personal paradise, a place where you can relax, entertain, and truly connect with nature.
-                </p>
-                <p class="text-lg text-[#43291f] mb-6">
-                    Experience the pride of a beautifully maintained exterior without lifting a finger. From precise mowing to expert pruning and planting, we cultivate beauty that enhances your home's curb appeal and your daily joy.
-                </p>
-                <a href="#contact-form-section" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
-                    Cultivate Your Dream Garden
-                </a>
+                <h3 class="text-3xl font-bold text-[#004D40] mb-6 text-center">Lush Lawns & Vibrant Gardens: Your Outdoor Escape</h3>
+                <div class="service-detail-content reverse">
+                    <img src="https://i.ibb.co/Jj2tf5Qk/Gemini-Generated-Image-ua705cua705cua70.png" alt="Lawn Mowing and Gardening Service" class="w-full md:w-1/2 h-auto rounded-lg mb-8 md:mb-0" onerror="this.onerror=null;this.src='https://placehold.co/600x350/004D40/FFFFFF/png?text=Image%20Not%20Loaded';">
+                    <div>
+                        <p class="text-lg text-[#212121] mb-4">
+                            Step outside and be greeted by a perfectly manicured lawn, vibrant and inviting, and a garden bursting with life and color. Our lawn mowing and gardening services transform your outdoor space into a personal paradise, a place where you can relax, entertain, and truly connect with nature.
+                        </p>
+                        <p class="text-lg text-[#212121] mb-6">
+                            Experience the pride of a beautifully maintained exterior without lifting a finger. From precise mowing to expert pruning and planting, we cultivate beauty that enhances your home's curb appeal and your daily joy.
+                        </p>
+                        <a href="#contact-form-section" class="bg-[#FFB300] text-white hover:bg-[#e6a200] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
+                            Cultivate Your Dream Garden
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Plastering & Painting Details -->
             <div id="plastering-painting-details" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-5xl mx-auto">
-                <h3 class="text-3xl font-bold text-[#226f54] mb-6 text-center">Flawless Finishes: The Art of Transformation</h3>
-                <img src="https://placehold.co/600x350/da2c38/f4f0bb/png?text=Professional%20Painting" alt="Plastering and Painting Service" class="w-full h-auto rounded-lg mb-8">
-                <p class="text-lg text-[#43291f] mb-4">
-                    Witness the incredible power of a fresh coat of paint and perfectly smooth walls. Our plastering and painting services aren't just about applying color; they're about creating a renewed ambiance, a canvas for your life. We meticulously prepare surfaces and apply finishes with precision, ensuring a flawless, long-lasting result.
-                </p>
-                <p class="text-lg text-[#43291f] mb-6">
-                    Feel the excitement of a space reborn, reflecting your style and radiating a sense of new beginnings. It's an investment in your home's beauty and your everyday happiness.
-                </p>
-                <a href="#contact-form-section" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
-                    Transform Your Walls
-                </a>
+                <h3 class="text-3xl font-bold text-[#004D40] mb-6 text-center">Seamless Plastering & Painting: The Foundation of Flawless Walls</h3>
+                <div class="service-detail-content">
+                    <img src="https://i.ibb.co/rRPGmxRd/Gemini-Generated-Image-kkcentkkcentkkce.png" alt="Plastering and Painting Service" class="w-full md:w-1/2 h-auto rounded-lg mb-8 md:mb-0" onerror="this.onerror=null;this.src='https://placehold.co/600x350/FFB300/FFFFFF/png?text=Professional%20Painting';">
+                    <div>
+                        <p class="text-lg text-[#212121] mb-4">
+                            Witness the incredible power of perfectly smooth walls and a fresh coat of paint. Our plastering services lay the essential groundwork, ensuring a flawless, durable surface before we apply any color. We meticulously prepare surfaces, repair imperfections, and apply plaster with expert precision.
+                        </p>
+                        <p class="text-lg text-[#212121] mb-6">
+                            Then, our painting transforms your space, creating a renewed ambiance and a canvas for your life. Feel the excitement of a space reborn, reflecting your style and radiating a sense of new beginnings. It's an investment in your home's beauty and your everyday happiness.
+                        </p>
+                        <a href="#contact-form-section" class="bg-[#FFB300] text-white hover:bg-[#e6a200] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
+                            Transform Your Walls
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Gutter Cleaning Details -->
             <div id="gutter-cleaning-details" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-5xl mx-auto">
-                <h3 class="text-3xl font-bold text-[#226f54] mb-6 text-center">Clear Gutters, Clear Mind: Protecting Your Home</h3>
-                <img src="https://placehold.co/600x350/87c38f/43291f/png?text=Gutter%20Cleaning" alt="Gutter Cleaning Service" class="w-full h-auto rounded-lg mb-8">
-                <p class="text-lg text-[#43291f] mb-4">
-                    Protecting your home from water damage starts with clear, functional gutters. Our thorough gutter cleaning service ensures rainwater is diverted effectively, preventing costly issues like foundation damage, leaky roofs, and unsightly mildew. We safely remove leaves, debris, and blockages, leaving your gutters pristine.
-                </p>
-                <p class="text-lg text-[#43291f] mb-6">
-                    Enjoy the peace of mind that comes with knowing your home is well-protected, come rain or shine. It's a small service with a huge impact on your property's longevity and your financial security.
-                </p>
-                <a href="#contact-form-section" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
-                    Secure Your Home
-                </a>
+                <h3 class="text-3xl font-bold text-[#004D40] mb-6 text-center">Clear Gutters, Clear Mind: Protecting Your Home</h3>
+                <div class="service-detail-content reverse">
+                    <img src="https://i.ibb.co/8D0qvq37/Gemini-Generated-Image-d35iyad35iyad35i.png" alt="Gutter Cleaning Service" class="w-full md:w-1/2 h-auto rounded-lg mb-8 md:mb-0" onerror="this.onerror=null;this.src='https://placehold.co/600x350/80CBC4/212121/png?text=Gutter%20Cleaning';">
+                    <div>
+                        <p class="text-lg text-[#212121] mb-4">
+                            Protecting your home from water damage starts with clear, functional gutters. Our thorough gutter cleaning service ensures rainwater is diverted effectively, preventing costly issues like foundation damage, leaky roofs, and unsightly mildew. We safely remove leaves, debris, and blockages, leaving your gutters pristine.
+                        </p>
+                        <p class="text-lg text-[#212121] mb-6">
+                            Enjoy the peace of mind that comes with knowing your home is well-protected, come rain or shine. It's a small service with a huge impact on your property's longevity and your financial security.
+                        </p>
+                        <a href="#contact-form-section" class="bg-[#FFB300] text-white hover:bg-[#e6a200] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
+                            Secure Your Home
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Rubbish Removal Details -->
             <div id="rubbish-removal-details" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-5xl mx-auto">
-                <h3 class="text-3xl font-bold text-[#226f54] mb-6 text-center">Declutter & Delight: Reclaim Your Space</h3>
-                <img src="https://placehold.co/600x350/da2c38/f4f0bb/png?text=Rubbish%20Removal" alt="Rubbish Removal Service" class="w-full h-auto rounded-lg mb-8">
-                <p class="text-lg text-[#43291f] mb-4">
-                    Is clutter weighing you down? Our efficient rubbish removal service is your key to a lighter, more spacious home. We handle everything from old furniture and appliances to garden waste and general junk, ensuring responsible disposal and leaving your property neat and tidy.
-                </p>
-                <p class="text-lg text-[#43291f] mb-6">
-                    Feel the incredible freedom and clarity that comes with a decluttered space. It's more than just removing rubbish; it's about creating room for new possibilities and a renewed sense of order in your life.
-                </p>
-                <a href="#contact-form-section" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
-                    Clear Your Clutter
-                </a>
+                <h3 class="text-3xl font-bold text-[#004D40] mb-6 text-center">Stress-Free Rubbish Removal: Reclaim Your Space, Simplify Your Life</h3>
+                <div class="service-detail-content">
+                    <img src="https://i.ibb.co/ycLKmz0q/Gemini-Generated-Image-5neug55neug55neu.png" alt="Rubbish Removal Service" class="w-full md:w-1/2 h-auto rounded-lg mb-8 md:mb-0" onerror="this.onerror=null;this.src='https://placehold.co/600x350/FFB300/FFFFFF/png?text=Rubbish%20Removal';">
+                    <div>
+                        <p class="text-lg text-[#212121] mb-4">
+                            Is clutter weighing you down? Our efficient rubbish removal service is your key to a lighter, more spacious home. We handle everything from old furniture and appliances to garden waste and general junk, ensuring responsible disposal and leaving your property neat and tidy.
+                        </p>
+                        <p class="text-lg text-[#212121] mb-6">
+                            Feel the incredible freedom and clarity that comes with a decluttered space. It's more than just removing rubbish; it's about creating room for new possibilities and a renewed sense of order in your life.
+                        </p>
+                        <a href="#contact-form-section" class="bg-[#FFB300] text-white hover:bg-[#e6a200] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
+                            Clear Your Clutter
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- House Moving Details -->
             <div id="house-moving-details" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-5xl mx-auto">
-                <h3 class="text-3xl font-bold text-[#226f54] mb-6 text-center">Effortless Transitions: Your Smooth Move</h3>
-                <img src="https://placehold.co/600x350/43291f/f4f0bb/png?text=Stress-Free%20Moving" alt="Effortless House Moving Service" class="w-full h-auto rounded-lg mb-8">
-                <p class="text-lg text-[#43291f] mb-4">
-                    Moving house can be one of life's most stressful events, but it doesn't have to be. Our comprehensive house moving service handles every aspect of your relocation, from careful packing and secure transport to efficient unpacking at your new destination. We ensure your belongings arrive safely and on time.
-                </p>
-                <p class="text-lg text-[#43291f] mb-6">
-                    Embrace the excitement of a new beginning without the typical moving day anxieties. We turn a daunting task into a seamless, positive experience, allowing you to focus on settling into your new home with joy.
-                </p>
-                <a href="#contact-form-section" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
-                    Plan Your Seamless Move
-                </a>
+                <h3 class="text-3xl font-bold text-[#004D40] mb-6 text-center">Effortless Transitions: Your Smooth Move</h3>
+                <div class="service-detail-content reverse">
+                    <img src="https://i.ibb.co/1YbTDhX1/Gemini-Generated-Image-k8kex5k8kex5k8ke.png" alt="Effortless House Moving Service" class="w-full md:w-1/2 h-auto rounded-lg mb-8 md:mb-0" onerror="this.onerror=null;this.src='https://placehold.co/600x350/212121/F5F5F5/png?text=Stress-Free%20Moving';">
+                    <div>
+                        <p class="text-lg text-[#212121] mb-4">
+                            Moving house can be one of life's most stressful events, but it doesn't have to be. Our comprehensive house moving service handles every aspect of your relocation, from careful packing and secure transport to efficient unpacking at your new destination. We ensure your belongings arrive safely and on time.
+                        </p>
+                        <p class="text-lg text-[#212121] mb-6">
+                            Embrace the excitement of a new beginning without the typical moving day anxieties. We turn a daunting task into a seamless, positive experience, allowing you to focus on settling into your new home with joy.
+                        </p>
+                        <a href="#contact-form-section" class="bg-[#FFB300] text-white hover:bg-[#e6a200] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
+                            Plan Your Seamless Move
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Plumbing Details -->
             <div id="plumbing-details" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-5xl mx-auto">
-                <h3 class="text-3xl font-bold text-[#226f54] mb-6 text-center">Reliable Plumbing: Flowing Solutions for Your Home</h3>
-                <img src="https://placehold.co/600x350/226f54/43291f/png?text=Expert%20Plumbing" alt="Reliable Plumbing Service" class="w-full h-auto rounded-lg mb-8">
-                <p class="text-lg text-[#43291f] mb-4">
-                    Don't let leaky pipes or clogged drains disrupt your day. Our certified plumbing experts provide swift, reliable solutions for all your needs, from minor repairs to new installations. We ensure your water systems are efficient and trouble-free, protecting your property from unexpected issues.
-                </p>
-                <p class="text-lg text-[#43291f] mb-6">
-                    Experience the comfort of knowing your home's plumbing is in capable hands. With our prompt service and lasting repairs, you can enjoy uninterrupted peace and functionality in your home.
-                </p>
-                <a href="#contact-form-section" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
-                    Get Plumbing Support
-                </a>
+                <h3 class="text-3xl font-bold text-[#004D40] mb-6 text-center">Reliable Plumbing: Flowing Solutions for Your Home</h3>
+                <div class="service-detail-content">
+                    <img src="https://i.ibb.co/JWXyczq8/Gemini-Generated-Image-tbnguvtbnguvtbng.png" alt="Reliable Plumbing Service" class="w-full md:w-1/2 h-auto rounded-lg mb-8 md:mb-0" onerror="this.onerror=null;this.src='https://placehold.co/600x350/004D40/FFFFFF/png?text=Expert%20Plumbing';">
+                    <div>
+                        <p class="text-lg text-[#212121] mb-4">
+                            Don't let leaky pipes or clogged drains disrupt your day. Our certified plumbing experts provide swift, reliable solutions for all your needs, from minor repairs to new installations. We ensure your water systems are efficient and trouble-free, protecting your property from unexpected issues.
+                        </p>
+                        <p class="text-lg text-[#212121] mb-6">
+                            Experience the comfort of knowing your home's plumbing is in capable hands. With our prompt service and lasting repairs, you can enjoy uninterrupted peace and functionality in your home.
+                        </p>
+                        <a href="#contact-form-section" class="bg-[#FFB300] text-white hover:bg-[#e6a200] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
+                            Get Plumbing Support
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- House Washing Details -->
             <div id="house-washing-details" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-5xl mx-auto">
-                <h3 class="text-3xl font-bold text-[#226f54] mb-6 text-center">Sparkling House Washing: Renew Your Home's Brilliance</h3>
-                <img src="https://placehold.co/600x350/87c38f/43291f/png?text=Sparkling%20House%20Wash" alt="Sparkling House Washing Service" class="w-full h-auto rounded-lg mb-8">
-                <p class="text-lg text-[#43291f] mb-4">
-                    Over time, dirt, mold, and grime can dull your home's exterior, diminishing its curb appeal. Our professional house washing service gently yet effectively cleans all surfaces, restoring your home's original beauty and protecting it from damaging build-up. We use safe, effective methods to leave your home sparkling.
-                </p>
-                <p class="text-lg text-[#43291f] mb-6">
-                    Feel the pride as your home regains its fresh, vibrant look, standing out in your neighborhood. It's a simple way to significantly enhance your property's value and your daily satisfaction.
-                </p>
-                <a href="#contact-form-section" class="bg-[#da2c38] text-white hover:bg-[#c02a35] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
-                    Schedule Your House Wash
-                </a>
+                <h3 class="text-3xl font-bold text-[#004D40] mb-6 text-center">Sparkling House Washing: Renew Your Home's Brilliance</h3>
+                <div class="service-detail-content reverse">
+                    <img src="https://i.ibb.co/bRvLsChx/Gemini-Generated-Image-lvuukelvuukelvuu.png" alt="Sparkling House Washing Service" class="w-full md:w-1/2 h-auto rounded-lg mb-8 md:mb-0" onerror="this.onerror=null;this.src='https://placehold.co/600x350/80CBC4/212121/png?text=Sparkling%20House%20Wash';">
+                    <div>
+                        <p class="text-lg text-[#212121] mb-4">
+                            Over time, dirt, mold, and grime can dull your home's exterior, diminishing its curb appeal. Our professional house washing service gently yet effectively cleans all surfaces, restoring your home's original beauty and protecting it from damaging build-up. We use safe, effective methods to leave your home sparkling.
+                        </p>
+                        <p class="text-lg text-[#212121] mb-6">
+                            Feel the pride as your home regains its fresh, vibrant look, standing out in your neighborhood. It's a simple way to significantly enhance your property's value and your daily satisfaction.
+                        </p>
+                        <a href="#contact-form-section" class="bg-[#FFB300] text-white hover:bg-[#e6a200] font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
+                            Schedule Your House Wash
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </section>
@@ -374,14 +443,14 @@
 
     <!-- Contact Form Section - Always visible -->
     <section id="contact-form-section" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#226f54] text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-8">
             Request a Free Quote
         </h2>
-        <p class="text-lg text-[#43291f] text-center mb-8">
+        <p class="text-lg text-[#212121] text-center mb-8">
             Tell us about your property maintenance needs, and we'll get back to you with a personalized quote.
         </p>
 
-        <form class="grid grid-cols-1 gap-6">
+        <form id="quote-form" class="grid grid-cols-1 gap-6">
             <div>
                 <label for="fullName" class="form-label">Full Name</label>
                 <input type="text" id="fullName" name="fullName" class="form-input" placeholder="John Doe" required>
@@ -392,7 +461,7 @@
             </div>
             <div>
                 <label for="mobileNumber" class="form-label">Mobile Number</label>
-                <input type="tel" id="mobileNumber" name="mobileNumber" class="form-input" placeholder="+123 456 7890" required>
+                <input type="tel" id="mobileNumber" name="mobileNumber" class="form-input" placeholder="+64 27 270 1271" value="+64 27 270 1271" required>
             </div>
             <div>
                 <label for="email" class="form-label">Email Address</label>
@@ -406,71 +475,70 @@
                 <div>
                     <label for="time" class="form-label">Preferred Time</label>
                     <input type="time" id="time" name="time" class="form-input" required>
-                    </div>
                 </div>
+            </div>
             <div>
                 <label class="form-label mb-2">Services You're Interested In:</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[#43291f]">
-                    <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="cleaning" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
-                        <span class="ml-2">Cleaning</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-[#212121]">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Sparkling Cleaning" class="mr-2 rounded text-[#004D40] focus:ring-[#80CBC4]"> Sparkling Cleaning
                     </label>
-                    <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="lawn-mowing-gardening" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
-                        <span class="ml-2">Lawn Mowing & Gardening</span>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Lush Lawn Mowing & Gardening" class="mr-2 rounded text-[#004D40] focus:ring-[#80CBC4]"> Lush Lawn Mowing & Gardening
                     </label>
-                    <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="plastering-painting" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
-                        <span class="ml-2">Plastering & Painting</span>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Seamless Plastering & Painting" class="mr-2 rounded text-[#004D40] focus:ring-[#80CBC4]"> Seamless Plastering & Painting
                     </label>
-                    <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="gutter-cleaning" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
-                        <span class="ml-2">Gutter Cleaning</span>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Crystal-Clear Gutter Cleaning" class="mr-2 rounded text-[#004D40] focus:ring-[#80CBC4]"> Crystal-Clear Gutter Cleaning
                     </label>
-                    <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="rubbish-removal" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
-                        <span class="ml-2">Rubbish Removal</span>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Stress-Free Rubbish Removal" class="mr-2 rounded text-[#004D40] focus:ring-[#80CBC4]"> Stress-Free Rubbish Removal
                     </label>
-                    <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="house-moving" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
-                        <span class="ml-2">House Moving</span>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Effortless House Moving" class="mr-2 rounded text-[#004D40] focus:ring-[#80CBC4]"> Effortless House Moving
                     </label>
-                    <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="plumbing" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
-                        <span class="ml-2">Plumbing Services</span>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Reliable Plumbing Services" class="mr-2 rounded text-[#004D40] focus:ring-[#80CBC4]"> Reliable Plumbing Services
                     </label>
-                    <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="house-washing" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
-                        <span class="ml-2">House Washing</span>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Sparkling House Washing" class="mr-2 rounded text-[#004D40] focus:ring-[#80CBC4]"> Sparkling House Washing
                     </label>
                 </div>
             </div>
             <div>
-                <label for="message" class="form-label">Tell us more about your needs:</label>
-                <textarea id="message" name="message" rows="4" class="form-input" placeholder="e.g., I need a deep clean for a 3-bedroom house and weekly lawn mowing."></textarea>
+                <label for="additionalDetails" class="form-label">Additional Details / Specific Requirements</label>
+                <textarea id="additionalDetails" name="additionalDetails" rows="4" class="form-input" placeholder="Tell us more about what you need..."></textarea>
             </div>
-            <button type="submit" class="bg-[#da2c38] text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-[#c02a35] transform hover:scale-105">
+            <button type="submit" class="bg-[#004D40] text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#00332b]">
                 Submit Request
             </button>
+            <!-- Success message display area -->
+            <div id="success-message" class="hidden mt-4 p-4 rounded-lg bg-green-100 text-green-800 text-center font-semibold">
+                Thank you for your inquiry! We have received your request and will get back to you shortly.
+            </div>
         </form>
     </section>
 
     <!-- Footer -->
-    <footer class="footer-bg py-12 px-6">
+    <footer class="footer-bg py-12 px-6 mt-auto">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <!-- Company Info -->
             <div>
-                <h4 class="footer-heading">Everest Property Care</h4>
-                <p class="text-sm mb-4">Transforming properties and elevating lives through meticulous care and dedicated service.</p>
-                <a href="#contact-form-section" class="footer-button">Get a Free Quote</a>
+                <h3 class="footer-heading">Everest Property Care</h3>
+                <p class="text-sm">
+                    Transforming properties and elevating lives across Auckland.
+                    <br>
+                    "You take rest and we make best"
+                </p>
             </div>
 
             <!-- Quick Links -->
             <div>
-                <h4 class="footer-heading">Quick Links</h4>
+                <h3 class="footer-heading">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="footer-link">Home</a></li>
-                    <li><a href="#services-section" class="footer-link">Services</a></li>
+                    <li><a href="#" id="footer-nav-home" class="footer-link">Home</a></li>
+                    <li><a href="#" id="footer-nav-services" class="footer-link">Services</a></li>
                     <li><a href="#" class="footer-link">About Us</a></li>
                     <li><a href="#contact-form-section" class="footer-link">Contact</a></li>
                 </ul>
@@ -478,88 +546,124 @@
 
             <!-- Contact Info -->
             <div>
-                <h4 class="footer-heading">Contact Us</h4>
-                <p class="footer-contact-info">Email: info@everestpropertycare.com</p>
-                <p class="footer-contact-info">Phone: +64 21 123 4567</p>
-                <p class="footer-contact-info">Address: Auckland, New Zealand</p>
-                <div class="flex justify-center md:justify-start space-x-4 mt-4">
-                    <!-- Social Media Icons (Placeholders) -->
-                    <a href="#" class="text-2xl footer-link hover:text-white">FB</a>
-                    <a href="#" class="text-2xl footer-link hover:text-white">IG</a>
-                    <a href="#" class="text-2xl footer-link hover:text-white">LI</a>
+                <h3 class="footer-heading">Contact Us</h3>
+                <p class="text-sm footer-contact-info">
+                    Email: info@everestpropertycare.co.nz<br>
+                    Phone: +64 27 270 1271<br>
+                    Address: Auckland, New Zealand
+                </p>
+                <div class="mt-4">
+                    <a href="#contact-form-section" class="footer-button">Get a Free Quote</a>
                 </div>
             </div>
         </div>
-        <div class="border-t border-[#87c38f] mt-8 pt-8 text-center text-sm opacity-80">
+        <div class="text-center text-sm mt-8 opacity-80">
             &copy; 2025 Everest Property Care. All rights reserved.
         </div>
     </footer>
 
     <script>
-        // JavaScript for navigation and showing/hiding sections
         document.addEventListener('DOMContentLoaded', function() {
             const mainContentArea = document.getElementById('main-content-area');
             const servicesDetailsPage = document.getElementById('services-details-page');
             const navHome = document.getElementById('nav-home');
             const navServices = document.getElementById('nav-services');
+            const footerNavHome = document.getElementById('footer-nav-home');
+            const footerNavServices = document.getElementById('footer-nav-services');
+            const serviceCards = document.querySelectorAll('.service-card');
+            const quoteForm = document.getElementById('quote-form');
+            const successMessage = document.getElementById('success-message');
 
             // Function to show main content and hide service details
             function showMainContent() {
-                mainContentArea.style.display = 'block';
-                servicesDetailsPage.style.display = 'none';
-                // Scroll to the top or hero section if desired
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                mainContentArea.classList.remove('hidden-section');
+                servicesDetailsPage.classList.add('hidden-section');
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
             }
 
             // Function to show service details and hide main content
-            function showServiceDetails() {
-                mainContentArea.style.display = 'none';
-                servicesDetailsPage.style.display = 'block';
-                // Scroll to the top of the service details page
-                window.scrollTo({ top: servicesDetailsPage.offsetTop, behavior: 'smooth' });
+            function showServiceDetails(anchorId = null) {
+                mainContentArea.classList.add('hidden-section');
+                servicesDetailsPage.classList.remove('hidden-section');
+                if (anchorId) {
+                    // Use setTimeout to ensure the section is visible before scrolling
+                    setTimeout(() => {
+                        const targetElement = document.getElementById(anchorId.substring(1)); // Remove '#'
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 100); // Small delay
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top of service details
+                }
             }
 
-            // Event listener for "Home" in navigation
-            if (navHome) {
-                navHome.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showMainContent();
-                });
-            }
+            // Navigation: Home link
+            navHome.addEventListener('click', function(e) {
+                e.preventDefault();
+                showMainContent();
+            });
 
-            // Event listener for "Services" in navigation
-            if (navServices) {
-                navServices.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showServiceDetails();
-                });
-            }
+            footerNavHome.addEventListener('click', function(e) {
+                e.preventDefault();
+                showMainContent();
+            });
 
-            // Event listeners for service cards to show specific details
-            document.querySelectorAll('#services-section a').forEach(card => {
+            // Navigation: Services link
+            navServices.addEventListener('click', function(e) {
+                e.preventDefault();
+                showServiceDetails();
+            });
+
+            footerNavServices.addEventListener('click', function(e) {
+                e.preventDefault();
+                showServiceDetails();
+            });
+
+            // Navigation: Service Cards (click to show details)
+            serviceCards.forEach(card => {
                 card.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    // Get the target section ID from the href
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-
-                    if (targetSection) {
-                        // First, hide all detail sections
-                        document.querySelectorAll('#services-details-page > div').forEach(detailSection => {
-                            detailSection.classList.add('hidden-section');
-                        });
-
-                        // Then, show the specific detail section
-                        targetSection.classList.remove('hidden-section');
-                        showServiceDetails(); // Ensure the details page is visible
-                        // Scroll to the specific detail section
-                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Prevent default anchor behavior if it's just a hash link
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        showServiceDetails(this.getAttribute('href'));
                     }
+                    // If it's a full URL, let the default behavior happen or handle as needed
                 });
             });
 
-            // Handle initial page load to show main content
-            showMainContent();
+            // Form submission handler
+            quoteForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent actual form submission
+
+                // Display success message
+                successMessage.classList.remove('hidden');
+
+                // Optionally, clear the form after a short delay
+                setTimeout(() => {
+                    quoteForm.reset(); // Resets all form fields
+                    successMessage.classList.add('hidden'); // Hide message after a few seconds
+                }, 5000); // Hide after 5 seconds
+            });
+
+            // Handle initial load based on URL hash if any
+            if (window.location.hash.startsWith('#') && document.getElementById(window.location.hash.substring(1))) {
+                const targetId = window.location.hash.substring(1);
+                // Check if the target is a service detail section
+                const serviceDetailSections = ['cleaning-details', 'lawn-mowing-details', 'plastering-painting-details', 'gutter-cleaning-details', 'rubbish-removal-details', 'house-moving-details', 'plumbing-details', 'house-washing-details']; // Re-added 'rubbish-removal-details'
+                if (serviceDetailSections.includes(targetId)) {
+                    showServiceDetails(window.location.hash);
+                } else if (targetId === 'contact-form-section') {
+                    showMainContent(); // Ensure main content is visible for contact form
+                    setTimeout(() => {
+                        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                } else {
+                    showMainContent(); // Default to main content on first load
+                }
+            } else {
+                showMainContent(); // Default to main content on first load
+            }
         });
     </script>
 </body>
