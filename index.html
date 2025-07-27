@@ -8,11 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* New Color Palette:
-           #da2c38 (Red/Burgundy)
-           #226f54 (Dark Green)
-           #87c38f (Light Green)
-           #f4f0bb (Light Yellow/Cream)
-           #43291f (Dark Brown)
+            #da2c38 (Red/Burgundy)
+            #226f54 (Dark Green)
+            #87c38f (Light Green)
+            #f4f0bb (Light Yellow/Cream)
+            #43291f (Dark Brown)
         */
         body {
             font-family: 'Inter', sans-serif;
@@ -247,7 +247,8 @@
             <!-- Cleaning Details -->
             <div id="cleaning-details" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-5xl mx-auto">
                 <h3 class="text-3xl font-bold text-[#226f54] mb-6 text-center">Sparkling Cleaning: Reclaim Your Sanctuary</h3>
-                <img src="https://placehold.co/600x350/87c38f/43291f/png?text=Professional%20Cleaning" alt="Professional Cleaning Service" class="w-full h-auto rounded-lg mb-8">
+                <!-- Image for cleaning service, updated with the new link -->
+                <img src="https://i.ibb.co/TDJ5H3b5/Gemini-Generated-Image-g74snxg74snxg74s-1.png" alt="Professional Cleaning Service" class="w-full h-auto rounded-lg mb-8" onerror="this.onerror=null;this.src='https://placehold.co/600x350/87c38f/43291f/png?text=Image%20Not%20Loaded';">
                 <p class="text-lg text-[#43291f] mb-4">
                     Imagine walking into a home that sparkles, where every surface gleams and the air feels fresh and pure. Our professional cleaning service isn't just about tidiness; it's about creating an environment that calms your mind and lifts your spirit. We meticulously clean every nook and cranny, from deep scrubbing kitchens and bathrooms to dusting forgotten corners.
                 </p>
@@ -400,7 +401,7 @@
                     <input type="date" id="date" name="date" class="form-input" required>
                 </div>
                 <div>
-                    <label for="time" class="form-label">Preferred Time</slabel>
+                    <label for="time" class="form-label">Preferred Time</label>
                     <input type="time" id="time" name="time" class="form-input" required>
                     </div>
                 </div>
@@ -412,175 +413,151 @@
                         <span class="ml-2">Cleaning</span>
                     </label>
                     <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="lawn_mowing" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
-                        <span class="ml-2">Lawn Mowing</span>
+                        <input type="checkbox" name="services" value="lawn-mowing-gardening" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                        <span class="ml-2">Lawn Mowing & Gardening</span>
                     </label>
                     <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="gardening" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
-                        <span class="ml-2">Gardening</span>
-                    </label>
-                    <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="plastering_painting" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                        <input type="checkbox" name="services" value="plastering-painting" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
                         <span class="ml-2">Plastering & Painting</span>
                     </label>
                     <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="gutter_cleaning" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                        <input type="checkbox" name="services" value="gutter-cleaning" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
                         <span class="ml-2">Gutter Cleaning</span>
                     </label>
                     <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="rubbish_removal" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                        <input type="checkbox" name="services" value="rubbish-removal" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
                         <span class="ml-2">Rubbish Removal</span>
                     </label>
                     <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="house_moving" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                        <input type="checkbox" name="services" value="house-moving" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
                         <span class="ml-2">House Moving</span>
                     </label>
                     <label class="inline-flex items-center">
                         <input type="checkbox" name="services" value="plumbing" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
-                        <span class="ml-2">Plumbing</span>
+                        <span class="ml-2">Plumbing Services</span>
                     </label>
                     <label class="inline-flex items-center">
-                        <input type="checkbox" name="services" value="house_washing" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
+                        <input type="checkbox" name="services" value="house-washing" class="form-checkbox h-5 w-5 text-[#226f54] rounded">
                         <span class="ml-2">House Washing</span>
                     </label>
                 </div>
             </div>
             <div>
-                <label for="note" class="form-label">Additional Notes</label>
-                <textarea id="note" name="note" rows="12" class="form-input leading-relaxed" placeholder="Any specific details or requests?"></textarea>
+                <label for="message" class="form-label">Tell us more about your needs:</label>
+                <textarea id="message" name="message" rows="4" class="form-input" placeholder="e.g., I need a deep clean for a 3-bedroom house and weekly lawn mowing."></textarea>
             </div>
-            <button type="submit" class="bg-[#da2c38] text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-[#c02a35] transition duration-300 ease-in-out transform hover:scale-105">
-                    Submit Request
-                </button>
-            </form>
+            <button type="submit" class="bg-[#da2c38] text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-[#c02a35] transform hover:scale-105">
+                Submit Request
+            </button>
+        </form>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="footer-bg py-12 mt-auto">
-        <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <!-- Contact Us -->
+    <!-- Footer -->
+    <footer class="footer-bg py-12 px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Company Info -->
             <div>
-                <h4 class="footer-heading text-xl mb-4">CONTACT US</h4>
-                <p class="footer-contact-info flex items-center justify-center md:justify-start mb-2">
-                    <span class="mr-2">📞</span> 027 270 1271
-                </p>
-                <p class="footer-contact-info flex items-center justify-center md:justify-start mb-4">
-                    <span class="mr-2">✉️</span> info@everestpropertycare.com
-                </p>
-                <a href="#contact-form-section" class="footer-button inline-block">Request a Free Quote</a>
+                <h4 class="footer-heading">Everest Property Care</h4>
+                <p class="text-sm mb-4">Transforming properties and elevating lives through meticulous care and dedicated service.</p>
+                <a href="#contact-form-section" class="footer-button">Get a Free Quote</a>
             </div>
 
             <!-- Quick Links -->
             <div>
-                <h4 class="footer-heading text-xl mb-4">QUICK LINKS</h4>
-                <ul>
-                    <li class="mb-2"><a href="#" id="footer-nav-home" class="footer-link">Home</a></li>
-                    <li class="mb-2"><a href="#" id="footer-nav-services" class="footer-link">Services</a></li>
-                    <li class="mb-2"><a href="#" class="footer-link">About Us</a></li>
-                    <li class="mb-2"><a href="#contact-form-section" class="footer-link">Contact</a></li>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="footer-link">Home</a></li>
+                    <li><a href="#services-section" class="footer-link">Services</a></li>
+                    <li><a href="#" class="footer-link">About Us</a></li>
+                    <li><a href="#contact-form-section" class="footer-link">Contact</a></li>
                 </ul>
             </div>
 
-            <!-- Connect With Us -->
+            <!-- Contact Info -->
             <div>
-                <h4 class="footer-heading text-xl mb-4">CONNECT WITH US</h4>
-                <p class="footer-contact-info">Your Property. Our Priority.</p>
-                <!-- Social media icons can go here -->
+                <h4 class="footer-heading">Contact Us</h4>
+                <p class="footer-contact-info">Email: info@everestpropertycare.com</p>
+                <p class="footer-contact-info">Phone: +64 21 123 4567</p>
+                <p class="footer-contact-info">Address: Auckland, New Zealand</p>
+                <div class="flex justify-center md:justify-start space-x-4 mt-4">
+                    <!-- Social Media Icons (Placeholders) -->
+                    <a href="#" class="text-2xl footer-link hover:text-white">FB</a>
+                    <a href="#" class="text-2xl footer-link hover:text-white">IG</a>
+                    <a href="#" class="text-2xl footer-link hover:text-white">LI</a>
+                </div>
             </div>
         </div>
-        <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-sm">
-            © 2025 Everest Property Care. All Rights Reserved.
+        <div class="border-t border-[#87c38f] mt-8 pt-8 text-center text-sm opacity-80">
+            &copy; 2025 Everest Property Care. All rights reserved.
         </div>
     </footer>
 
     <script>
+        // JavaScript for navigation and showing/hiding sections
         document.addEventListener('DOMContentLoaded', function() {
             const mainContentArea = document.getElementById('main-content-area');
             const servicesDetailsPage = document.getElementById('services-details-page');
-
             const navHome = document.getElementById('nav-home');
             const navServices = document.getElementById('nav-services');
-            const footerNavHome = document.getElementById('footer-nav-home');
-            const footerNavServices = document.getElementById('footer-nav-services');
 
-            // Function to show the homepage content
-            function showHomePage() {
-                mainContentArea.classList.remove('hidden-section');
-                servicesDetailsPage.classList.add('hidden-section');
-                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+            // Function to show main content and hide service details
+            function showMainContent() {
+                mainContentArea.style.display = 'block';
+                servicesDetailsPage.style.display = 'none';
+                // Scroll to the top or hero section if desired
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // Function to show the services details page
-            function showServicesPage() {
-                mainContentArea.classList.add('hidden-section');
-                servicesDetailsPage.classList.remove('hidden-section');
-                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+            // Function to show service details and hide main content
+            function showServiceDetails() {
+                mainContentArea.style.display = 'none';
+                servicesDetailsPage.style.display = 'block';
+                // Scroll to the top of the service details page
+                window.scrollTo({ top: servicesDetailsPage.offsetTop, behavior: 'smooth' });
             }
 
-            // Event Listeners for navigation links
+            // Event listener for "Home" in navigation
             if (navHome) {
                 navHome.addEventListener('click', function(e) {
                     e.preventDefault();
-                    showHomePage();
+                    showMainContent();
                 });
             }
+
+            // Event listener for "Services" in navigation
             if (navServices) {
                 navServices.addEventListener('click', function(e) {
                     e.preventDefault();
-                    showServicesPage();
-                });
-            }
-            if (footerNavHome) {
-                footerNavHome.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showHomePage();
-                });
-            }
-            if (footerNavServices) {
-                footerNavServices.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showServicesPage();
+                    showServiceDetails();
                 });
             }
 
-            // Handle clicks on service cards to jump to specific details on the services page
-            document.querySelectorAll('#services-section a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId.startsWith('#')) {
-                        e.preventDefault();
-                        showServicesPage(); // First, switch to the services page
-                        // Then, scroll to the specific detail section after a short delay
-                        setTimeout(() => {
-                            const targetElement = document.querySelector(targetId);
-                            if (targetElement) {
-                                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                            }
-                        }, 100); // Small delay to allow display change
+            // Event listeners for service cards to show specific details
+            document.querySelectorAll('#services-section a').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Get the target section ID from the href
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        // First, hide all detail sections
+                        document.querySelectorAll('#services-details-page > div').forEach(detailSection => {
+                            detailSection.classList.add('hidden-section');
+                        });
+
+                        // Then, show the specific detail section
+                        targetSection.classList.remove('hidden-section');
+                        showServiceDetails(); // Ensure the details page is visible
+                        // Scroll to the specific detail section
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             });
 
-            // Handle direct links to contact form (always visible, just scroll)
-            document.querySelectorAll('a[href="#contact-form-section"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    // Ensure main content is visible if navigating from services details to contact form
-                    if (servicesDetailsPage.classList.contains('hidden-section')) {
-                         mainContentArea.classList.remove('hidden-section');
-                    }
-                    servicesDetailsPage.classList.add('hidden-section'); // Hide services details if they were open
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Initial state: show homepage, hide services page
-            showHomePage();
+            // Handle initial page load to show main content
+            showMainContent();
         });
     </script>
-
 </body>
 </html>
