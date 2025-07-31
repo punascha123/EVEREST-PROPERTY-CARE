@@ -111,7 +111,7 @@
         <nav class="container mx-auto flex justify-between items-center">
             <a href="#" class="flex flex-col items-center space-y-1">
                 <!-- Company Logo -->
-                <img src="https://i.ibb.co/N2RkK0Wp/IMG-8147.jpg" alt="EVEREST PROPERTY CARE Logo" class="h-48 md:h-56 w-auto">
+                <img src="https://i.ibb.co/N2RkK0Wp/IMG-8147.jpg" alt="EVEREST PROPERTY CARE Logo" class="h-64 md:h-72 w-auto">
                 <!-- Slogan - in italic font -->
                 <span class="text-xl italic text-[#212121]" style="font-family: 'Dancing Script', cursive;">You take rest and we make best</span>
             </a>
@@ -350,7 +350,7 @@
             <div id="gutter-cleaning-details" class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16 max-w-5xl mx-auto">
                 <h3 class="text-3xl font-bold text-[#004D40] mb-6 text-center">Clear Gutters, Clear Mind: Protecting Your Home</h3>
                 <div class="service-detail-content reverse">
-                    <img src="https://i.ibb.co/8D0qvq37/Gemini-Generated-Image-d35iyad35iyad35i.png" alt="Gutter Cleaning Service" class="w-full md:w-1/2 h-auto rounded-lg mb-8 md:mb-0" onerror="this.onerror=null;this.src='https://placehold.co/600x350/80CBC4/212121/png?text=Gutter%20Cleaning';">
+                    <img src="https://i.ibb.co/8D0qvq37/Gemini-Generated-Image-d35iyad35iyad35i.png" alt="Crystal-Clear Gutter Cleaning Service" class="w-full md:w-1/2 h-auto rounded-lg mb-8 md:mb-0" onerror="this.onerror=null;this.src='https://placehold.co/600x350/80CBC4/212121/png?text=Gutter%20Cleaning';">
                     <div>
                         <p class="text-lg text-[#212121] mb-4">
                             Protecting your home from water damage starts with clear, functional gutters. Our thorough gutter cleaning service ensures rainwater is diverted effectively, preventing costly issues like foundation damage, leaky roofs, and unsightly mildew. We safely remove leaves, debris, and blockages, leaving your gutters pristine.
@@ -454,6 +454,7 @@
             Tell us about your property maintenance needs, and we'll get back to you with a personalized quote.
         </p>
 
+        <!-- Formspree Integration: The action attribute now points to your specific Formspree endpoint. -->
         <form id="quote-form" action="https://formspree.io/f/mwpqqneo" method="POST" class="grid grid-cols-1 gap-6">
             <div>
                 <label for="fullName" class="form-label">Full Name</label>
@@ -517,7 +518,7 @@
             <button type="submit" class="bg-[#004D40] text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#00332b]">
                 Submit Request
             </button>
-            <!-- Success message display area -->
+            <!-- Success message display area - Formspree will handle redirection, so this might not be needed for simple setups -->
             <div id="success-message" class="hidden mt-4 p-4 rounded-lg bg-green-100 text-green-800 text-center font-semibold">
                 Thank you for your inquiry! We have received your request and will get back to you shortly.
             </div>
@@ -550,7 +551,7 @@
             <div>
                 <h3 class="footer-heading">Contact Us</h3>
                 <p class="text-sm footer-contact-info">
-                    Email: info@everestpropertycare.com<br>
+                    Email: info@everestpropertycare.co.nz<br>
                     Phone: +64 27 270 1271<br>
                     Address: Auckland, New Zealand
                 </p>
@@ -573,8 +574,10 @@
             const footerNavHome = document.getElementById('footer-nav-home');
             const footerNavServices = document.getElementById('footer-nav-services');
             const serviceCards = document.querySelectorAll('.service-card');
-            const quoteForm = document.getElementById('quote-form');
-            const successMessage = document.getElementById('success-message');
+            // The success message div is still in the HTML, but the JavaScript to show/hide it is commented out.
+            // This is because Formspree handles the success feedback by default (usually a redirect).
+            // If you want a custom in-page success message without redirect, you'd need to implement Formspree's AJAX submission.
+            // const successMessage = document.getElementById('success-message');
 
             // Function to show main content and hide service details
             function showMainContent() {
@@ -634,7 +637,11 @@
                 });
             });
 
-            // Form submission handler
+            // The original JavaScript for handling form submission and showing a local success message
+            // has been commented out because Formspree handles the submission directly.
+            // If you want a custom in-page success message without redirect, you'd need to use
+            // Formspree's AJAX submission method (which is a bit more advanced).
+            /*
             quoteForm.addEventListener('submit', function(e) {
                 e.preventDefault(); // Prevent actual form submission
 
@@ -647,6 +654,7 @@
                     successMessage.classList.add('hidden'); // Hide message after a few seconds
                 }, 5000); // Hide after 5 seconds
             });
+            */
 
             // Handle initial load based on URL hash if any
             if (window.location.hash.startsWith('#') && document.getElementById(window.location.hash.substring(1))) {
