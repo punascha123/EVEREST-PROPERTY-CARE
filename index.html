@@ -350,37 +350,65 @@
                 </p>
             </section>
 
-            <!-- Testimonials Section -->
-            <section id="testimonials-section" class="py-16 bg-[#F5F5F5] rounded-lg shadow-inner">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-12">What Our Clients Say</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-                    <!-- Testimonial 1: Byron - Gardening -->
-                    <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                        <p class="text-lg text-gray-700 mb-4 italic">"EVEREST PROPERTY CARE transformed my overgrown garden. Team was meticulous, making my backyard enjoyable again. Huge weight off my shoulders!"</p>
-                        <p class="font-semibold text-[#212121]">- Byron</p>
+            <section id="testimonials-section" class="py-16 bg-[#004D40] rounded-3xl shadow-2xl max-w-6xl mx-auto my-12 p-6 md:p-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+        What Our Clients Say About Everest Property Care
+    </h2>
+    
+    <div class="relative overflow-hidden">
+        <div id="testimonial-carousel" class="flex no-scrollbar snap-x snap-mandatory scroll-smooth pb-4 space-x-6 px-4">
+
+            <!-- Testimonial 1: Byron - Gardening -->
+            <div class="min-w-[95%] sm:min-w-[45%] lg:min-w-[30%] snap-center"
+                 itemscope itemtype="https://schema.org/Review">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transform transition duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center text-center">
+                    <i class="fas fa-quote-left text-4xl text-blue-600 mb-4"></i>
+                    <p class="text-lg text-gray-700 mb-4 italic" itemprop="reviewBody">
+                        "Everest Property Care transformed my overgrown garden in Henderson. Their professional lawn mowing and gardening service made my backyard beautiful again — reliable, efficient, and stress-free!"
+                    </p>
+                    <div class="flex items-center mb-2 text-yellow-500">
+                        <i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
                     </div>
-                    <!-- Testimonial 2: Avinesh - Cleaning -->
-                    <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                        <p class="text-lg text-gray-700 mb-4 italic">"binod's team did an incredible deep clean of my apartment. Spotless and fresh, it made my weekend so much more relaxing."</p>
-                        <p class="font-semibold text-[#212121]">- Avinesh</p>
-                    </div>
-                    <!-- Testimonial 3: Chris - House Moving -->
-                    <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                        <p class="text-lg text-gray-700 mb-4 italic"> Made my move surprisingly smooth. They were careful and efficient. Couldn't have done it without them!"</p>
-                        <p class="font-semibold text-[#212121]">- Chris</p>
-                    </div>
-                    <!-- Testimonial 4: Uday - Plastering & Painting -->
-                    <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                        <p class="text-lg text-gray-700 mb-4 italic"> Painting and plastering work was exceptional. My walls look brand new and flawless. It completely changed the feel of the room – so happy!"</p>
-                        <p class="font-semibold text-[#212121]">- Uday</p>
-                    </div>
-                    <!-- Testimonial 5: Penee - Rubbish Removal -->
-                    <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                        <p class="text-lg text-gray-700 mb-4 italic">"these guys handled my garage rubbish removal quickly and without fuss. Professional and left the area spotless. Fantastic service!"</p>
-                        <p class="font-semibold text-[#212121]">- Penee</p>
+                    <p class="font-semibold text-gray-800" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        - <span itemprop="name">Byron</span>
+                    </p>
+                    <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
                     </div>
                 </div>
-            </section>
+            </div>
+
+            <!-- Testimonial 2: Avinesh - Cleaning -->
+            <div class="min-w-[95%] sm:min-w-[45%] lg:min-w-[30%] snap-center"
+                 itemscope itemtype="https://schema.org/Review">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transform transition duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center text-center">
+                    <i class="fas fa-quote-left text-4xl text-blue-600 mb-4"></i>
+                    <p class="text-lg text-gray-700 mb-4 italic" itemprop="reviewBody">
+                        "The Everest Property Care team did an exceptional deep cleaning of my Te Atatū apartment. Everything was spotless and hygienic, perfect for families and busy professionals. Highly recommend their cleaning services!"
+                    </p>
+                    <div class="flex items-center mb-2 text-yellow-500">
+                        <i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i><i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                    <p class="font-semibold text-gray-800" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        - <span itemprop="name">Avinesh</span>
+                    </p>
+                    <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3: Chris - Move Out / Bond Clean -->
+            <div class="min-w-[95%] sm:min-w-[45%] lg:min-w-[30%] snap-center"
+                 itemscope itemtype="https://schema.org/Review">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transform transition duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center text-center">
+                    <i class="fas fa-quote-left text-4xl text-blue-600 mb-4"></i>
+                    <p class="text-lg text-gray-700 mb-4 italic" itemprop="reviewBody">
+                        "Everest Property Care made our move from Massey stress-free with a complete bond clean. The team was thorough, professional, and fast — highly recommended for exit cleans
 
         </main>
     </div> <!-- End of main-content-area -->
