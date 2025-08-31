@@ -425,88 +425,68 @@
                 </div>
             </section>
 
-            <!-- Contact Form Section - New Design -->
-            <section id="contact-form-section" class="bg-white p-8 md:p-16 rounded-xl shadow-2xl max-w-4xl mx-auto my-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-4">Get Your Free Quote</h2>
-                <p class="text-lg text-[#212121] text-center mb-8">
-                    Ready to transform your property? Fill out the form below, and we'll get back to you with a free, no-obligation quote.
-                </p>
-                <!-- Form with an updated, cleaner layout -->
-                <form id="https://formspree.io/f/mwpqqneo" method="post">
-                    <div>
-                        <label for="name" class="form-label">Full Name</label>
-                        <input type="text" id="name" name="name" required class="form-input">
-                    </div>
-                    <div>
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" id="email" name="email" required class="form-input">
-                    </div>
-                    <div>
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required class="form-input">
-                    </div>
-                    <!-- New checkboxes for multiple service selection -->
-                    <div>
-                        <label class="form-label">Choose Services (Select all that apply)</label>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
-                            <label class="flex items-center space-x-2 text-gray-700">
-                                <input type="checkbox" name="services" value="Sparkling Cleaning" class="rounded-md border-gray-300 text-[#004D40] focus:ring-[#80CBC4]">
-                                <span>Sparkling Cleaning</span>
-                            </label>
-                            <label class="flex items-center space-x-2 text-gray-700">
-                                <input type="checkbox" name="services" value="Lush Lawn Mowing & Gardening" class="rounded-md border-gray-300 text-[#004D40] focus:ring-[#80CBC4]">
-                                <span>Lush Lawn Mowing & Gardening</span>
-                            </label>
-                            <label class="flex items-center space-x-2 text-gray-700">
-                                <input type="checkbox" name="services" value="Seamless Plastering & Painting" class="rounded-md border-gray-300 text-[#004D40] focus:ring-[#80CBC4]">
-                                <span>Seamless Plastering & Painting</span>
-                            </label>
-                            <label class="flex items-center space-x-2 text-gray-700">
-                                <input type="checkbox" name="services" value="Crystal-Clear Gutter Cleaning" class="rounded-md border-gray-300 text-[#004D40] focus:ring-[#80CBC4]">
-                                <span>Crystal-Clear Gutter Cleaning</span>
-                            </label>
-                            <label class="flex items-center space-x-2 text-gray-700">
-                                <input type="checkbox" name="services" value="Stress-Free Rubbish Removal" class="rounded-md border-gray-300 text-[#004D40] focus:ring-[#80CBC4]">
-                                <span>Stress-Free Rubbish Removal</span>
-                            </label>
-                            <label class="flex items-center space-x-2 text-gray-700">
-                                <input type="checkbox" name="services" value="Effortless House Moving" class="rounded-md border-gray-300 text-[#004D40] focus:ring-[#80CBC4]">
-                                <span>Effortless House Moving</span>
-                            </label>
-                            <label class="flex items-center space-x-2 text-gray-700">
-                                <input type="checkbox" name="services" value="Reliable Plumbing Services" class="rounded-md border-gray-300 text-[#004D40] focus:ring-[#80CBC4]">
-                                <span>Reliable Plumbing Services</span>
-                            </label>
-                            <label class="flex items-center space-x-2 text-gray-700">
-                                <input type="checkbox" name="services" value="Sparkling House Washing" class="rounded-md border-gray-300 text-[#004D40] focus:ring-[#80CBC4]">
-                                <span>Sparkling House Washing</span>
-                            </label>
-                        </div>
-                    </div>
-                    <!-- Service and Date/Time fields in a responsive grid -->
-                    <div class="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-6">
-                        <div>
-                            <label for="date" class="form-label">Preferred Date</label>
-                            <input type="date" id="date" name="date" required class="form-input">
-                        </div>
-                        <div>
-                            <label for="time" class="form-label">Preferred Time</label>
-                            <input type="time" id="time" name="time" required class="form-input">
-                        </div>
-                    </div>
-                    <div>
-                        <label for="message" class="form-label">Please provide details for the selected services.</label>
-                        <textarea id="message" name="message" rows="5" required class="form-input"></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="bg-[#FFB300] text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-[#e6a200] transform hover:scale-105">
-                            Request Quote
-                        </button>
-                    </div>
-                </form>
-            </section>
-        </main>
-    </div>
+        <!-- Contact Form Section - New Design -->
+<section id="contact-form-section" class="bg-white p-8 md:p-16 rounded-xl shadow-2xl max-w-4xl mx-auto my-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-4">Get Your Free Quote</h2>
+    <p class="text-lg text-[#212121] text-center mb-8">
+        Ready to transform your property? Fill out the form below, and we'll get back to you with a free, no-obligation quote.
+    </p>
+
+    <!-- FIXED: Using action instead of id -->
+    <form action="https://formspree.io/f/mwpqqneo" method="POST" class="space-y-6">
+        <div>
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" required class="form-input">
+        </div>
+        <div>
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" required class="form-input">
+        </div>
+        <div>
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required class="form-input">
+        </div>
+
+        <!-- Multiple service selection -->
+        <div>
+            <label class="form-label">Choose Services (Select all that apply)</label>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="Sparkling Cleaning"> <span>Sparkling Cleaning</span></label>
+                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="Lawn Mowing & Gardening"> <span>Lawn Mowing & Gardening</span></label>
+                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="Plastering & Painting"> <span>Plastering & Painting</span></label>
+                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="Gutter Cleaning"> <span>Gutter Cleaning</span></label>
+                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="Rubbish Removal"> <span>Rubbish Removal</span></label>
+                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="House Moving"> <span>House Moving</span></label>
+                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="Plumbing"> <span>Plumbing</span></label>
+                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="House Washing"> <span>House Washing</span></label>
+            </div>
+        </div>
+
+        <!-- Date & Time -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <label for="date" class="form-label">Preferred Date</label>
+                <input type="date" id="date" name="date" class="form-input">
+            </div>
+            <div>
+                <label for="time" class="form-label">Preferred Time</label>
+                <input type="time" id="time" name="time" class="form-input">
+            </div>
+        </div>
+
+        <div>
+            <label for="message" class="form-label">Additional Details</label>
+            <textarea id="message" name="message" rows="5" class="form-input" placeholder="Tell us more about your property or service needs..."></textarea>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="bg-[#FFB300] text-white font-bold py-3 px-10 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-[#e6a200] transform hover:scale-105">
+                Request Quote
+            </button>
+        </div>
+    </form>
+</section>
+
 
     <!-- Confirmation Modal -->
     <div id="overlay" class="overlay"></div>
