@@ -542,3 +542,29 @@
     </footer>
 </body>
 </html>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // --- Map setup ---
+        const map = L.map('map', {
+            center: [-36.8811, 174.6312], // Centered on Henderson, West Auckland
+            zoom: 12, // Zoom level to show the local area
+            minZoom: 4,
+            maxZoom: 18,
+            worldCopyJump: true,
+            zoomControl: true, // We will use the default one
+        });
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add a marker for Henderson
+        L.marker([-36.8811, 174.6312]).addTo(map)
+            .bindPopup('Everest Property Care<br>Serving West Auckland from Henderson').openPopup();
+
+    </script>
+</body>
+</html>
