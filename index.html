@@ -134,6 +134,11 @@
             cursor: pointer;
             color: #ccc;
         }
+        .service-list ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -141,23 +146,23 @@
     <!-- Header/Navigation -->
     <header class="bg-[#FFFFFF] shadow-md py-4 px-6 md:px-12">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="#" class="flex flex-col items-center space-y-1">
+            <a href="#" onclick="showSection('main-content')" class="flex flex-col items-center space-y-1">
                 <!-- Company Logo -->
                 <img src="https://i.ibb.co/N2RkK0Wp/IMG-8147.jpg" alt="EVEREST PROPERTY CARE Logo" class="h-64 md:h-72 w-auto">
                 <!-- Slogan - in italic font -->
                 <span class="text-xl italic text-[#212121]" style="font-family: 'Dancing Script', cursive;">You take your rest; we'll make it the best</span>
             </a>
             <div class="hidden md:block">
-                <a href="#hero" id="nav-home" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Home</a>
-                <a href="#services-section" id="nav-services" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Services</a>
-                <a href="#why-choose-us" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">About Us</a>
-                <a href="#contact-form-section" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Contact</a>
+                <a href="#main-content" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Home</a>
+                <a href="#" onclick="showAllServicesPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Services</a>
+                <a href="#why-choose-us" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">About Us</a>
+                <a href="#contact-form-section" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Contact</a>
             </div>
         </nav>
     </header>
 
-    <!-- Main Content Area -->
-    <div id="main-content-area" class="flex-grow">
+    <!-- Main Content Area (Home Page) -->
+    <div id="main-content" class="flex-grow">
         <!-- Hero Section -->
         <section id="hero" class="bg-gradient-to-r from-[#004D40] to-[#80CBC4] text-white py-20 px-6 text-center rounded-b-lg shadow-lg">
             <div class="container mx-auto max-w-4xl">
@@ -191,9 +196,9 @@
                 </h3>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service Card 1: Sparkling Cleaning -->
-                    <a href="#cleaning-details" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
-                        <img src=<a href="https://ibb.co/fYMzLGVX"><img src="https://i.ibb.co/7JvdLNxS/Deep-cleaning-min.png"alt="Sparkling Cleaning Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/80CBC4/212121/png?text=Sparkling%20Cleaning';">
+                     <!-- Service Card 1: Sparkling Cleaning -->
+                    <a href="#services-section" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                        <img src="https://i.ibb.co/7JvdLNxS/Deep-cleaning-min.png" alt="Sparkling Cleaning Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/80CBC4/212121/png?text=Sparkling%20Cleaning';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-blue-500 mb-4">✨</div>
                             <h4 class="text-xl font-semibold mb-3 text-[#212121]">Sparkling Cleaning</h4>
@@ -202,7 +207,7 @@
                     </a>
 
                     <!-- Service Card 2: Lush Lawn Mowing & Gardening -->
-                    <a href="#lawn-mowing-details" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                    <a href="#services-section" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
                         <img src="https://i.ibb.co/gbS17bVF/lawn-mowing-pictures.png" alt="Lush Lawn Mowing Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/004D40/FFFFFF/png?text=Lush%20Lawn%20Mowing';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-green-500 mb-4">🌳</div>
@@ -212,8 +217,8 @@
                     </a>
 
                     <!-- Service Card 3: Seamless Plastering & Painting -->
-                    <a href="#plastering-painting-details" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
-                        <img src=<a href="https://ibb.co/gb7g5pQ0"><img src="https://i.ibb.co/p6PXt8NH/Plastering.png"  alt="Seamless Plastering and Painting Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/FFB300/FFFFFF/png?text=Flawless%20Plastering';">
+                    <a href="#services-section" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                        <img src="https://i.ibb.co/p6PXt8NH/Plastering.png" alt="Seamless Plastering and Painting Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/FFB300/FFFFFF/png?text=Flawless%20Plastering';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-yellow-500 mb-4">🎨</div>
                             <h4 class="text-xl font-semibold mb-3 text-[#212121]">Seamless Plastering & Painting</h4>
@@ -222,18 +227,18 @@
                     </a>
 
                     <!-- Service Card 4: Crystal-Clear Gutter Cleaning -->
-                    <a href="#gutter-cleaning-details" class="service-card bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                    <a href="#services-section" class="service-card bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
                         <!-- Added image to the gutter cleaning service card -->
                         <img src="https://i.ibb.co/x8Scgh2P/gutter-cleaning.png" alt="Crystal-Clear Gutter Cleaning Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/80CBC4/212121/png?text=Gutter%20Cleaning';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-gray-500 mb-4">💧</div>
                             <h4 class="text-xl font-semibold mb-3 text-[#212121]">Crystal-Clear Gutter Cleaning</h4>
-                            <p class="text-[#212121]">Protect your home and enhance its curb appeal with perfectly clear gutters.</p>
+                            <p class="text-[#212121]">Protect your home from water damage with our thorough gutter cleaning service. This is an essential part of regular property maintenance.</p>
                         </div>
                     </a>
 
                     <!-- Service Card 5: Stress-Free Rubbish Removal -->
-                    <a href="#rubbish-removal-details" class="service-card bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                    <a href="#services-section" class="service-card bg-white rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
                         <img src="https://i.ibb.co/QF0HkJwH/rubbish-removal.png" alt="Stress-Free Rubbish Removal Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/FFB300/FFFFFF/png?text=Rubbish%20Removal';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-red-500 mb-4">🗑️</div>
@@ -243,7 +248,7 @@
                     </a>
 
                     <!-- Service Card 6: Effortless House Moving -->
-                    <a href="#house-moving-details" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                    <a href="#services-section" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
                         <img src="https://i.ibb.co/dn6Qxqq/House-Moving.png" alt="Effortless House Moving Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/212121/F5F5F5/png?text=Effortless%20Moving';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-purple-500 mb-4">🚚</div>
@@ -253,7 +258,7 @@
                     </a>
 
                     <!-- Service Card 7: Plumbing Services -->
-                    <a href="#plumbing-details" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                    <a href="#services-section" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
                         <img src="https://i.ibb.co/YF7jJxGd/Plumbing.png" alt="Reliable Plumbing Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/004D40/FFFFFF/png?text=Reliable%20Plumbing';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-blue-700 mb-4">🛠️</div>
@@ -263,7 +268,7 @@
                     </a>
 
                     <!-- New Service Card: Sparkling House Washing -->
-                    <a href="#house-washing-details" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
+                    <a href="#services-section" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
                         <img src="https://i.ibb.co/N6FX21mj/House-washing.png" alt="Sparkling House Washing Service" class="w-full h-auto rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x250/80CBC4/212121/png?text=Sparkling%20House%20Wash';">
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-teal-500 mb-4">🏠💧</div>
@@ -432,7 +437,7 @@
                     Ready to transform your property? Fill out the form below, and we'll get back to you with a free, no-obligation quote.
                 </p>
 
-                <form action="https://formspree.io/f/mwpqqneo" method="POST" class="space-y-6">
+                <form id="quote-form" class="space-y-6">
                     <!-- Box for Personal Information -->
                     <div class="bg-gray-100 p-6 rounded-lg shadow-inner border border-gray-200 space-y-4">
                         <div>
@@ -447,8 +452,12 @@
                             <label for="phone" class="form-label">Phone Number</label>
                             <input type="tel" id="phone" name="phone" required class="form-input">
                         </div>
+                        <div>
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" id="address" name="address" required class="form-input">
+                        </div>
                     </div>
-                    
+                   
                     <!-- Box for Preferred Date and Time -->
                     <div class="bg-gray-100 p-6 rounded-lg shadow-inner border border-gray-200 space-y-4">
                         <div>
@@ -457,35 +466,53 @@
                         </div>
                         <div>
                             <label for="time" class="form-label">Preferred Time</label>
-                            <input type="time" id="time" name="time" required class="form-input">
+                            <input type="time" id="time" name="time" class="form-input">
                         </div>
                     </div>
 
-                    <!-- Box for Services and Message -->
+                    <!-- Box for Service and Message -->
                     <div class="bg-gray-100 p-6 rounded-lg shadow-inner border border-gray-200 space-y-4">
                         <div>
-                            <label class="form-label">Choose Services (Select all that apply)</label>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-2">
-                                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="Sparkling Cleaning"> <span>Sparkling Cleaning</span></label>
-                                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="Lawn Mowing & Gardening"> <span>Lawn Mowing & Gardening</span></label>
-                                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="Plastering & Painting"> <span>Plastering & Painting</span></label>
-                                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="Gutter Cleaning"> <span>Gutter Cleaning</span></label>
-                                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="Rubbish Removal"> <span>Rubbish Removal</span></label>
-                                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="House Moving"> <span>House Moving</span></label>
-                                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="Plumbing Services"> <span>Plumbing Services</span></label>
-                                <label class="flex items-center space-x-2"><input type="checkbox" name="services" value="House Washing"> <span>House Washing</span></label>
+                            <label class="form-label">Service(s) of Interest</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-[#212121]">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Lawn Mowing & Gardening" class="rounded mr-2"> Lawn Mowing & Gardening
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Sparkling Cleaning" class="rounded mr-2"> Sparkling Cleaning
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Plastering & Painting" class="rounded mr-2"> Plastering & Painting
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Gutter Cleaning" class="rounded mr-2"> Gutter Cleaning
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Rubbish Removal" class="rounded mr-2"> Rubbish Removal
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="House Moving" class="rounded mr-2"> House Moving
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Plumbing Services" class="rounded mr-2"> Plumbing Services
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="House Washing" class="rounded mr-2"> House Washing
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Other" class="rounded mr-2"> Other
+                                </label>
                             </div>
                         </div>
-                        
                         <div>
-                            <label for="message" class="form-label">Message</label>
+                            <label for="message" class="form-label">Your Message</label>
                             <textarea id="message" name="message" rows="4" required class="form-input"></textarea>
                         </div>
                     </div>
 
-                    <div class="text-center mt-8">
-                        <button type="submit" class="bg-[#FFB300] text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#e6a200] w-full md:w-auto">
-                            Send Request
+                    <div class="text-center">
+                        <button type="submit" class="bg-[#FFB300] text-white font-bold py-3 px-10 rounded-full shadow-lg transition duration-300 hover:bg-[#e6a200] transform hover:scale-105">
+                            Submit My Request
                         </button>
                     </div>
                 </form>
@@ -493,75 +520,244 @@
         </main>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer-bg py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-                <!-- Services -->
-                <div>
-                    <h5 class="footer-heading">Our Services</h5>
-                    <ul class="space-y-2 text-sm opacity-80">
-                        <li><a href="#services-section" class="footer-link">Lawn Mowing & Gardening</a></li>
-                        <li><a href="#services-section" class="footer-link">Sparkling Cleaning</a></li>
-                        <li><a href="#services-section" class="footer-link">Gutter Cleaning</a></li>
-                        <li><a href="#services-section" class="footer-link">House Washing</a></li>
-                        <li><a href="#services-section" class="footer-link">Plastering & Painting</a></li>
-                        <li><a href="#services-section" class="footer-link">Plumbing Services</a></li>
-                        <li><a href="#services-section" class="footer-link">Rubbish Removal</a></li>
-                    </ul>
-                </div>
-                <!-- Contact Info -->
-                <div>
-                    <h5 class="footer-heading">Contact Us</h5>
-                    <ul class="space-y-2 text-sm opacity-80">
-                        <li class="flex items-center justify-center md:justify-start space-x-2">
-                            <i class="fas fa-phone-alt"></i>
-                            <a href="tel:+64272701271" class="footer-contact-info">0272701271</a>
-                        </li>
-                        <li class="flex items-center justify-center md:justify-start space-x-2">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@everestpropertycare.com" class="footer-contact-info">info@everestpropertycare.com</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Follow Us -->
-                <div>
-                    <h5 class="footer-heading">Follow Us</h5>
-                    <div class="flex justify-center md:justify-start space-x-4 mt-2">
-                        <a href="https://www.facebook.com/EverestPropertyCare" class="text-2xl hover:text-[#80CBC4] transition-colors"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.tiktok.com/@yourprofile" class="text-2xl hover:text-[#80CBC4] transition-colors"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://wa.me/64272701271" class="text-2xl hover:text-[#80CBC4] transition-colors"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                    <a href="#contact-form-section" class="footer-button mt-6 inline-block">Request a Quote</a>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm opacity-70">
-                &copy; 2025 EVEREST PROPERTY CARE. All Rights Reserved.
+    <!-- Detailed Services Section (Initially hidden) -->
+    <div id="detailed-services-section" class="flex-grow hidden-section px-6 py-16">
+        <div class="container mx-auto max-w-5xl">
+            <button onclick="showSection('main-content')" class="bg-[#004D40] text-white px-6 py-2 rounded-full mb-8 hover:bg-[#003B32] transition-colors duration-300">
+                &larr; Back to Home
+            </button>
+            <div id="service-details-content" class="bg-white rounded-lg p-8 md:p-12 shadow-2xl">
+                <!-- Content will be dynamically injected here by JavaScript -->
             </div>
         </div>
+    </div>
+
+    <!-- Confirmation Modal and Overlay -->
+    <div id="confirmation-overlay" class="overlay"></div>
+    <div id="confirmation-box" class="confirmation-box">
+        <span class="close-button" onclick="closeConfirmation()">&times;</span>
+        <div class="text-4xl text-[#004D40] mb-4">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-[#004D40] mb-2">Thank you!</h3>
+        <p class="text-lg text-[#212121]">Your request has been received. We'll be in touch shortly to provide your free quote.</p>
+        <button onclick="closeConfirmation()" class="mt-6 bg-[#FFB300] text-white font-bold py-2 px-6 rounded-full transition-colors duration-300 hover:bg-[#e6a200]">
+            Close
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-bg py-12 px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Quick Links -->
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul>
+                    <li class="mb-2"><a href="#services-section" onclick="showSection('main-content')" class="footer-link">Services</a></li>
+                    <li class="mb-2"><a href="#why-choose-us" onclick="showSection('main-content')" class="footer-link">Why Choose Us</a></li>
+                    <li class="mb-2"><a href="#testimonials-section" onclick="showSection('main-content')" class="footer-link">Testimonials</a></li>
+                    <li class="mb-2"><a href="#contact-form-section" onclick="showSection('main-content')" class="footer-link">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div>
+                <h4 class="footer-heading">Contact Us</h4>
+                <p class="text-sm mb-2 footer-contact-info">
+                    <i class="fas fa-phone mr-2"></i> +64 27 270 1271
+                </p>
+                <p class="text-sm mb-2 footer-contact-info">
+                    <i class="fas fa-envelope mr-2"></i> info@everestpropertycare.com
+                </p>
+                <p class="text-sm mb-2 footer-contact-info">
+                    <i class="fas fa-map-marker-alt mr-2"></i> West Auckland, New Zealand
+                </p>
+            </div>
+            <!-- Social Media -->
+            <div>
+                <h4 class="footer-heading">Follow Us</h4>
+                <div class="flex space-x-4 mb-4">
+                    <a href="https://tiktok.com" class="text-white hover:text-[#80CBC4]"><i class="fab fa-tiktok text-2xl"></i></a>
+                    <a href="https://instagram.com" class="text-white hover:text-[#80CBC4]"><i class="fab fa-instagram text-2xl"></i></a>
+                    <a href="https://whatsapp.com" class="text-white hover:text-[#80CBC4]"><i class="fab fa-whatsapp text-2xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-sm mt-8 border-t border-gray-700 pt-8">
+            &copy; 2024 Everest Property Care. All Rights Reserved.
+        </div>
     </footer>
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
     <script>
-        // --- Map setup ---
-        const map = L.map('map', {
-            center: [-36.8811, 174.6312], // Centered on Henderson, West Auckland
-            zoom: 12, // Zoom level to show the local area
-            minZoom: 4,
-            maxZoom: 18,
-            worldCopyJump: true,
-            zoomControl: true, // We will use the default one
+        // Data for each service
+        const servicesData = {
+            'cleaning-details': {
+                title: 'Sparkling Cleaning',
+                subtitle: 'Residential & Commercial Cleaning Services',
+                image: 'https://i.ibb.co/7JvdLNxS/Deep-cleaning-min.png',
+                description: 'Our team is dedicated to providing meticulous cleaning services for your home or business. We ensure every nook and cranny is spotless, giving you a fresh, healthy environment.',
+                list: [
+                    'Deep & Spring Cleaning',
+                    'Regular Home Cleaning',
+                    'Commercial Office Cleaning',
+                    'End-of-Tenancy Cleaning',
+                    'One-off & Weekly/Fortnightly/Monthly Cleans'
+                ]
+            },
+            'lawn-mowing-details': {
+                title: 'Lush Lawn Mowing & Gardening',
+                subtitle: 'Professional Lawn & Garden Maintenance',
+                image: 'https://i.ibb.co/gbS17bVF/lawn-mowing-pictures.png',
+                description: 'Transform your outdoor space with our expert lawn mowing and gardening services. We handle everything from regular mowing to full garden overhauls, so you can enjoy a beautiful, well-kept garden all year round.',
+                list: [
+                    'Lawn Mowing',
+                    'Hedge Trimming',
+                    'Weeding & Garden Bed Maintenance',
+                    'Lawn Fertilization & Care'
+                ]
+            },
+            'plastering-painting-details': {
+                title: 'Seamless Plastering & Painting',
+                subtitle: 'High-Quality Interior & Exterior Finishes',
+                image: 'https://i.ibb.co/p6PXt8NH/Plastering.png',
+                description: 'Give your property a fresh look with our professional plastering and painting services. Our team ensures a flawless finish, transforming your walls and adding value to your home. We handle everything from minor touch-ups to full-scale renovations.',
+                list: [
+                    'Interior & Exterior Painting',
+                    'Wall Plastering & Repair',
+                    'Ceiling Finishes',
+                    'Surface Preparation',
+                    'Waterblasting & Anti-Mould Treatment'
+                ]
+            },
+            'gutter-cleaning-details': {
+                title: 'Crystal-Clear Gutter Cleaning',
+                subtitle: 'Essential Gutter & Downspout Maintenance',
+                image: 'https://i.ibb.co/x8Scgh2P/gutter-cleaning.png',
+                description: 'Protect your home from water damage with our thorough gutter cleaning service. We remove all debris, leaves, and blockages, ensuring your gutters and downspouts are flowing freely and functioning correctly. This is an essential part of regular property maintenance.',
+                list: [
+                    'Gutter & Downspout Debris Removal',
+                    'Gutter Flushing & Blockage Clearing',
+                    'Inspection for Leaks or Damage',
+                    'Scheduled Gutter Maintenance'
+                ]
+            },
+            'rubbish-removal-details': {
+                title: 'Stress-Free Rubbish Removal',
+                subtitle: 'Efficient Disposal of Unwanted Items',
+                image: 'https://i.ibb.co/QF0HkJwH/rubbish-removal.png',
+                description: 'Reclaim your space with our hassle-free rubbish removal service. We responsibly dispose of all types of waste, from green waste to household junk, saving you time and effort. Simply point to the rubbish, and we\'ll take care of the rest.',
+                list: [
+                    'Household Junk & Green Waste Removal',
+                    'Demolition & Construction Site Waste',
+                    'Furniture & Appliance Disposal',
+                    'E-Waste & Scrap Metal Disposal'
+                ]
+            },
+            'house-moving-details': {
+                title: 'Effortless House Moving',
+                subtitle: 'Reliable and Professional Relocation Services',
+                image: 'https://i.ibb.co/dn6Qxqq/House-Moving.png',
+                description: 'Moving can be stressful, but with our dedicated team, it doesn\'t have to be. We handle your belongings with the utmost care, ensuring a smooth and efficient transition to your new home. Our service is designed to take the heavy lifting off your shoulders.',
+                list: [
+                    'Packing & Unpacking Assistance',
+                    'Secure Transportation',
+                    'Disassembly & Assembly of Furniture',
+                    'Residential & Commercial Moving'
+                ]
+            },
+            'plumbing-details': {
+                title: 'Reliable Plumbing Services',
+                subtitle: 'Expert Solutions for Your Plumbing Needs',
+                image: 'https://i.ibb.co/YF7jJxGd/Plumbing.png',
+                description: 'From a leaky faucet to a complete bathroom fit-out, our certified plumbers provide reliable and professional services. We handle all plumbing repairs, installations, and maintenance to keep your home’s systems running perfectly.',
+                list: [
+                    'Leak Detection & Repair',
+                    'Faucet & Fixture Installation',
+                    'Pipe Repair & Replacement',
+                    'Water Heater Service'
+                ]
+            },
+            'house-washing-details': {
+                title: 'Sparkling House Washing',
+                subtitle: 'Revitalize Your Home\'s Exterior',
+                image: 'https://i.ibb.co/N6FX21mj/House-washing.png',
+                description: 'Our professional house washing service removes dirt, grime, and mildew, restoring your home\'s curb appeal. Using safe and effective methods, we protect your paint and siding while making your property look brand new. Perfect for preparing to sell or for routine maintenance.',
+                list: [
+                    'Exterior Wall Cleaning',
+                    'Roof & Gutter Cleaning',
+                    'Driveway & Pathway Waterblasting',
+                    'Window Cleaning'
+                ]
+            }
+        };
+
+        // Function to show/hide sections
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('body > div');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.classList.remove('hidden-section');
+                    // Scroll to the top of the newly shown section
+                    section.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    section.classList.add('hidden-section');
+                }
+            });
+        }
+        
+        // Function to show the complete services page
+        function showAllServicesPage() {
+            const contentDiv = document.getElementById('service-details-content');
+            let allServicesHTML = `
+                <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-8">Our Full Range of Services</h2>
+                <p class="text-lg text-[#212121] text-center mb-12">
+                    Below is a comprehensive list of all the services we offer. For a free, no-obligation quote, please use the contact form on our home page.
+                </p>
+            `;
+            const servicesArray = Object.values(servicesData);
+            servicesArray.forEach((service, index) => {
+                const isReversed = index % 2 !== 0; // Alternate image position
+                allServicesHTML += `
+                    <div class="service-detail-content mb-12 py-8 border-b-2 border-gray-200 ${isReversed ? 'reverse' : ''}">
+                        <div class="text-center md:text-left md:w-1/2">
+                            <h3 class="text-2xl md:text-3xl font-bold text-[#004D40] mb-1">${service.title}</h3>
+                            <h4 class="text-lg md:text-xl font-semibold text-[#FFB300] mb-4">${service.subtitle}</h4>
+                            <p class="text-md text-[#212121] mb-6">${service.description}</p>
+                            <div class="service-list">
+                                <h5 class="text-lg font-bold text-[#004D40] mb-2">Service details:</h5>
+                                <ul>
+                                    ${service.list.map(item => `<li>${item}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-8 md:mt-0 md:w-1/2 flex justify-center">
+                            <img src="${service.image}" alt="${service.title}" class="rounded-lg shadow-xl w-full h-auto" onerror="this.onerror=null;this.src='https://placehold.co/600x400/80CBC4/212121/png?text=${encodeURIComponent(service.title)}';">
+                        </div>
+                    </div>
+                `;
+            });
+            contentDiv.innerHTML = allServicesHTML;
+            showSection('detailed-services-section');
+        }
+
+        // Functions for confirmation box
+        function showConfirmation() {
+            document.getElementById('confirmation-overlay').style.display = 'block';
+            document.getElementById('confirmation-box').style.display = 'block';
+        }
+
+        function closeConfirmation() {
+            document.getElementById('confirmation-overlay').style.display = 'none';
+            document.getElementById('confirmation-box').style.display = 'none';
+        }
+
+        // Handle form submission
+        document.getElementById('quote-form').addEventListener('submit', function(event) {
+            // This prevents the form from submitting and refreshing the page
+            event.preventDefault(); 
+            // In a real application, you would send the form data to a server here.
+            // For now, we just show the confirmation message.
+            showConfirmation();
         });
-
-        // Add OpenStreetMap tile layer
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
-
-        // Add a marker for Henderson
-        L.marker([-36.8811, 174.6312]).addTo(map)
-            .bindPopup('Everest Property Care<br>Serving West Auckland from Henderson').openPopup();
 
     </script>
 </body>
