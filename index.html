@@ -139,7 +139,7 @@
             <div class="hidden md:block">
                 <a href="#main-content" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Home</a>
                 <a href="#" onclick="showAllServicesPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Services</a>
-                <a href="#why-choose-us" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">About Us</a>
+                <a href="#" onclick="showAboutUsPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">About Us</a>
                 <a href="#contact-form-section" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Contact</a>
             </div>
         </nav>
@@ -262,7 +262,154 @@
                     </a>
                 </div>
             </section>
+             <!-- Contact Form Section - New Design -->
+            <section id="contact-form-section" class="bg-white p-8 md:p-16 rounded-xl shadow-2xl max-w-4xl mx-auto my-16 border-2 border-[#80CBC4]">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-4">Get Your Free Quote</h2>
+                <p class="text-lg text-[#212121] text-center mb-8">
+                    Ready to transform your property? Fill out the form below, and we'll get back to you with a free, no-obligation quote.
+                </p>
 
+                <form id="quote-form" action="https://formspree.io/f/mwpqqneo" method="POST" class="space-y-6">
+                    <!-- Box for Personal Information -->
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-inner border border-gray-200 space-y-4">
+                        <div>
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" name="name" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" id="address" name="address" required class="form-input">
+                        </div>
+                    </div>
+                   
+                    <!-- Box for Preferred Date and Time -->
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-inner border border-gray-200 space-y-4">
+                        <div>
+                            <label for="date" class="form-label">Preferred Date</label>
+                            <input type="date" id="date" name="date" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="time" class="form-label">Preferred Time</label>
+                            <input type="time" id="time" name="time" class="form-input">
+                        </div>
+                    </div>
+
+                    <!-- Box for Service and Message -->
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-inner border border-gray-200 space-y-4">
+                        <div>
+                            <label class="form-label">Service(s) of Interest</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-[#212121]">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Lawn Mowing & Gardening" class="rounded mr-2"> Lawn Mowing & Gardening
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Sparkling Cleaning" class="rounded mr-2"> Sparkling Cleaning
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Plastering & Painting" class="rounded mr-2"> Plastering & Painting
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Gutter Cleaning" class="rounded mr-2"> Gutter Cleaning
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Rubbish Removal" class="rounded mr-2"> Rubbish Removal
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="House Moving" class="rounded mr-2"> House Moving
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Plumbing Services" class="rounded mr-2"> Plumbing Services
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="House Washing" class="rounded mr-2"> House Washing
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="services" value="Other" class="rounded mr-2"> Other
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" name="message" rows="4" required class="form-input"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="bg-[#FFB300] text-white font-bold py-3 px-10 rounded-full shadow-lg transition duration-300 hover:bg-[#e6a200] transform hover:scale-105">
+                            Submit My Request
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Detailed Services Section (Initially hidden) -->
+    <div id="detailed-services-section" class="flex-grow hidden-section px-6 py-16">
+        <div class="container mx-auto max-w-5xl">
+            <button onclick="showSection('main-content')" class="bg-[#004D40] text-white px-6 py-2 rounded-full mb-8 hover:bg-[#003B32] transition-colors duration-300">
+                &larr; Back to Home
+            </button>
+            <div id="service-details-content">
+                <!-- Content will be dynamically injected here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- About Us Page (Initially hidden) -->
+    <div id="about-us-section" class="flex-grow hidden-section px-6 py-16">
+        <div class="container mx-auto max-w-6xl">
+            <button onclick="showSection('main-content')" class="bg-[#004D40] text-white px-6 py-2 rounded-full mb-8 hover:bg-[#003B32] transition-colors duration-300">
+                &larr; Back to Home
+            </button>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-center text-[#004D40] mb-4">
+                About Everest Property Care
+            </h1>
+            <p class="text-lg text-[#212121] text-center max-w-3xl mx-auto mb-16">
+                More than just a property care service, we are a team dedicated to transforming your space while protecting our planet. Learn about our commitment to quality, sustainability, and safety.
+            </p>
+
+            <!-- Our Commitment Section -->
+            <section class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-12">
+                    Our Commitment to a Better World
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Eco-Friendly Practices -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 text-center flex flex-col items-center">
+                        <div class="w-16 h-16 flex items-center justify-center mb-4 rounded-full bg-green-100 text-[#004D40]">
+                            <i class="fas fa-leaf text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Eco-Friendly Solutions</h3>
+                        <p class="text-[#212121]">We proudly use biodegradable and eco-friendly products for all our cleaning services. Our commitment to sustainability ensures a pristine home without harming the environment.</p>
+                    </div>
+                    <!-- Recycling and Waste -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 text-center flex flex-col items-center">
+                        <div class="w-16 h-16 flex items-center justify-center mb-4 rounded-full bg-blue-100 text-[#004D40]">
+                            <i class="fas fa-recycle text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Prioritizing Recycling</h3>
+                        <p class="text-[#212121]">Whether it's green waste from gardening or general rubbish, we prioritize recycling and proper waste disposal. We take extra steps to sort and manage waste responsibly, minimizing our environmental footprint.</p>
+                    </div>
+                    <!-- Health & Safety -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 text-center flex flex-col items-center">
+                        <div class="w-16 h-16 flex items-center justify-center mb-4 rounded-full bg-red-100 text-[#004D40]">
+                            <i class="fas fa-first-aid text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Health & Safety First</h3>
+                        <p class="text-[#212121]">The well-being of our clients and staff is our highest priority. Our team is fully trained in the latest health and safety protocols, using proper equipment and techniques to ensure every job is done safely and correctly.</p>
+                    </div>
+                </div>
+            </section>
+            
             <!-- Why Choose Us Section -->
             <section id="why-choose-us" class="max-w-6xl mx-auto my-12 p-6 md:p-12 bg-white rounded-3xl shadow-2xl border-2 border-[#80CBC4]">
                 <div class="text-center mb-12">
@@ -413,108 +560,9 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Contact Form Section - New Design -->
-            <section id="contact-form-section" class="bg-white p-8 md:p-16 rounded-xl shadow-2xl max-w-4xl mx-auto my-16 border-2 border-[#80CBC4]">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-4">Get Your Free Quote</h2>
-                <p class="text-lg text-[#212121] text-center mb-8">
-                    Ready to transform your property? Fill out the form below, and we'll get back to you with a free, no-obligation quote.
-                </p>
-
-                <form id="quote-form" action="https://formspree.io/f/mwpqqneo" method="POST" class="space-y-6">
-                    <!-- Box for Personal Information -->
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-inner border border-gray-200 space-y-4">
-                        <div>
-                            <label for="name" class="form-label">Full Name</label>
-                            <input type="text" id="name" name="name" required class="form-input">
-                        </div>
-                        <div>
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" id="email" name="email" required class="form-input">
-                        </div>
-                        <div>
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required class="form-input">
-                        </div>
-                        <div>
-                            <label for="address" class="form-label">Address</label>
-                            <input type="text" id="address" name="address" required class="form-input">
-                        </div>
-                    </div>
-                   
-                    <!-- Box for Preferred Date and Time -->
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-inner border border-gray-200 space-y-4">
-                        <div>
-                            <label for="date" class="form-label">Preferred Date</label>
-                            <input type="date" id="date" name="date" required class="form-input">
-                        </div>
-                        <div>
-                            <label for="time" class="form-label">Preferred Time</label>
-                            <input type="time" id="time" name="time" class="form-input">
-                        </div>
-                    </div>
-
-                    <!-- Box for Service and Message -->
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-inner border border-gray-200 space-y-4">
-                        <div>
-                            <label class="form-label">Service(s) of Interest</label>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-[#212121]">
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="services" value="Lawn Mowing & Gardening" class="rounded mr-2"> Lawn Mowing & Gardening
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="services" value="Sparkling Cleaning" class="rounded mr-2"> Sparkling Cleaning
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="services" value="Plastering & Painting" class="rounded mr-2"> Plastering & Painting
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="services" value="Gutter Cleaning" class="rounded mr-2"> Gutter Cleaning
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="services" value="Rubbish Removal" class="rounded mr-2"> Rubbish Removal
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="services" value="House Moving" class="rounded mr-2"> House Moving
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="services" value="Plumbing Services" class="rounded mr-2"> Plumbing Services
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="services" value="House Washing" class="rounded mr-2"> House Washing
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="services" value="Other" class="rounded mr-2"> Other
-                                </label>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="message" class="form-label">Your Message</label>
-                            <textarea id="message" name="message" rows="4" required class="form-input"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="text-center">
-                        <button type="submit" class="bg-[#FFB300] text-white font-bold py-3 px-10 rounded-full shadow-lg transition duration-300 hover:bg-[#e6a200] transform hover:scale-105">
-                            Submit My Request
-                        </button>
-                    </div>
-                </form>
-            </section>
-        </main>
-    </div>
-
-    <!-- Detailed Services Section (Initially hidden) -->
-    <div id="detailed-services-section" class="flex-grow hidden-section px-6 py-16">
-        <div class="container mx-auto max-w-5xl">
-            <button onclick="showSection('main-content')" class="bg-[#004D40] text-white px-6 py-2 rounded-full mb-8 hover:bg-[#003B32] transition-colors duration-300">
-                &larr; Back to Home
-            </button>
-            <div id="service-details-content">
-                <!-- Content will be dynamically injected here by JavaScript -->
-            </div>
         </div>
     </div>
+
 
     <!-- Confirmation Modal and Overlay -->
     <div id="confirmation-overlay" class="overlay"></div>
@@ -538,8 +586,8 @@
                 <h4 class="footer-heading">Quick Links</h4>
                 <ul>
                     <li class="mb-2"><a href="#services-section" onclick="showSection('main-content')" class="footer-link">Services</a></li>
-                    <li class="mb-2"><a href="#why-choose-us" onclick="showSection('main-content')" class="footer-link">Why Choose Us</a></li>
-                    <li class="mb-2"><a href="#testimonials-section" onclick="showSection('main-content')" class="footer-link">Testimonials</a></li>
+                    <li class="mb-2"><a href="#why-choose-us" onclick="showAboutUsPage()" class="footer-link">Why Choose Us</a></li>
+                    <li class="mb-2"><a href="#testimonials-section" onclick="showAboutUsPage()" class="footer-link">Testimonials</a></li>
                     <li class="mb-2"><a href="#contact-form-section" onclick="showSection('main-content')" class="footer-link">Contact Us</a></li>
                 </ul>
             </div>
@@ -737,6 +785,11 @@
             });
             contentDiv.innerHTML = allServicesHTML;
             showSection('detailed-services-section');
+        }
+
+        // Function to show the About Us page
+        function showAboutUsPage() {
+            showSection('about-us-section');
         }
 
         // Functions for confirmation box
