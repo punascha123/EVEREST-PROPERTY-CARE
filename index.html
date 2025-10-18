@@ -7,7 +7,8 @@
     <!-- Favicon link -->
     <link rel="icon" href="https://i.ibb.co/N2RkK0Wp/IMG-8147.jpg" type="image/jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- NEW FONTS IMPORTED: Lato for Body, Playfair Display for Slogan/Headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* New Aesthetic Color Palette for Property Care:
@@ -18,11 +19,33 @@
         --vibrant-gold: #FFB300 (Bright, inviting orange/gold)
         */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Lato', sans-serif; /* Changed from Inter to Lato */
             background-color: #F5F5F5; /* Soft Grey for main background */
             color: #212121; /* Dark Grey for main text */
             scroll-behavior: smooth; /* Smooth scrolling for anchor links */
         }
+        /* Custom style for the slogan using the new font */
+        .slogan-text {
+            font-family: 'Playfair Display', serif; /* Changed from Dancing Script */
+            font-size: 1.5rem; /* Ensure good size */
+            font-style: italic;
+            white-space: nowrap; /* Prevents wrapping during movement */
+            overflow: hidden; /* Important for clean movement */
+        }
+
+        /* Animation for the Slogan */
+        @keyframes slideSlogan {
+            0% { transform: translateX(0); opacity: 1; }
+            50% { transform: translateX(5px); opacity: 0.95; } /* Subtle move right */
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .slogan-moving {
+            display: inline-block;
+            /* UPDATED: Changed animation duration from 1.2s to 0.8s for maximum speed */
+            animation: slideSlogan 0.8s ease-in-out infinite alternate; 
+        }
+
         /* Custom styles for the footer to match the new palette */
         .footer-bg {
             background-color: #004D40; /* Primary Teal for footer background */
@@ -150,8 +173,9 @@
             <a href="#" onclick="showSection('main-content')" class="flex flex-col items-center space-y-1">
                 <!-- Company Logo -->
                 <img src="https://i.ibb.co/N2RkK0Wp/IMG-8147.jpg" alt="EVEREST PROPERTY CARE Logo" class="h-64 md:h-72 w-auto">
-                <!-- Slogan - in italic font -->
-                <span class="text-xl italic text-[#212121]" style="font-family: 'Dancing Script', cursive;">You take your rest; we'll make it the best</span>
+                <!-- Slogan - in italic font and moving -->
+                <!-- Applied 'slogan-text' for new font and 'slogan-moving' for animation -->
+                <span class="text-xl italic text-[#212121] slogan-text slogan-moving">You take your rest; we'll make it the best</span>
             </a>
             <div class="hidden md:block">
                 <a href="#main-content" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Home</a>
@@ -165,7 +189,7 @@
     <!-- Main Content Area (Home Page) -->
     <div id="main-content" class="flex-grow">
         <!-- Hero Section -->
-        <section id="hero" class="bg-gradient-to-r from-[#004D40] to-[#80CBC4] text-white py-20 px-6 text-center rounded-b-lg shadow-lg">
+        <section id="hero" class="bg-gradient-to-r from-[#004D40] to-[#80CBC4] text-white py-20 px-6 text-center rounded-b-lg shadow-lg relative">
             <div class="container mx-auto max-w-4xl">
                 <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 animate-fade-in-up">
                     West Auckland's Trusted Lawn Mowing and Cleaning Experts
@@ -180,6 +204,12 @@
                     Get Your Free Quote Today!
                 </a>
             </div>
+
+            <!-- Note for Lawnrite Franchise (Small and Separate) -->
+            <div class="absolute bottom-4 right-4 md:right-8 p-2 rounded-lg bg-white/20 backdrop-blur-sm text-xs md:text-sm font-light text-white italic text-right">
+                Lawn Mowing services provided under license with the <strong class="font-semibold">Lawnrite</strong> franchise.
+            </div>
+            
         </section>
 
         <!-- Services Overview Section (Cards) -->
@@ -213,6 +243,11 @@
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-green-500 mb-4">🌳</div>
                             <h4 class="text-xl font-semibold mb-3 text-[#212121]">Lush Lawn Mowing & Gardening</h4>
+                            <!-- FRANCHISE NOTE -->
+                            <p class="text-xs font-medium text-[#004D40] mb-2 italic">
+                                Lawn Mowing provided under license with **Lawnrite**.
+                            </p>
+                            <!-- END FRANCHISE NOTE -->
                             <p class="text-[#212121]">Step into a vibrant outdoor oasis, perfectly manicured and bursting with life.</p>
                         </div>
                     </a>
@@ -251,20 +286,11 @@
                     <!-- Service Card 6: Effortless House Moving -->
                     <a href="#services-section" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
                         <img src="https://i.ibb.co/dn6Qxqq/House-Moving.png" alt="Effortless House Moving Service" class="w-full h-auto rounded-t-lg mb-4 service-card-img" onerror="this.onerror=null;this.src='https://placehold.co/400x250/212121/F5F5F5/png?text=Effortless%20Moving';">
+                    
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-purple-500 mb-4">🚚</div>
                             <h4 class="text-xl font-semibold mb-3 text-[#212121]">Effortless House Moving</h4>
                             <p class="text-[#212121]">Transition to your new chapter with ease, knowing every detail of your move is handled with care.</p>
-                        </div>
-                    </a>
-
-                    <!-- Service Card 7: Plumbing Services -->
-                    <a href="#services-section" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
-                        <img src="https://i.ibb.co/YF7jJxGd/Plumbing.png" alt="Reliable Plumbing Service" class="w-full h-auto rounded-t-lg mb-4 service-card-img" onerror="this.onerror=null;this.src='https://placehold.co/400x250/004D40/FFFFFF/png?text=Reliable%20Plumbing';">
-                        <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
-                            <div class="text-5xl text-blue-700 mb-4">🛠️</div>
-                            <h4 class="text-xl font-semibold mb-3 text-[#212121]">Reliable Plumbing Services</h4>
-                            <p class="text-[#212121]">From leaky faucets to complex installations, our expert plumbers ensure your systems run perfectly, giving you peace of mind.</p>
                         </div>
                     </a>
 
@@ -342,9 +368,7 @@
                                 <label class="flex items-center">
                                     <input type="checkbox" name="services" value="House Moving" class="rounded mr-2"> House Moving
                                 </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="services" value="Plumbing Services" class="rounded mr-2"> Plumbing Services
-                                </label>
+                                <!-- Plumbing Services Checkbox Removed -->
                                 <label class="flex items-center">
                                     <input type="checkbox" name="services" value="House Washing" class="rounded mr-2"> House Washing
                                 </label>
@@ -727,18 +751,6 @@
                     'Residential & Commercial Moving'
                 ]
             },
-            'plumbing-details': {
-                title: 'Reliable Plumbing Services',
-                subtitle: 'Expert Solutions for Your Plumbing Needs',
-                image: 'https://i.ibb.co/YF7jJxGd/Plumbing.png',
-                description: 'From a leaky faucet to a complete bathroom fit-out, our certified plumbers provide reliable and professional services. We handle all plumbing repairs, installations, and maintenance to keep your home’s systems running perfectly.',
-                list: [
-                    'Leak Detection & Repair',
-                    'Faucet & Fixture Installation',
-                    'Pipe Repair & Replacement',
-                    'Water Heater Service'
-                ]
-            },
             'house-washing-details': {
                 title: 'Sparkling House Washing',
                 subtitle: 'Revitalize Your Home\'s Exterior',
@@ -779,6 +791,12 @@
             const servicesArray = Object.values(servicesData);
             servicesArray.forEach((service, index) => {
                 const isReversed = index % 2 !== 0; // Alternate for a staggered layout
+                let franchiseNote = '';
+                // Franchise note for Lawn Mowing in the detailed services page
+                if (service.title.includes('Lush Lawn Mowing & Gardening')) {
+                    franchiseNote = `<p class="text-sm font-semibold text-[#FFB300] mb-4">Lawn Mowing provided under license with **Lawnrite**.</p>`;
+                }
+
                 allServicesHTML += `
                     <div class="bg-white rounded-xl shadow-lg p-6 md:p-12 mb-12 flex flex-col md:flex-row items-center gap-8 ${isReversed ? 'md:flex-row-reverse' : ''}">
                         <div class="md:w-1/2">
@@ -787,6 +805,7 @@
                         <div class="md:w-1/2">
                             <h3 class="text-2xl md:text-3xl font-bold text-[#004D40] mb-2">${service.title}</h3>
                             <h4 class="text-lg text-[#80CBC4] font-semibold mb-4">${service.subtitle}</h4>
+                            ${franchiseNote}
                             <p class="text-[#212121] mb-6">${service.description}</p>
                             <div class="service-list text-left w-full">
                                 <h4 class="text-sm font-bold text-[#004D40] mb-2">Key services include:</h4>
