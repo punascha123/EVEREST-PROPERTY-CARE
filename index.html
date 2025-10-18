@@ -163,6 +163,22 @@
             height: auto;
             object-fit: cover;
         }
+        /* Custom styles for article content */
+        #article-content-container p {
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+        }
+        #article-content-container ul, #article-content-container ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        #article-content-container li {
+            margin-bottom: 0.5rem;
+        }
+        #article-content-container strong {
+            font-weight: 700;
+            color: #004D40;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -182,6 +198,8 @@
                 <a href="#" onclick="showAllServicesPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Services</a>
                 <a href="#" onclick="showAboutUsPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">About Us</a>
                 <a href="#contact-form-section" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Contact</a>
+                <!-- NEW BLOG LINK ADDED -->
+                <a href="#" onclick="showBlogPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Blog</a>
             </div>
         </nav>
     </header>
@@ -603,7 +621,6 @@
         </div>
     </div>
 
-
     <!-- Confirmation Modal and Overlay -->
     <div id="confirmation-overlay" class="overlay"></div>
     <div id="confirmation-box" class="confirmation-box">
@@ -617,6 +634,109 @@
             Close
         </button>
     </div>
+
+    <!-- Blog Page (Index of Articles - Initially hidden) -->
+    <div id="blog-section" class="flex-grow hidden-section px-6 py-16">
+        <div class="container mx-auto max-w-6xl">
+            <button onclick="showSection('main-content')" class="bg-[#004D40] text-white px-6 py-2 rounded-full mb-8 hover:bg-[#003B32] transition-colors duration-300">
+                &larr; Back to Home
+            </button>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-center text-[#004D40] mb-4">
+                Everest Property Care Blog
+            </h1>
+            <p class="text-lg text-[#212121] text-center max-w-3xl mx-auto mb-16">
+                Get expert tips, seasonal maintenance guides, and cleaning hacks from West Auckland’s property care specialists.
+            </p>
+
+            <!-- Blog Posts Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <!-- Blog Post 1: Winter Gutter Care -->
+                <article class="bg-white rounded-xl shadow-xl overflow-hidden transform transition duration-500 hover:shadow-2xl hover:translate-y-[-5px]">
+                    <img src="https://placehold.co/600x400/004D40/FFFFFF/png?text=Gutter+Cleaning+Guide" alt="Gutter Care in Winter" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-[#FFB300] uppercase tracking-wider">Maintenance</span>
+                        <h2 class="text-2xl font-bold text-[#004D40] mt-2 mb-3 leading-snug">
+                            5 Essential Tips for Winter Gutter Cleaning
+                        </h2>
+                        <p class="text-gray-700 text-sm mb-4">
+                            Don't let blocked gutters lead to costly winter roof damage. Learn the simple steps our experts take to prepare your home for the Auckland rain.
+                        </p>
+                        <a href="#" onclick="showArticle('winter-gutter-care')" class="text-[#80CBC4] hover:text-[#004D40] font-semibold text-sm flex items-center">
+                            Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2: Deep Cleaning Hacks -->
+                <article class="bg-white rounded-xl shadow-xl overflow-hidden transform transition duration-500 hover:shadow-2xl hover:translate-y-[-5px]">
+                    <img src="https://placehold.co/600x400/80CBC4/212121/png?text=Deep+Cleaning+Hacks" alt="Deep Cleaning Kitchen" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-[#FFB300] uppercase tracking-wider">Cleaning</span>
+                        <h2 class="text-2xl font-bold text-[#004D40] mt-2 mb-3 leading-snug">
+                            Top 3 Eco-Friendly Deep Cleaning Hacks
+                        </h2>
+                        <p class="text-gray-700 text-sm mb-4">
+                            Use common household items to achieve a spotless, chemical-free clean. Our professional cleaners share their secrets for a healthier home.
+                        </p>
+                        <a href="#" onclick="showArticle('deep-cleaning-hacks')" class="text-[#80CBC4] hover:text-[#004D40] font-semibold text-sm flex items-center">
+                            Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3: Lawn Mowing Tips -->
+                <article class="bg-white rounded-xl shadow-xl overflow-hidden transform transition duration-500 hover:shadow-2xl hover:translate-y-[-5px]">
+                    <img src="https://placehold.co/600x400/FFB300/FFFFFF/png?text=Perfect+Lawn+Tips" alt="Perfectly Manicured Lawn" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-[#FFB300] uppercase tracking-wider">Gardening</span>
+                        <h2 class="text-2xl font-bold text-[#004D40] mt-2 mb-3 leading-snug">
+                            The Secret to a Lush, Green West Auckland Lawn
+                        </h2>
+                        <p class="text-gray-700 text-sm mb-4">
+                            Our Lawnrite experts reveal the best mowing height and watering schedule to keep your grass vibrant through the changing seasons.
+                        </p>
+                        <a href="#" onclick="showArticle('perfect-lawn-tips')" class="text-[#80CBC4] hover:text-[#004D40] font-semibold text-sm flex items-center">
+                            Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- NEW Blog Post 4: End of Tenancy Cleaning -->
+                <article class="bg-white rounded-xl shadow-xl overflow-hidden transform transition duration-500 hover:shadow-2xl hover:translate-y-[-5px]">
+                    <img src="https://placehold.co/600x400/004D40/FFB300/png?text=Bond+Back+Cleaning" alt="End of Tenancy Cleaning" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-[#FFB300] uppercase tracking-wider">Moving & Cleaning</span>
+                        <h2 class="text-2xl font-bold text-[#004D40] mt-2 mb-3 leading-snug">
+                            Guaranteed Bond Back: Why Professional End of Tenancy Cleaning is Key
+                        </h2>
+                        <p class="text-gray-700 text-sm mb-4">
+                            Moving out? Ensure you get your full bond back with our expert **End of Tenancy Cleaning West Auckland** service. We cover every detail.
+                        </p>
+                        <a href="#" onclick="showArticle('end-of-tenancy-cleaning')" class="text-[#80CBC4] hover:text-[#004D40] font-semibold text-sm flex items-center">
+                            Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Article Reader (Initially hidden) - NEW SECTION -->
+    <div id="blog-article-reader" class="flex-grow hidden-section px-6 py-16">
+        <div class="container mx-auto max-w-4xl bg-white p-8 md:p-12 rounded-xl shadow-2xl">
+            <!-- Back to Blog button -->
+            <button onclick="showBlogPage()" class="bg-[#004D40] text-white px-6 py-2 rounded-full mb-8 hover:bg-[#003B32] transition-colors duration-300">
+                &larr; Back to All Articles
+            </button>
+            <div id="article-content-container">
+                <!-- Full article content will be injected here -->
+            </div>
+        </div>
+    </div>
+
 
     <!-- Footer -->
     <footer class="footer-bg py-12 px-6">
@@ -650,13 +770,14 @@
                     <a href="https://instagram.com" class="text-white hover:text-[#80CBC4]"><i class="fab fa-instagram text-2xl"></i></a>
                     <a href="https://whatsapp.com" class="text-white hover:text-[#80CBC4]"><i class="fab fa-whatsapp text-2xl"></i></a>
                 </div>
+               
             </div>
             <!-- Location Map -->
             <div class="text-left">
                 <h4 class="footer-heading">Service Area</h4>
                 <div class="w-full rounded-lg overflow-hidden shadow-md">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d418751.2952514104!2d174.5623057165787!3d-36.85244502848972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47fb5a9ce6fb%3A0x500ef6143a29917!2sAuckland%2C%20New%20Zealand!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d418751.2952514104!2d174.5623057165787!3d-36.85244502848972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47fb5a9ce6fb%3A0x500ef6143a29917!2sAuckland%20New%20Zealand!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus" 
                         width="100%" 
                         height="200" 
                         style="border:0;" 
@@ -764,6 +885,83 @@
             }
         };
 
+        // Blog Article Content - Keys must match the onclick parameters in the HTML
+        const blogContent = {
+            'winter-gutter-care': {
+                title: '5 Essential Tips for Winter Gutter Cleaning',
+                category: 'Maintenance',
+                date: 'October 15, 2025',
+                image: 'https://placehold.co/800x500/004D40/FFFFFF/png?text=Gutter+Cleaning+Guide',
+                fullContent: `
+                    <p class="mb-6">Winter in West Auckland brings heavy rain, and the last thing you want is a blocked gutter causing water damage to your home. Gutter cleaning is a simple, yet essential, maintenance task. Here are five expert tips from the Everest Property Care team to help you prepare your gutters for the season:</p>
+                    <ol class="list-decimal list-inside space-y-4 ml-4 text-gray-700">
+                        <li><strong>Clear Debris Frequently:</strong> Leaves, moss, and twigs accumulate quickly. Check and clear your gutters every three months, especially before the heaviest rain periods.</li>
+                        <li><strong>Flush with Water:</strong> Once the main debris is out, use a garden hose to flush the gutters. This reveals hidden blockages and ensures the downspouts are clear.</li>
+                        <li><strong>Check Downspouts:</strong> Downspouts are often the culprit for major blockages. If water pools, use a plumber's snake or a high-pressure nozzle to dislodge the blockage from the bottom up.</li>
+                        <li><strong>Look for Signs of Damage:</strong> While cleaning, inspect for cracks, loose hangers, or rust spots. Small repairs now can prevent costly replacements later.</li>
+                        <li><strong>Consider Gutter Guards:</strong> For properties prone to heavy leaf fall, installing high-quality gutter guards can significantly reduce the frequency of manual cleaning, saving you time and money in the long run.</li>
+                    </ol>
+                    <p class="mt-6 text-gray-700">If you need professional assistance, contact Everest Property Care for safe and thorough gutter cleaning services.</p>
+                `
+            },
+            'deep-cleaning-hacks': {
+                title: 'Top 3 Eco-Friendly Deep Cleaning Hacks',
+                category: 'Cleaning',
+                date: 'September 28, 2025',
+                image: 'https://placehold.co/800x500/80CBC4/212121/png?text=Deep+Cleaning+Hacks',
+                fullContent: `
+                    <p class="mb-6 text-gray-700">You don't need harsh chemicals to achieve a spotless home. Our professional cleaners rely on powerful, natural ingredients that are safe for your family and the Auckland environment. Try these three eco-friendly cleaning hacks:</p>
+                    <ul class="list-disc list-inside space-y-4 ml-4 text-gray-700">
+                        <li><strong>The Vinegar and Baking Soda Drain Cleaner:</strong> Forget toxic drain openers. Pour half a cup of baking soda down a slow drain, followed by half a cup of white vinegar. Let it fizz for 15 minutes, then flush with boiling water. It's safe, effective, and completely natural.</li>
+                        <li><strong>Lemon and Salt for Hard Water Stains:</strong> For taps, shower heads, and porcelain fixtures, cut a lemon in half, sprinkle salt on the cut side, and scrub the area. The citric acid cuts through mineral deposits while the salt acts as a gentle abrasive.</li>
+                        <li><strong>Essential Oils for Dusting:</strong> Mix a few drops of lemon or tea tree essential oil with water in a spray bottle. Spray a light mist onto your microfibre cloth before dusting. The oil helps repel dust and leaves a wonderful, fresh scent without chemical residue.</li>
+                    </ul>
+                    <p class="mt-6 text-gray-700">For a complete, worry-free deep clean using only eco-friendly products, book one of our Sparkling Cleaning services today!</p>
+                `
+            },
+            'perfect-lawn-tips': {
+                title: 'The Secret to a Lush, Green  Auckland Lawn',
+                category: 'Gardening',
+                date: 'September 1, 2025',
+                image: 'https://placehold.co/800x500/FFB300/FFFFFF/png?text=Perfect+Lawn+Tips',
+                fullContent: `
+                    <p class="mb-6 text-gray-700">Achieving that vibrant, bowling-green lawn requires more than just a quick trim. Our Lawnrite experts know that precision and timing are key to maintaining healthy grass in the West Auckland climate. Here are our top professional tips:</p>
+                    <ol class="list-decimal list-inside space-y-4 ml-4 text-gray-700">
+                        <li><strong>Mow High, Mow Often:</strong> Never cut more than one-third of the grass blade at a time. Keeping the grass slightly longer (around 2.5 to 3 inches) shades the roots, preventing weed growth and reducing water evaporation.</li>
+                        <li><strong>Water Deeply, But Infrequently:</strong> Instead of light daily sprinkling, water your lawn deeply (about 1 inch) two or three times a week. This encourages the roots to grow deeper, making the grass more drought-resistant.</li>
+                        <li><strong>Sharp Blades are Crucial:</strong> Dull mower blades tear the grass, making it susceptible to disease. Always ensure your mower blades are professionally sharpened. The clean cut heals faster, giving your lawn a healthier look.</li>
+                        <li><strong>Soil Aeration:</strong> Compacted soil prevents water and nutrients from reaching the roots. Aerating your lawn once a year (especially in spring) can dramatically improve its health and color.</li>
+                    </ol>
+                    <p class="mt-6 text-gray-700">Let us handle the complexity of lawn care. Talk to Everest Property Care about setting up a regular Lawnrite service schedule!</p>
+                `
+            },
+            // NEW ARTICLE ADDED HERE
+            'end-of-tenancy-cleaning': {
+                title: ' Why Professional End of Tenancy Cleaning is Key',
+                category: 'Moving & Cleaning',
+                date: 'October 17, 2025',
+                image: 'https://placehold.co/800x500/004D40/FFB300/png?text=End+of+Tenancy+Cleaning+West+Auckland',
+                fullContent: `
+                    <p class="mb-6 text-gray-700">Moving out of your rental property in Auckland? The biggest obstacle to getting your full **bond back** is often the final inspection report. Landlords and property managers require a deep, professional standard of cleanliness—often far beyond a simple tidy up. That's where expert **End of Tenancy Cleaning** comes in.</p>
+
+                    <h2 class="text-2xl font-bold text-[#004D40] mt-6 mb-3 leading-snug">The Everest Property Care Bond Back Guarantee</h2>
+                    <p class="mb-6 text-gray-700">We understand the specific requirements of property managers around. Our comprehensive checklists are designed to meet or exceed those standards, giving you peace of mind during your move. We focus on:</p>
+                    <ul class="list-disc list-inside space-y-3 ml-4 text-gray-700">
+                        <li><strong>Kitchen Deep Clean:</strong> Including oven, rangehood, and internal cabinetry (empty).</li>
+                        <li><strong>Bathroom Sanitization:</strong> Grout scrubbing, mould removal, and ensuring all fixtures sparkle.</li>
+                        <li><strong>Walls and Surfaces:</strong> Spot cleaning walls, dusting skirting boards, and window sills.</li>
+                        <li><strong>Flooring:</strong> Thorough vacuuming and mopping hard floors.</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold text-[#004D40] mt-6 mb-3 leading-snug">Saving You Time and Stress</h2>
+                    <p class="mb-6 text-gray-700">Attempting a **deep clean** while juggling packing and moving is incredibly stressful. Our professional team brings the right equipment and experience to complete the job in hours, not days. This not only saves your energy but significantly increases your chance of a quick, successful bond return.</p>
+
+                    <p class="mt-6 text-lg font-semibold text-[#FFB300]">Don't risk your deposit. Trust Everest Property Care for your next **End of Tenancy Cleaning West Auckland** job. Contact us for a free quote today!</p>
+                `
+            }
+        };
+
+
         // Function to show/hide sections
         function showSection(sectionId) {
             const sections = document.querySelectorAll('body > div');
@@ -824,6 +1022,37 @@
         function showAboutUsPage() {
             showSection('about-us-section');
         }
+
+        // Function to show the Blog page (Index)
+        function showBlogPage() {
+            showSection('blog-section');
+        }
+
+        // Function to show a specific article
+        function showArticle(articleKey) {
+            const article = blogContent[articleKey];
+            const container = document.getElementById('article-content-container');
+
+            if (!article) {
+                container.innerHTML = '<p class="text-red-500 text-center">Sorry, that article could not be found.</p>';
+                showSection('blog-article-reader');
+                return;
+            }
+
+            const articleHTML = `
+                <span class="text-sm font-semibold text-[#FFB300] uppercase tracking-wider">${article.category}</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#004D40] mt-2 mb-3 leading-tight">${article.title}</h1>
+                <p class="text-sm text-gray-500 mb-8 border-b pb-4">Published on: ${article.date}</p>
+                <img src="${article.image}" alt="${article.title}" class="w-full h-auto rounded-lg mb-8 shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x500/F5F5F5/212121?text=${encodeURIComponent(article.title)}';">
+                <div class="article-body text-lg">
+                    ${article.fullContent}
+                </div>
+            `;
+            
+            container.innerHTML = articleHTML;
+            showSection('blog-article-reader');
+        }
+
 
         // Functions for confirmation box
         function showConfirmation() {
