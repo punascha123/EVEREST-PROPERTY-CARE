@@ -179,6 +179,32 @@
             font-weight: 700;
             color: #004D40;
         }
+        
+        /* NEW FAQ STYLES */
+        .faq-question {
+            transition: background-color 0.3s ease;
+        }
+        .faq-question.open {
+            background-color: #e6f7f6; /* Light aqua tint */
+            color: #004D40;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+            padding: 0 1.5rem;
+        }
+        .faq-answer.open {
+            max-height: 500px; /* Set to a large enough value */
+            padding: 1.5rem 1.5rem;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-icon.open {
+            transform: rotate(180deg);
+        }
+
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -197,6 +223,8 @@
                 <a href="#main-content" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Home</a>
                 <a href="#" onclick="showAllServicesPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Services</a>
                 <a href="#" onclick="showAboutUsPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">About Us</a>
+                <!-- NEW FAQ LINK ADDED -->
+                <a href="#faq" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">FAQ</a>
                 <a href="#contact-form-section" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Contact</a>
                 <!-- NEW BLOG LINK ADDED -->
                 <a href="#" onclick="showBlogPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Blog</a>
@@ -322,6 +350,65 @@
                     </a>
                 </div>
             </section>
+            
+            <!-- NEW FAQ SECTION -->
+            <section id="faq" class="bg-white p-8 md:p-16 rounded-xl shadow-2xl max-w-4xl mx-auto my-16 border-2 border-[#80CBC4]">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-10">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 (Lawn Mowing) -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-4 rounded-lg hover:bg-gray-50">
+                            <span class="text-lg font-semibold text-[#212121]">How often should I get my lawn mowed?</span>
+                            <i class="fas fa-chevron-down faq-icon text-[#004D40]"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-[#212121]">For a healthy, lush lawn in Auckland, we recommend regular mowing every 1-2 weeks during the peak growing season (spring and summer) and every 3-4 weeks during the slower winter months. We can create a schedule that's perfect for your lawn's needs.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 (Cleaning) -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-4 rounded-lg hover:bg-gray-50">
+                            <span class="text-lg font-semibold text-[#212121]">What's included in a standard home clean?</span>
+                            <i class="fas fa-chevron-down faq-icon text-[#004D40]"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-[#212121]">Our standard clean is very thorough! It includes dusting all surfaces, vacuuming and mopping all floors, a complete clean of bathrooms (toilets, showers, baths, sinks), and a full kitchen clean (wiping benchtops, cabinet fronts, and splashbacks). We can also customize this to your needs.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 (Lawn Mowing / WINZ) -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-4 rounded-lg hover:bg-gray-50">
+                            <span class="text-lg font-semibold text-[#212121]">Do you provide quotes for WINZ?</span>
+                            <i class="fas fa-chevron-down faq-icon text-[#004D40]"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-[#212121] font-medium">Yes, we absolutely do! We can provide WINZ quotes for all our services, including regular lawn mowing and essential home cleaning. Please contact us, and we'll happily assist you with the process.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 (Cleaning) -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-4 rounded-lg hover:bg-gray-50">
+                            <span class="text-lg font-semibold text-[#212121]">What is an 'end-of-tenancy' or 'bond clean'?</span>
+                            <i class="fas fa-chevron-down faq-icon text-[#004D40]"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-[#212121]">An end-of-tenancy clean (or bond clean) is a very deep clean of your entire rental property required before you move out. It's designed to get the property back to the standard it was in at the start of your tenancy to help you get your full bond back. This includes things like inside ovens, window tracks, and inside all cabinets.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 5 (Lawn Mowing) -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-4 rounded-lg hover:bg-gray-50">
+                            <span class="text-lg font-semibold text-[#212121]">Do I need to be home for my lawn mowing service?</span>
+                            <i class="fas fa-chevron-down faq-icon text-[#004D40]"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-[#212121]">Not at all! As long as we have safe access to the areas that need mowing (e.g., gates are unlocked), our team can complete the job while you're at work or out. We're fully insured and police-vetted for your peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END NEW FAQ SECTION -->
+
              <!-- Contact Form Section - New Design -->
             <section id="contact-form-section" class="bg-white p-8 md:p-16 rounded-xl shadow-2xl max-w-4xl mx-auto my-16 border-2 border-[#80CBC4]">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#004D40] text-center mb-4">Get Your Free Quote</h2>
@@ -1064,6 +1151,34 @@
             document.getElementById('confirmation-overlay').style.display = 'none';
             document.getElementById('confirmation-box').style.display = 'none';
         }
+
+        // NEW SCRIPT FOR FAQ ACCORDION
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('.faq-icon');
+                    const isOpen = answer.classList.contains('open');
+
+                    // Close all open answers
+                    document.querySelectorAll('.faq-answer.open').forEach(openAnswer => {
+                        openAnswer.classList.remove('open');
+                        openAnswer.previousElementSibling.classList.remove('open');
+                        openAnswer.previousElementSibling.querySelector('.faq-icon').classList.remove('open');
+                    });
+
+                    // If this answer wasn't already open, open it
+                    if (!isOpen) {
+                        answer.classList.add('open');
+                        question.classList.add('open');
+                        icon.classList.add('open');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
+
