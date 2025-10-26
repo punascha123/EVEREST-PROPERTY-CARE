@@ -1,15 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.everestpropertycare.com/</loc>
-  </url>
-  <url>
-    <loc>https://www.everestpropertycare.com/services/</loc>
-  </url>
-  <url>
-    <loc>https://www.everestpropertycare.com/contact/</loc>
-  </url>
-  <url>
-    <loc>https://www.everestpropertycare.com/about/</loc>
-  </url>
-</urlset>
+import os
+from datetime import datetime
+
+# Your website URL
+BASE_URL = "https://www.everestpropertycare.com"
+
+# Static pages
+pages = [
+    "/",
+    "/about",
+    "/services",
+    "/faq",
+    "/contact",
+    "/blog"
+]
+
+# Folder where your blog posts are stored (e.g., /blog/)
+blog_folder = "./blog"  # change this path to where your blog posts are
+
+# Start writing sitemap
+sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+
+# Add static pages
+for page in pages:
+    sitemap.append(f"  <url>\n    <loc>{BASE_URL}{page}</loc>\n    <priority>0.8</priority>\n  </url>")
+
+# Add blog posts dynamically
+for filename in os.listdir(blog_folder):
+    if filename.endswith(".html"):  # assuming blog posts are HTML files
+        post_url = f"/blog/{filename.replace('.html','')}"
+        sitemap.append(f"  <url>\n    <loc>{BASE_URL}{post_url}</loc>\n    <priority>0.5</priority>\n    <lastmod>{datetime.now().date()}</lastmod>\n  </url>")
+
+sitemap.append("</urlset>")
+
+# Write to sitemap.xml
+with open("sitemap.xml", "w", encoding="utf-8") as f:
+    f.write("\n".join(sitemap))
+
+print("sitemap.xml generated successfully!")
