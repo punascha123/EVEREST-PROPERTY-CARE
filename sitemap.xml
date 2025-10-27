@@ -1,40 +1,56 @@
-import os
-from datetime import datetime
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-# Your website URL
-BASE_URL = "https://www.everestpropertycare.com"
+  <!-- Main Pages -->
+  <url>
+    <loc>https://www.everestpropertycare.com/</loc>
+    <priority>1.0</priority>
+  </url>
 
-# Static pages
-pages = [
-    "/",
-    "/about",
-    "/services",
-    "/faq",
-    "/contact",
-    "/blog"
-]
+  <url>
+    <loc>https://www.everestpropertycare.com/about</loc>
+    <priority>0.8</priority>
+  </url>
 
-# Folder where your blog posts are stored (e.g., /blog/)
-blog_folder = "./blog"  # change this path to where your blog posts are
+  <url>
+    <loc>https://www.everestpropertycare.com/services</loc>
+    <priority>0.8</priority>
+  </url>
 
-# Start writing sitemap
-sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
-           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+  <url>
+    <loc>https://www.everestpropertycare.com/faq</loc>
+    <priority>0.7</priority>
+  </url>
 
-# Add static pages
-for page in pages:
-    sitemap.append(f"  <url>\n    <loc>{BASE_URL}{page}</loc>\n    <priority>0.8</priority>\n  </url>")
+  <url>
+    <loc>https://www.everestpropertycare.com/contact</loc>
+    <priority>0.7</priority>
+  </url>
 
-# Add blog posts dynamically
-for filename in os.listdir(blog_folder):
-    if filename.endswith(".html"):  # assuming blog posts are HTML files
-        post_url = f"/blog/{filename.replace('.html','')}"
-        sitemap.append(f"  <url>\n    <loc>{BASE_URL}{post_url}</loc>\n    <priority>0.5</priority>\n    <lastmod>{datetime.now().date()}</lastmod>\n  </url>")
+  <url>
+    <loc>https://www.everestpropertycare.com/blog</loc>
+    <priority>0.6</priority>
+  </url>
 
-sitemap.append("</urlset>")
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://www.everestpropertycare.com/blog/5-essential-tips-for-winter-gutter-cleaning</loc>
+    <priority>0.5</priority>
+  </url>
 
-# Write to sitemap.xml
-with open("sitemap.xml", "w", encoding="utf-8") as f:
-    f.write("\n".join(sitemap))
+  <url>
+    <loc>https://www.everestpropertycare.com/blog/top-3-eco-friendly-deep-cleaning-hacks</loc>
+    <priority>0.5</priority>
+  </url>
 
-print("sitemap.xml generated successfully!")
+  <url>
+    <loc>https://www.everestpropertycare.com/blog/the-secret-to-a-lush-green-west-auckland-lawn</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.everestpropertycare.com/blog/guaranteed-bond-back-why-professional-end-of-tenancy-cleaning-is-key</loc>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
