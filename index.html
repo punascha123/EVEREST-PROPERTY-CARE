@@ -210,26 +210,42 @@
 <body class="flex flex-col min-h-screen">
 
     <!-- Header/Navigation -->
-    <header class="bg-[#FFFFFF] shadow-md py-4 px-6 md:px-12">
+    <!-- MODIFICATION: Reduced padding (py-2) and made header sticky -->
+    <header class="bg-[#FFFFFF] shadow-md py-2 px-6 md:px-12 sticky top-0 z-50">
         <nav class="container mx-auto flex justify-between items-center">
             <a href="#" onclick="showSection('main-content')" class="flex flex-col items-center space-y-1">
                 <!-- Company Logo -->
-                <img src="https://i.ibb.co/N2RkK0Wp/IMG-8147.jpg" alt="EVEREST PROPERTY CARE Logo" class="h-64 md:h-72 w-auto">
+                <!-- MODIFICATION: Increased logo size again from h-24 md:h-32 to h-28 md:h-36 -->
+                <img src="https://i.ibb.co/N2RkK0Wp/IMG-8147.jpg" alt="EVEREST PROPERTY CARE Logo" class="h-28 md:h-36 w-auto">
                 <!-- Slogan - in italic font and moving -->
                 <!-- Applied 'slogan-text' for new font and 'slogan-moving' for animation -->
-                <span class="text-xl italic text-[#212121] slogan-text slogan-moving">You take your rest; we'll make it the best</span>
+                <!-- MODIFICATION: Reduced slogan text size from text-xl to text-lg -->
+                <span class="text-lg italic text-[#212121] slogan-text slogan-moving">You take your rest; we'll make it the best</span>
             </a>
             <div class="hidden md:block">
+                <!-- MODIFICATION: Re-ordered links -->
                 <a href="#main-content" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Home</a>
                 <a href="#" onclick="showAllServicesPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Services</a>
                 <a href="#" onclick="showAboutUsPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">About Us</a>
-                <!-- NEW FAQ LINK ADDED -->
+                <a href="#" onclick="showBlogPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Blog</a>
                 <a href="#faq" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">FAQ</a>
                 <a href="#contact-form-section" onclick="showSection('main-content')" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Contact</a>
-                <!-- NEW BLOG LINK ADDED -->
-                <a href="#" onclick="showBlogPage()" class="text-xl font-semibold text-[#004D40] hover:text-[#FFB300] mx-3">Blog</a>
             </div>
+            <!-- NEW: Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-3xl text-[#004D40] hover:text-[#FFB300]">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
+        <!-- NEW: Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-full left-0 right-0 z-40 border-t border-gray-200">
+            <!-- MODIFICATION: Re-ordered links -->
+            <a href="#main-content" class="mobile-menu-link block text-lg font-semibold text-[#004D40] hover:bg-[#F5F5F5] text-center py-3 px-6" onclick="showSection('main-content')">Home</a>
+            <a href="#" class="mobile-menu-link block text-lg font-semibold text-[#004D40] hover:bg-[#F5F5F5] text-center py-3 px-6" onclick="showAllServicesPage()">Services</a>
+            <a href="#" class="mobile-menu-link block text-lg font-semibold text-[#004D40] hover:bg-[#F5F5F5] text-center py-3 px-6" onclick="showAboutUsPage()">About Us</a>
+            <a href="#" class="mobile-menu-link block text-lg font-semibold text-[#004D40] hover:bg-[#F5F5F5] text-center py-3 px-6" onclick="showBlogPage()">Blog</a>
+            <a href="#faq" class="mobile-menu-link block text-lg font-semibold text-[#004D40] hover:bg-[#F5F5F5] text-center py-3 px-6" onclick="showSection('main-content')">FAQ</a>
+            <a href="#contact-form-section" class="mobile-menu-link block text-lg font-semibold text-[#004D40] hover:bg-[#F5F5F5] text-center py-3 px-6" onclick="showSection('main-content')">Contact</a>
+        </div>
     </header>
 
     <!-- Main Content Area (Home Page) -->
@@ -251,9 +267,7 @@
                 </a>
             </div>
 
-            <!-- Note for Lawnrite Franchise (Small and Separate) -->
-            <div class="absolute bottom-4 right-4 md:right-8 p-2 rounded-lg bg-white/20 backdrop-blur-sm text-xs md:text-sm font-light text-white italic text-right">
-            </div>
+            <!-- MODIFICATION: Removed empty div for Lawnrite Franchise note -->
             
         </section>
 
@@ -288,14 +302,12 @@
                         <div class="p-8 pt-0 flex-grow flex flex-col justify-between">
                             <div class="text-5xl text-green-500 mb-4">🌳</div>
                             <h4 class="text-xl font-semibold mb-3 text-[#212121]">Lush Lawn Mowing & Gardening</h4>
-                            <!-- FRANCHISE NOTE -->
-                            <p class="text-xs font-medium text-[#004D40] mb-2 italic">
-                                Lawn Mowing provided under license with **Lawnrite**.
-                            </p>
-                            <!-- END FRANCHISE NOTE -->
+                            <!-- MODIFICATION: Removed FRANCHISE NOTE -->
                             <p class="text-[#212121]">Step into a vibrant outdoor oasis, perfectly manicured and bursting with life.</p>
                         </div>
                     </a>
+
+                    <!-- MODIFICATION: Removed duplicated Lawn Mowing service card that was here -->
 
                     <!-- Service Card 3: Seamless Plastering & Painting -->
                     <a href="#services-section" class="service-card bg-white rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-xl min-h-[450px]">
@@ -781,7 +793,8 @@
                             The Secret to a Lush, Green West Auckland Lawn
                         </h2>
                         <p class="text-gray-700 text-sm mb-4">
-                            Our Lawnrite experts reveal the best mowing height and watering schedule to keep your grass vibrant through the changing seasons.
+                            <!-- MODIFICATION: Removed "Lawnrite" -->
+                            Our experts reveal the best mowing height and watering schedule to keep your grass vibrant through the changing seasons.
                         </p>
                         <a href="#" onclick="showArticle('perfect-lawn-tips')" class="text-[#80CBC4] hover:text-[#004D40] font-semibold text-sm flex items-center">
                             Read Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
@@ -1019,7 +1032,8 @@
                         <li><strong>Sharp Blades are Crucial:</strong> Dull mower blades tear the grass, making it susceptible to disease. Always ensure your mower blades are professionally sharpened. The clean cut heals faster, giving your lawn a healthier look.</li>
                         <li><strong>Soil Aeration:</strong> Compacted soil prevents water and nutrients from reaching the roots. Aerating your lawn once a year (especially in spring) can dramatically improve its health and color.</li>
                     </ol>
-                    <p class="mt-6 text-gray-700">Let us handle the complexity of lawn care. Talk to Everest Property Care about setting up a regular Lawnrite service schedule!</p>
+                    <!-- MODIFICATION: Removed "Lawnrite" -->
+                    <p class="mt-6 text-gray-700">Let us handle the complexity of lawn care. Talk to Everest Property Care about setting up a regular service schedule!</p>
                 `
             },
             // NEW ARTICLE ADDED HERE
@@ -1076,10 +1090,13 @@
             servicesArray.forEach((service, index) => {
                 const isReversed = index % 2 !== 0; // Alternate for a staggered layout
                 let franchiseNote = '';
+                // MODIFICATION: Removed franchise note logic
                 // Franchise note for Lawn Mowing in the detailed services page
+                /*
                 if (service.title.includes('Lush Lawn Mowing & Gardening')) {
                     franchiseNote = `<p class="text-sm font-semibold text-[#FFB300] mb-4">Lawn Mowing provided under license with **Lawnrite**.</p>`;
                 }
+                */
 
                 allServicesHTML += `
                     <div class="bg-white rounded-xl shadow-lg p-6 md:p-12 mb-12 flex flex-col md:flex-row items-center gap-8 ${isReversed ? 'md:flex-row-reverse' : ''}">
@@ -1178,7 +1195,35 @@
                 });
             });
         });
+
+        // NEW SCRIPT FOR MOBILE MENU TOGGLE
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = menuButton.querySelector('i');
+
+            // Toggle menu
+            menuButton.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                if (isHidden) {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                }
+            });
+
+            // Close menu when a link is clicked
+            const mobileLinks = document.querySelectorAll('.mobile-menu-link');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+        });
     </script>
 </body>
 </html>
-
