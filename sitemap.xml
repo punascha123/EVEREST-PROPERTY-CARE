@@ -1,56 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Main Pages -->
+  <!-- Only real pages go here -->
   <url>
     <loc>https://www.everestpropertycare.com/</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://www.everestpropertycare.com/about</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.everestpropertycare.com/services</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.everestpropertycare.com/faq</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.everestpropertycare.com/contact</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.everestpropertycare.com/blog</loc>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Blog Posts -->
-  <url>
-    <loc>https://www.everestpropertycare.com/blog/5-essential-tips-for-winter-gutter-cleaning</loc>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://www.everestpropertycare.com/blog/top-3-eco-friendly-deep-cleaning-hacks</loc>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://www.everestpropertycare.com/blog/the-secret-to-a-lush-green-west-auckland-lawn</loc>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://www.everestpropertycare.com/blog/guaranteed-bond-back-why-professional-end-of-tenancy-cleaning-is-key</loc>
-    <priority>0.5</priority>
   </url>
 
 </urlset>
